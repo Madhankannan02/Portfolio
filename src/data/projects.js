@@ -1,4 +1,4 @@
-import titanStorageHero from "../assets/Tital Storage hero.png";
+import titanStorageHero from "../assets/Tital-Storage-hero.png";
 import titanStoragePresentation from '../assets/Tital Storage presentation.png';
 import stractHero from '../assets/Stract Hero.png';
 import stractPresentation from '../assets/Stract Presentation.png';
