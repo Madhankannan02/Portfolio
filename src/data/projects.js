@@ -1,5 +1,5 @@
-import titanStorageHero from "../assets/Tital-Storage-hero.png";
-import titanStoragePresentation from '../assets/Tital Storage presentation.png';
+import titanStorageHero from "../assets/Tital Storage hero.png";
+import titanStoragePresentation from '../assets/Tital-Storage-Presentation.png';
 import stractHero from '../assets/Stract Hero.png';
 import stractPresentation from '../assets/Stract Presentation.png';
 import butcherBoxHero from '../assets/Butcher Box Hero.png';
