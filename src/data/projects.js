@@ -38,6 +38,7 @@ export const projects = [
         description: "HatHaven Project – A Premium Headwear Marketplace Crafted To Redefine Style Discovery, Streamline The Shopping Experience, And Elevate Personal Expression For Fashion Enthusiasts.",
         tags: ["UX Research", "Case Study", "Ecommerce Website"],
         image: hathaveHero,
-        link: hathavePresentation
+        link: hathavePresentation,
+        route: '/hathaven'
     },
 ];

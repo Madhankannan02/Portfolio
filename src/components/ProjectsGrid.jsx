@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import ProjectCard from './ProjectCard';
@@ -6,8 +7,13 @@ import { projects } from '../data/projects';
 
 const ProjectsGrid = () => {
     const [selectedProject, setSelectedProject] = useState(null);
+    const navigate = useNavigate();
 
     const handleProjectClick = (project) => {
+        if (project.route) {
+            navigate(project.route);
+            return;
+        }
         if (project.link && project.link !== '#') {
             setSelectedProject(project);
         }
