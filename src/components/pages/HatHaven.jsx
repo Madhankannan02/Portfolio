@@ -262,7 +262,7 @@ export default function HatHaven() {
                         <FadeIn className="lg:col-span-2">
                             <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-stone-100 flex flex-col justify-between h-full hover:shadow-md transition-shadow duration-300">
                                 <div>
-                                    <span className="text-orange-600 font-mono text-sm tracking-widest uppercase mb-6 block flex items-center gap-2">
+                                    <span className="text-[#66588D] font-mono text-sm tracking-widest uppercase mb-6 block flex items-center gap-2">
                                         <Type size={16} /> Primary Typeface
                                     </span>
                                     <h3 className="text-6xl md:text-8xl font-bold text-stone-900 mb-6 tracking-tighter">Inter</h3>
@@ -301,15 +301,15 @@ export default function HatHaven() {
                         <div className="flex flex-col gap-6">
                             {/* Primary Color */}
                             <FadeIn delay={0.2} className="flex-1 min-h-[300px]">
-                                <div className="bg-[#EA580C] rounded-[2.5rem] p-8 flex flex-col justify-between h-full text-white relative overflow-hidden group shadow-xl shadow-orange-900/10">
+                                <div className="bg-[#66588D] rounded-[2.5rem] p-8 flex flex-col justify-between h-full text-white relative overflow-hidden group shadow-xl shadow-purple-900/10">
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     <div className="flex justify-between items-start relative z-10">
                                         <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl"><Palette size={24} className="text-white" /></div>
-                                        <span className="font-mono text-sm opacity-60 bg-black/20 px-3 py-1 rounded-full">#EA580C</span>
+                                        <span className="font-mono text-sm opacity-60 bg-black/20 px-3 py-1 rounded-full">#66588D</span>
                                     </div>
                                     <div className="relative z-10">
                                         <p className="text-sm opacity-80 uppercase tracking-wider mb-2 font-medium">Primary Brand</p>
-                                        <p className="text-3xl font-bold">Sunset Orange</p>
+                                        <p className="text-3xl font-bold">Royal Purple</p>
                                     </div>
                                 </div>
                             </FadeIn>
