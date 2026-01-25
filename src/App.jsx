@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import HatHaven from './components/pages/HatHaven';
+import TitanStorage from './components/pages/TitanStorage';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import ProjectsGrid from './components/ProjectsGrid';
@@ -20,6 +21,7 @@ function App() {
           </Layout>
         } />
         <Route path="/hathaven" element={<HatHaven />} />
+        <Route path="/titan-storage" element={<TitanStorage />} />
       </Routes>
     </>
   );

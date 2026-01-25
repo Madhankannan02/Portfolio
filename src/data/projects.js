@@ -14,7 +14,8 @@ export const projects = [
         description: "A new era of industrial engineering defined by technical precision and global reach. Titan Storage Solutions bridges the gap between complex engineering and digital accessibility through a modern, informative interface.",
         tags: ["UI/UX", "Web Design", "Figma"],
         image: titanStorageHero,
-        link: titanStoragePresentation
+        link: titanStoragePresentation,
+        route: '/titan-storage'
     },
     {
         id: 2,
