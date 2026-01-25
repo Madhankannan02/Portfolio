@@ -78,7 +78,7 @@ export default function TitanStorage() {
             </section>
 
             {/* About the Project Section */}
-            <section className="py-32 px-6 bg-[#0A0A0A] border-t border-white/5">
+            <section className="py-[50px] px-[30px] bg-[#181A1A] border-t border-white/5">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">
 
@@ -104,7 +104,7 @@ export default function TitanStorage() {
                                         <p className="text-xs text-gray-500 uppercase tracking-wider">Founder, Titan Storage Solutions</p>
                                     </div>
                                 </div>
-                                <blockquote className="text-gray-400 text-sm leading-relaxed max-w-sm">
+                                <blockquote className="text-gray-400 text-lg leading-relaxed max-w-md">
                                     «We need a structured, industrial platform that captures our global expertise in tank engineering and delivers a seamless experience for EPC contractors.»
                                 </blockquote>
                             </FadeIn>
