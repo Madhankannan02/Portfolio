@@ -16,6 +16,9 @@ import ProductPage from '../../assets/hathaven-slides/Product Page.svg';
 import BlogPage from '../../assets/hathaven-slides/Blog Page.svg';
 import ContactPage from '../../assets/hathaven-slides/Contact Us Page.svg';
 import HeroAsset from '../../assets/hathaven-slides/Hero.svg';
+import Mockup1 from '../../assets/hathaven-slides/mockup1.svg';
+import Mockup2 from '../../assets/hathaven-slides/mockup2.svg';
+import CharacterOverlay from '../../assets/hathaven-slides/Character overlay.svg';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -198,6 +201,54 @@ export default function HatHaven() {
                 </div>
             </section>
 
+            {/* Design Process - Process Flow */}
+            <section className="py-24 bg-[#1A1A1A] relative overflow-hidden">
+                {/* Grid Background */}
+                <div className="absolute inset-0 z-0 opacity-10"
+                    style={{
+                        backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+                        backgroundSize: '40px 40px'
+                    }}
+                />
+
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <SectionHeader
+                        title="The Methodology"
+                        subtitle="From abstract concepts to pixel-perfect execution."
+                    />
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative mt-16">
+                        {[
+                            { step: "01", title: "Discovery", desc: "Analyzing market gaps in luxury headwear e-commerce." },
+                            { step: "02", title: "Definition", desc: "Mapping the 'Zen Mode' user journey to reduce cognitive load.", arrow: "right" },
+                            { step: "03", title: "Wireframing", desc: "Structuring the information architecture for seamless discovery.", arrow: "down-left" },
+                            { step: "04", title: "Visual Design", desc: "Applying the 'Royal Purple' identity and tailored typography.", arrow: "left" },
+                            { step: "05", title: "Prototyping", desc: "Crafting micro-interactions and transition variables.", arrow: "down-right" },
+                            { step: "06", title: "Design Handoff", desc: "Preparing detailed documentation and assets for developers." }
+                        ].map((item, index) => (
+                            <FadeIn key={index} delay={index * 0.1} className={`relative p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300 group
+                                ${index === 0 ? 'rounded-tl-[2rem] rounded-tr-lg rounded-bl-lg rounded-br-lg' : ''}
+                                ${index === 2 ? 'rounded-tr-[2rem]' : ''}
+                                ${index === 3 ? 'rounded-bl-[2rem]' : ''}
+                                ${index === 5 ? 'rounded-br-[2rem]' : ''}
+                                rounded-lg
+                            `}>
+                                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#66588D] flex items-center justify-center text-white text-xs font-bold font-mono shadow-lg border border-[#1A1A1A] z-20">
+                                    {item.step}
+                                </div>
+                                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+
+                                {/* Connector Lines for Desktop Visuals - simplified for responsiveness (Decorative) */}
+                                {index !== 5 && (
+                                    <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-[1px] bg-white/10 z-0" />
+                                )}
+                            </FadeIn>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Design System - Hybrid Version */}
             <section className="py-32 bg-gray-50 border-y border-gray-200">
                 <div className="max-w-7xl mx-auto px-6">
@@ -347,6 +398,99 @@ export default function HatHaven() {
                                     <img src={ContactPage} alt="Contact Page" className="w-full h-auto" />
                                 </div>
                             </FadeIn>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Mobile Experience Section */}
+            <section className="py-24 bg-[#0a0a0a] text-white overflow-hidden relative">
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+                    <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-900 rounded-full blur-[120px]" />
+                    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-900 rounded-full blur-[120px]" />
+                </div>
+
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <FadeIn>
+                            <div className="space-y-8">
+                                <div className="flex items-center gap-3 text-purple-400">
+                                    <Smartphone className="w-6 h-6" />
+                                    <span className="uppercase tracking-[0.2em] text-xs font-semibold">Responsive Design</span>
+                                </div>
+
+                                <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+                                    Seamless on <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                                        Every Device
+                                    </span>
+                                </h2>
+
+                                <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
+                                    The shopping experience transcends the desktop. We meticulously crafted a mobile-first interface that retains all the elegance of the full site while optimizing for touch interactions and smaller viewports.
+                                </p>
+
+                                <div className="flex flex-col gap-4 pt-8">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                                            <ShoppingCart size={20} className="text-purple-300" />
+                                        </div>
+                                        <div>
+                                            <p className="font-semibold">Streamlined Checkout</p>
+                                            <p className="text-sm text-gray-500">One-tap purchasing flow</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                                            <Search size={20} className="text-purple-300" />
+                                        </div>
+                                        <div>
+                                            <p className="font-semibold">Smart Discovery</p>
+                                            <p className="text-sm text-gray-500">AI-powered recommendations</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeIn>
+
+                        <FadeIn delay={0.3} className="relative">
+                            <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-gray-900">
+                                <img src={Mockup1} alt="Mobile Interface" className="w-full h-auto" />
+                            </div>
+                            {/* Decorative elements */}
+                            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-purple-500/20 to-transparent blur-3xl opacity-50" />
+                        </FadeIn>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            {/* High Fidelity UI Design */}
+            <section className="py-24 px-6 bg-[#FaFaFa]">
+                <div className="max-w-7xl mx-auto">
+                    <SectionHeader
+                        title="High Fidelity Design"
+                        subtitle="Crafting a visual language that speaks to luxury."
+                    />
+
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+                        <div className="absolute inset-0 bg-purple-900/10 group-hover:bg-transparent transition-colors duration-500" />
+                        <img src={Mockup2} alt="High Fidelity Interface" className="w-full h-auto" />
+
+                        {/* Overlay Details */}
+                        <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/80 to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-between items-end">
+                            <div>
+                                <h3 className="text-2xl font-bold mb-2">Product Detail View</h3>
+                                <p className="text-gray-300">Optimized for conversion and clarity.</p>
+                            </div>
+                            <div className="hidden md:block">
+                                <div className="flex gap-2">
+                                    <span className="px-3 py-1 border border-white/30 rounded-full text-xs uppercase tracking-wider">UI Design</span>
+                                    <span className="px-3 py-1 border border-white/30 rounded-full text-xs uppercase tracking-wider">Figma</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
