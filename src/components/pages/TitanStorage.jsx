@@ -49,7 +49,7 @@ export default function TitanStorage() {
                         </span>
                     </FadeIn>
 
-                    <FadeIn delay={0.4}>
+                    <FadeIn delay={0.3}>
                         <h1 className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative">
                             <span className="relative z-10 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">TITAN STORAGE</span>
                             {/* Text Glow Effect */}
@@ -59,7 +59,7 @@ export default function TitanStorage() {
                 </div>
 
                 {/* 3. Laptop Image Layer */}
-                <FadeIn delay={0.8} className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12">
+                <FadeIn delay={0.5} className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12">
                     <img
                         src={FirstImageLaptop}
                         alt="Titan Storage Dashboard Interface"
