@@ -88,20 +88,20 @@ export default function HatHaven() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
     return (
-        <div className="bg-white min-h-screen text-gray-900 font-sans selection:bg-purple-100 selection:text-purple-900 overflow-x-hidden">
+        <div className="bg-stone-50 min-h-screen text-stone-900 font-sans selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden">
 
             {/* Hero Section */}
-            <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-[#F3F3F3] pt-8 md:pt-0">
+            <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-[#FAFAG9] pt-8 md:pt-0">
                 <div className="absolute inset-0 z-0 opacity-10"
                     style={{
-                        backgroundImage: 'radial-gradient(#66588D 1px, transparent 1px)',
+                        backgroundImage: 'radial-gradient(#EA580C 1px, transparent 1px)',
                         backgroundSize: '30px 30px'
                     }}
                 />
 
                 <div className="z-10 text-center max-w-4xl mx-auto">
                     <FadeIn delay={0.2}>
-                        <span className="inline-block px-3 py-1 mb-6 text-xs tracking-widest uppercase border border-purple-200 rounded-full bg-purple-50 text-purple-600 font-semibold shadow-sm">
+                        <span className="inline-block px-3 py-1 mb-6 text-xs tracking-widest uppercase border border-orange-200 rounded-full bg-orange-50 text-orange-600 font-semibold shadow-sm">
                             E-Commerce Experience
                         </span>
                     </FadeIn>
@@ -124,10 +124,10 @@ export default function HatHaven() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 1 }}
-                    className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
+                    className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-400"
                 >
                     <span className="text-xs uppercase tracking-widest">Scroll to View Project</span>
-                    <ArrowDown className="animate-bounce text-purple-600" size={16} />
+                    <ArrowDown className="animate-bounce text-orange-600" size={16} />
                 </motion.div>
             </section>
 
@@ -144,13 +144,13 @@ export default function HatHaven() {
                                 <FadeIn>
                                     <div className="space-y-8">
                                         <div>
-                                            <div className="flex items-center gap-3 mb-6 text-purple-400">
-                                                <div className="w-8 h-[2px] bg-purple-400" />
+                                            <div className="flex items-center gap-3 mb-6 text-orange-400">
+                                                <div className="w-8 h-[2px] bg-orange-400" />
                                                 <span className="uppercase tracking-[0.2em] text-xs font-semibold">Core Philosophy</span>
                                             </div>
                                             <h2 className="text-4xl md:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
                                                 The Digital <br />
-                                                <span className="text-purple-200">Sanctuary</span>
+                                                <span className="text-orange-200">Sanctuary</span>
                                             </h2>
                                         </div>
 
@@ -169,7 +169,7 @@ export default function HatHaven() {
                             <div className="lg:col-span-7 relative">
                                 <FadeIn delay={0.3}>
                                     <div className="relative group">
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-transparent blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-transparent blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                                         {/* Image Wrapper with 3D feel */}
                                         <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-gray-900/50 group-hover:scale-[1.02] transition-transform duration-700 ease-out">
@@ -184,7 +184,7 @@ export default function HatHaven() {
                                         {/* Decorative floating badge */}
                                         <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-lg hidden md:block">
                                             <div className="flex gap-3">
-                                                <div className="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white">
+                                                <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white">
                                                     <Palette size={20} />
                                                 </div>
                                                 <div>
@@ -233,7 +233,7 @@ export default function HatHaven() {
                                 ${index === 5 ? 'rounded-br-[2rem]' : ''}
                                 rounded-lg
                             `}>
-                                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#66588D] flex items-center justify-center text-white text-xs font-bold font-mono shadow-lg border border-[#1A1A1A] z-20">
+                                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#EA580C] flex items-center justify-center text-white text-xs font-bold font-mono shadow-lg border border-[#1A1A1A] z-20">
                                     {item.step}
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
@@ -260,12 +260,12 @@ export default function HatHaven() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                         {/* Typography Spec Sheet - Adapted from Version 3 */}
                         <FadeIn className="lg:col-span-2">
-                            <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col justify-between h-full hover:shadow-md transition-shadow duration-300">
+                            <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-stone-100 flex flex-col justify-between h-full hover:shadow-md transition-shadow duration-300">
                                 <div>
-                                    <span className="text-purple-600 font-mono text-sm tracking-widest uppercase mb-6 block flex items-center gap-2">
+                                    <span className="text-orange-600 font-mono text-sm tracking-widest uppercase mb-6 block flex items-center gap-2">
                                         <Type size={16} /> Primary Typeface
                                     </span>
-                                    <h3 className="text-6xl md:text-8xl font-bold text-gray-900 mb-6 tracking-tighter">Inter</h3>
+                                    <h3 className="text-6xl md:text-8xl font-bold text-stone-900 mb-6 tracking-tighter">Inter</h3>
 
                                     <div className="flex flex-wrap gap-6 text-gray-400 mt-8 mb-12">
                                         <div className="space-y-2">
@@ -301,15 +301,15 @@ export default function HatHaven() {
                         <div className="flex flex-col gap-6">
                             {/* Primary Color */}
                             <FadeIn delay={0.2} className="flex-1 min-h-[300px]">
-                                <div className="bg-[#66588D] rounded-[2.5rem] p-8 flex flex-col justify-between h-full text-white relative overflow-hidden group shadow-xl shadow-purple-900/10">
+                                <div className="bg-[#EA580C] rounded-[2.5rem] p-8 flex flex-col justify-between h-full text-white relative overflow-hidden group shadow-xl shadow-orange-900/10">
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     <div className="flex justify-between items-start relative z-10">
                                         <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl"><Palette size={24} className="text-white" /></div>
-                                        <span className="font-mono text-sm opacity-60 bg-black/20 px-3 py-1 rounded-full">#66588D</span>
+                                        <span className="font-mono text-sm opacity-60 bg-black/20 px-3 py-1 rounded-full">#EA580C</span>
                                     </div>
                                     <div className="relative z-10">
                                         <p className="text-sm opacity-80 uppercase tracking-wider mb-2 font-medium">Primary Brand</p>
-                                        <p className="text-3xl font-bold">Royal Purple</p>
+                                        <p className="text-3xl font-bold">Sunset Orange</p>
                                     </div>
                                 </div>
                             </FadeIn>
@@ -357,10 +357,10 @@ export default function HatHaven() {
                     <div className="space-y-24 md:space-y-40">
                         {/* Main Page */}
                         <div className="relative">
-                            <div className="absolute top-0 right-0 w-2/3 h-full bg-purple-50 rounded-l-[3rem] -z-10 translate-x-1/3" />
+                            <div className="absolute top-0 right-0 w-2/3 h-full bg-orange-50 rounded-l-[3rem] -z-10 translate-x-1/3" />
                             <div className="max-w-5xl mx-auto">
                                 <div className="flex items-end justify-between mb-8 px-4">
-                                    <h3 className="text-4xl font-bold text-gray-900">01. Home</h3>
+                                    <h3 className="text-4xl font-bold text-stone-900">01. Home</h3>
                                     <span className="text-gray-400 font-mono">Main Page</span>
                                 </div>
                                 <ProjectImage src={MainPage} alt="Main Page Design" />
@@ -414,14 +414,14 @@ export default function HatHaven() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <FadeIn>
                             <div className="space-y-8">
-                                <div className="flex items-center gap-3 text-purple-400">
+                                <div className="flex items-center gap-3 text-orange-400">
                                     <Smartphone className="w-6 h-6" />
                                     <span className="uppercase tracking-[0.2em] text-xs font-semibold">Responsive Design</span>
                                 </div>
 
                                 <h2 className="text-4xl md:text-6xl font-bold leading-tight">
                                     Seamless on <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">
                                         Every Device
                                     </span>
                                 </h2>
@@ -433,16 +433,16 @@ export default function HatHaven() {
                                 <div className="flex flex-col gap-4 pt-8">
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                                            <ShoppingCart size={20} className="text-purple-300" />
+                                            <ShoppingCart size={20} className="text-orange-300" />
                                         </div>
                                         <div>
                                             <p className="font-semibold">Streamlined Checkout</p>
-                                            <p className="text-sm text-gray-500">One-tap purchasing flow</p>
+                                            <p className="text-sm text-stone-400">One-tap purchasing flow</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                                            <Search size={20} className="text-purple-300" />
+                                            <Search size={20} className="text-orange-300" />
                                         </div>
                                         <div>
                                             <p className="font-semibold">Smart Discovery</p>
@@ -458,7 +458,7 @@ export default function HatHaven() {
                                 <img src={Mockup1} alt="Mobile Interface" className="w-full h-auto" />
                             </div>
                             {/* Decorative elements */}
-                            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-purple-500/20 to-transparent blur-3xl opacity-50" />
+                            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-orange-500/20 to-transparent blur-3xl opacity-50" />
                         </FadeIn>
                     </div>
                 </div>
@@ -476,7 +476,7 @@ export default function HatHaven() {
                     />
 
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-                        <div className="absolute inset-0 bg-purple-900/10 group-hover:bg-transparent transition-colors duration-500" />
+                        <div className="absolute inset-0 bg-orange-900/10 group-hover:bg-transparent transition-colors duration-500" />
                         <img src={Mockup2} alt="High Fidelity Interface" className="w-full h-auto" />
 
                         {/* Overlay Details */}
@@ -500,11 +500,11 @@ export default function HatHaven() {
             <footer className="py-20 bg-gray-900 text-white relative z-10 text-center">
                 <FadeIn>
                     <p className="text-3xl font-bold mb-4 tracking-tight">HATHAVEN</p>
-                    <p className="text-gray-400 mb-8">E-Commerce Concept & Design</p>
+                    <p className="text-stone-400 mb-8">E-Commerce Concept & Design</p>
                     <div className="flex justify-center gap-6">
-                        <span className="w-10 h-1 rounded-full bg-purple-500" />
+                        <span className="w-10 h-1 rounded-full bg-orange-500" />
                     </div>
-                    <p className="mt-12 text-sm text-gray-600">© 2026 Hathaven Project. All Rights Reserved.</p>
+                    <p className="mt-12 text-sm text-stone-600">© 2026 Hathaven Project. All Rights Reserved.</p>
                 </FadeIn>
             </footer>
 
