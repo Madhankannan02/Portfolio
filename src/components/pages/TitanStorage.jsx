@@ -6,6 +6,7 @@ import { ArrowDown } from 'lucide-react';
 import HeroImage from '../../assets/titan-storage-slide/HomeScreen.svg';
 import FirstImageBackground from '../../assets/titan-storage-slide/first image background.svg';
 import FirstImageLaptop from '../../assets/titan-storage-slide/first image laptop.svg';
+import SecondMockup from '../../assets/titan-storage-slide/second mockup.svg';
 import JoelAvatar from '../../assets/generated/joel_k_avatar_1769328668647.png';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
@@ -78,8 +79,8 @@ export default function TitanStorage() {
             </section>
 
             {/* About the Project Section */}
-            <section className="py-[50px] px-[30px] bg-[#181A1A] border-t border-white/5">
-                <div className="max-w-7xl mx-auto">
+            <section className="py-[50px] px-[80px] bg-[#181A1A] border-t border-white/5">
+                <div className="max-w-8xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">
 
                         {/* Divider Line (Vertical on Desktop) */}
@@ -128,6 +129,19 @@ export default function TitanStorage() {
                         </div>
                     </div>
                 </div>
+            </section>
+
+            {/* Second Mockup Section */}
+            <section className="bg-[#181A1A] px-[30px] pb-[50px]">
+                <FadeIn>
+                    <div className="w-full">
+                        <img
+                            src={SecondMockup}
+                            alt="Titan Storage Interface Mockup"
+                            className="w-full h-auto object-cover rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
             </section>
 
         </div>
