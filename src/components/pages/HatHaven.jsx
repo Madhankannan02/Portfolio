@@ -7,7 +7,8 @@ import {
     Monitor,
     Smartphone,
     ShoppingCart,
-    Search
+    Search,
+    Sparkles
 } from 'lucide-react';
 
 // Import Assets
@@ -18,7 +19,7 @@ import ContactPage from '../../assets/hathaven-slides/Contact Us Page.svg';
 import HeroAsset from '../../assets/hathaven-slides/Hero.svg';
 import Mockup1 from '../../assets/hathaven-slides/mockup1.svg';
 import Mockup2 from '../../assets/hathaven-slides/mockup2.svg';
-import CharacterOverlay from '../../assets/hathaven-slides/Character overlay.svg';
+
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -468,6 +469,7 @@ export default function HatHaven() {
 
 
             {/* High Fidelity UI Design */}
+            {/* High Fidelity UI Design */}
             <section className="py-24 px-6 bg-[#FaFaFa]">
                 <div className="max-w-7xl mx-auto">
                     <SectionHeader
@@ -475,23 +477,65 @@ export default function HatHaven() {
                         subtitle="Crafting a visual language that speaks to luxury."
                     />
 
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-                        <div className="absolute inset-0 bg-orange-900/10 group-hover:bg-transparent transition-colors duration-500" />
-                        <img src={Mockup2} alt="High Fidelity Interface" className="w-full h-auto" />
+                    <div className="mt-16">
+                        <FadeIn>
+                            <div className="relative rounded-[3rem] bg-[#1a1a1a] p-8 md:p-16 overflow-hidden shadow-2xl">
+                                {/* Background Gradients */}
+                                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+                                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
 
-                        {/* Overlay Details */}
-                        <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/80 to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-between items-end">
-                            <div>
-                                <h3 className="text-2xl font-bold mb-2">Product Detail View</h3>
-                                <p className="text-gray-300">Optimized for conversion and clarity.</p>
-                            </div>
-                            <div className="hidden md:block">
-                                <div className="flex gap-2">
-                                    <span className="px-3 py-1 border border-white/30 rounded-full text-xs uppercase tracking-wider">UI Design</span>
-                                    <span className="px-3 py-1 border border-white/30 rounded-full text-xs uppercase tracking-wider">Figma</span>
+                                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center relative z-10">
+                                    {/* Mockup Column */}
+                                    <div className="lg:col-span-3 relative">
+                                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group aspect-[16/10]">
+                                            <img
+                                                src={MainPage}
+                                                alt="High Fidelity Interface"
+                                                className="w-full h-full object-cover object-top transform transition-transform duration-700 group-hover:scale-[1.02]"
+                                            />
+                                            {/* Reflection/Sheen */}
+                                            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                        </div>
+                                    </div>
+
+                                    {/* Character/Overlay Column */}
+                                    <div className="lg:col-span-2 flex flex-col justify-center">
+                                        <motion.div
+                                            initial={{ opacity: 0, x: 20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.3, duration: 0.8 }}
+                                            className="relative"
+                                        >
+                                            <img
+                                                src="https://images.unsplash.com/photo-1533518463841-d62e1fc91373?auto=format&fit=crop&q=80&w=800"
+                                                alt="Elegant Model in Hat"
+                                                className="w-full h-auto max-w-sm mx-auto rounded-2xl shadow-2xl object-cover aspect-[3/4]"
+                                            />
+
+                                            {/* Floating Badge */}
+                                            <div className="absolute bottom-10 -left-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-lg hidden md:block">
+                                                <div className="flex gap-3 items-center">
+                                                    <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white">
+                                                        <Sparkles size={20} />
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-xs text-stone-300 uppercase tracking-wider">Aesthetic</p>
+                                                        <p className="font-semibold text-white">Premium Feel</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+
+                                        <div className="mt-12 text-white/80">
+                                            <h3 className="text-2xl font-bold text-white mb-4">Immersive Shopping</h3>
+                                            <p className="leading-relaxed text-stone-300">
+                                                High-fidelity visuals combined with clean typography create an environment where the product takes center stage.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </FadeIn>
                     </div>
                 </div>
             </section>
