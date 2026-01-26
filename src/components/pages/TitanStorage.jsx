@@ -33,7 +33,7 @@ export default function TitanStorage() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
     return (
-        <div className="bg-[#0A0A0A] min-h-screen text-slate-100 font-montreal selection:bg-slate-700 selection:text-white overflow-x-hidden">
+        <div className="bg-[#181A1A] min-h-screen text-slate-100 font-montreal selection:bg-slate-700 selection:text-white overflow-x-hidden">
 
             {/* Hero Section */}
             <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-black text-white pt-20 pb-20 md:pt-12 md:pb-0">
@@ -159,7 +159,7 @@ export default function TitanStorage() {
 
             {/* User Research / Audience Analysis */}
             {/* User Research / Audience Analysis */}
-            <section className="py-[50px] px-6 md:px-[80px] bg-[#E5E5E5] text-gray-900 relative border-t border-white/5 overflow-hidden">
+            <section className="py-[50px] px-6 md:px-[80px] bg-[#E5E5E5] text-gray-900 relative overflow-hidden mx-4 md:mx-[30px] rounded-[45px] mb-[50px]">
                 {/* Background Shapes */}
                 <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-[#D4D4D4] rounded-bl-full opacity-50 pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-[#D4D4D4] rounded-tr-full opacity-50 pointer-events-none" />
@@ -266,108 +266,394 @@ export default function TitanStorage() {
                 </div>
             </section>
 
-            {/* Services Page Section */}
-            <section className="py-24 bg-[#0A0A0A] px-4 md:px-[60px]">
+
+
+            {/* Third Mockup Section */}
+            <section className="bg-[#181A1A] px-4 md:px-[30px] pb-[50px]">
                 <FadeIn>
-                    <div className="max-w-7xl mx-auto mb-16">
-                        <div className="flex items-center gap-4 mb-6">
-                            <span className="w-12 h-[1px] bg-orange-500"></span>
-                            <span className="text-orange-500 uppercase tracking-widest text-xs font-bold">Capabilities</span>
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-light text-white mb-6">Engineering Services</h2>
-                        <p className="text-gray-400 max-w-2xl text-lg">
-                            We structured the services to provide immediate access to technical specifications.
-                            The layout prioritizes clarity, allowing contractors to quickly assess capabilities and certifications.
-                        </p>
-                    </div>
-                    <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-[#141414]">
-                        <img src={ServicesImage} alt="Titan Storage Services Page" className="w-full h-auto" />
+                    <div className="w-full">
+                        <img
+                            src={ThirdMockup}
+                            alt="Titan Storage Interface Mockup 3"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
                     </div>
                 </FadeIn>
             </section>
 
-            {/* About Page Design */}
-            <section className="py-24 bg-[#111111] px-4 md:px-[60px] border-y border-white/5">
-                <FadeIn>
-                    <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                            <div className="order-2 lg:order-1">
-                                <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-[#0A0A0A]">
-                                    <img src={AboutUsImage} alt="Titan Storage About Page" className="w-full h-auto" />
-                                </div>
-                            </div>
-                            <div className="order-1 lg:order-2">
-                                <h2 className="text-3xl md:text-5xl font-light text-white mb-8">Corporate Identity</h2>
-                                <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                                    The About page serves as the trust anchor. We designed it to highlight Titan's rigorous safety standards and global engineering footprint without overwhelming the user.
-                                </p>
-                                <div className="space-y-6">
-                                    <div className="flex gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
-                                            <span className="text-xl">🏆</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-bold mb-1">Legacy of Excellence</h4>
-                                            <p className="text-sm text-gray-500">Highlighting decades of industry leadership.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
-                                            <span className="text-xl">🌍</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-bold mb-1">Global Reach</h4>
-                                            <p className="text-sm text-gray-500">Displaying operational capacity across continents.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </FadeIn>
-            </section>
-
-            {/* Visual Interface Showcase (Mockups 3, 4, 5) */}
-            <section className="py-32 bg-[#0A0A0A] px-4 md:px-[30px]">
-                <div className="max-w-7xl mx-auto">
+            {/* Typography & Colors Section */}
+            <section className="py-24 px-6 md:px-[80px] bg-[#0F0F0F] text-white border-t border-white/5 font-sans">
+                <div className="max-w-8xl mx-auto">
+                    {/* Header */}
                     <FadeIn>
-                        <div className="text-center mb-20">
-                            <h2 className="text-3xl md:text-5xl font-light text-white mb-6">System Architecture</h2>
-                            <p className="text-gray-400">High-fidelity interface views across different modules.</p>
+                        <div className="flex justify-between items-start mb-24 border-b border-white/10 pb-8">
+                            <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">[ 03 ]</span>
+                            <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">[ TYPOGRAPHY & COLORS ]</span>
+                        </div>
+                    </FadeIn>
+
+                    {/* Typography Subsection */}
+                    <FadeIn delay={0.2}>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32 border-b border-white/10 pb-24">
+                            <div>
+                                <h2 className="text-[12rem] leading-none font-medium tracking-tighter text-white">Manrope</h2>
+                            </div>
+                            <div className="grid grid-cols-3 gap-12 border-l border-white/10 pl-12">
+                                <div className="space-y-2">
+                                    <h4 className="text-gray-500 text-lg mb-4">Weight</h4>
+                                    <ul className="space-y-1 text-xl text-gray-300">
+                                        <li>Medium</li>
+                                        <li>Regular</li>
+                                        <li>Semibold</li>
+                                        <li>Bold</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="text-gray-500 text-lg mb-4">Line Height</h4>
+                                    <p className="text-xl text-gray-300">36 / 80</p>
+                                </div>
+                                <div>
+                                    <h4 className="text-gray-500 text-lg mb-4">Letter Spacing</h4>
+                                    <p className="text-xl text-gray-300">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </FadeIn>
+
+                    {/* Colors Subsection */}
+                    <FadeIn delay={0.4}>
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                            {/* Sidebar Label */}
+                            <div className="lg:col-span-2">
+                                <span className="text-gray-500 uppercase tracking-widest text-sm sticky top-24">COLORS</span>
+                            </div>
+
+                            {/* Cards Column */}
+                            <div className="lg:col-span-10 divide-y divide-white/10 border-b border-white/10">
+                                {/* Color 1: Industrial Ember */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-8">
+                                    <p className="text-gray-400 text-lg leading-relaxed">
+                                        This vibrant orange mirrors the safety markings, heavy machinery, and high-heat engineering environments common in storage tank manufacturing.
+                                    </p>
+                                    <div className="relative h-64 bg-[#FF7420] rounded-[2rem] p-8 flex flex-col justify-between shadow-2xl group overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <div className="flex justify-end">
+                                            <h3 className="text-4xl text-right font-light text-white leading-tight">Industrial <br /> Ember</h3>
+                                        </div>
+                                        <div className="flex justify-between items-end">
+                                            <span className="text-white/50 font-mono text-sm">01</span>
+                                            <div className="text-right font-mono text-xs text-white/80 space-y-1">
+                                                <p>HEX: #FF7420</p>
+                                                <p>RGB: 255. 116. 32</p>
+                                                <p>CMYK: 0. 68. 93. 0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Color 2: White */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-8">
+                                    <p className="text-gray-400 text-lg leading-relaxed">
+                                        Represents clarity and precision. It is used for all technical data, headings, and body copy to ensure maximum legibility for engineers reviewing complex specs.
+                                    </p>
+                                    <div className="relative h-64 bg-white rounded-[2rem] p-8 flex flex-col justify-between shadow-2xl">
+                                        <div className="flex justify-end">
+                                            <h3 className="text-5xl font-light text-black">White</h3>
+                                        </div>
+                                        <div className="flex justify-between items-end">
+                                            <span className="text-black/30 font-mono text-sm">02</span>
+                                            <div className="text-right font-mono text-xs text-gray-800 space-y-1">
+                                                <p>HEX: #FFFFFF</p>
+                                                <p>RGB: 255. 255. 255</p>
+                                                <p>CMYK: 0. 0. 0. 0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Color 3: Deep Obsidian */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-8">
+                                    <p className="text-gray-400 text-lg leading-relaxed">
+                                        This isn't just "black": it's a deep, technical charcoal that mimics the look of raw industrial materials like steel and coated carbon.
+                                    </p>
+                                    <div className="relative h-64 bg-[#191A19] rounded-[2rem] p-8 flex flex-col justify-between shadow-2xl border border-white/10">
+                                        <div className="flex justify-end">
+                                            <h3 className="text-4xl text-right font-light text-white leading-tight">Deep <br /> Obsidian</h3>
+                                        </div>
+                                        <div className="flex justify-between items-end">
+                                            <span className="text-white/30 font-mono text-sm">03</span>
+                                            <div className="text-right font-mono text-xs text-gray-400 space-y-1">
+                                                <p>HEX: #191A19</p>
+                                                <p>RGB: 25. 26. 25</p>
+                                                <p>CMYK: 75. 66. 65. 80</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+
+            {/* Fourth Mockup Section */}
+            <section className="bg-[#181A1A] px-4 md:px-[30px] pb-[50px]">
+                <FadeIn>
+                    <div className="w-full">
+                        <img
+                            src={FourthMockup}
+                            alt="Titan Storage Interface Mockup 4"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
+            </section>
+
+            {/* High Fidelity Preview Section */}
+            <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A] border-t border-white/5">
+                <div className="max-w-[90rem] mx-auto">
+                    <FadeIn>
+                        <div className="flex justify-between items-end mb-24">
+                            <div>
+                                <span className="text-sm font-mono text-gray-500 uppercase tracking-widest block mb-4">[ 04 ]</span>
+                                <h2 className="text-6xl md:text-8xl font-light text-white tracking-tighter">
+                                    Full Preview
+                                </h2>
+                            </div>
+                            <div className="hidden md:block">
+                                <p className="text-gray-400 max-w-md text-right leading-relaxed">
+                                    A cohesive design system applied across key application interfaces, ensuring consistency and clarity.
+                                </p>
+                            </div>
                         </div>
                     </FadeIn>
 
                     <div className="space-y-32">
-                        {/* Mockup 3 */}
+                        {/* 1. Home Page Preview */}
                         <FadeIn>
-                            <div className="relative group">
-                                <div className="absolute -inset-4 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
-                                <img src={ThirdMockup} alt="Interface Detail 1" className="relative w-full h-auto rounded-3xl border border-white/10 shadow-2xl" />
+                            <div className="group relative">
+                                <div className="absolute -inset-1 bg-gradient-to-b from-white/10 to-transparent rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+                                <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                    <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                        <div className="w-3 h-3 rounded-full bg-red-500/20" />
+                                        <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
+                                        <div className="w-3 h-3 rounded-full bg-green-500/20" />
+                                    </div>
+                                    <img src={HeroImage} alt="Home Page Design" className="w-full h-auto" />
+                                </div>
+                                <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Home Screen</h3>
                             </div>
                         </FadeIn>
 
-                        {/* Mixed Grid for 4 & 5 */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-                            <FadeIn delay={0.2}>
-                                <div className="space-y-4">
-                                    <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#141414]">
-                                        <img src={FourthMockup} alt="Mobile Interface" className="w-full h-auto" />
+                        {/* 2 & 3. Split View: Services & About */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                            <FadeIn delay={0.2} className="lg:mt-24">
+                                <div className="group relative">
+                                    <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                        <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-red-500/20" />
+                                            <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
+                                            <div className="w-3 h-3 rounded-full bg-green-500/20" />
+                                        </div>
+                                        <img src={ServicesImage} alt="Services Page" className="w-full h-auto" />
                                     </div>
-                                    <p className="text-center text-sm text-gray-500 uppercase tracking-widest pt-4">Mobile Adaptation</p>
+                                    <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Engineering Services</h3>
                                 </div>
                             </FadeIn>
 
                             <FadeIn delay={0.4}>
-                                <div className="space-y-4 md:mt-16">
-                                    <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#141414]">
-                                        <img src={FifthMockup} alt="Data Visualization" className="w-full h-auto" />
+                                <div className="group relative">
+                                    <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                        <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-red-500/20" />
+                                            <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
+                                            <div className="w-3 h-3 rounded-full bg-green-500/20" />
+                                        </div>
+                                        <img src={AboutUsImage} alt="About Us Page" className="w-full h-auto" />
                                     </div>
-                                    <p className="text-center text-sm text-gray-500 uppercase tracking-widest pt-4">Data Visualization</p>
+                                    <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Company Profile</h3>
                                 </div>
+                            </FadeIn>
+                        </div>
+
+                        {/* 4. Dashboard / System View */}
+                        <FadeIn delay={0.2}>
+                            <div className="group relative">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+                                <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                    <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                        <div className="w-3 h-3 rounded-full bg-red-500/20" />
+                                        <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
+                                        <div className="w-3 h-3 rounded-full bg-green-500/20" />
+                                    </div>
+                                    <img src={FifthMockup} alt="System Dashboard" className="w-full h-auto" />
+                                </div>
+                                <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">System Dashboard</h3>
+                            </div>
+                        </FadeIn>
+                    </div>
+                </div>
+            </section>
+
+            {/* Design Process Section */}
+            <section className="pt-16 pb-24 px-6 md:px-[60px] bg-[#E5E5E5] text-gray-900 mx-4 md:mx-[30px] rounded-[45px] mb-[50px]">
+                <div className="max-w-8xl mx-auto">
+                    {/* Header */}
+                    <FadeIn>
+                        <div className="flex justify-between items-start mb-8">
+                            <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">[ 05 ]</span>
+                            <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">[ DESIGN PROCESS ]</span>
+                        </div>
+                    </FadeIn>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                        {/* Title Column */}
+                        <div className="lg:col-span-4">
+                            <FadeIn>
+                                <div className="sticky top-24">
+                                    <h2 className="text-7xl font-light tracking-tighter leading-none mb-8">
+                                        Design <br /> Process
+                                    </h2>
+                                </div>
+                            </FadeIn>
+                        </div>
+
+                        {/* Steps Column */}
+                        <div className="lg:col-span-8">
+                            <div className="divide-y divide-gray-300 border-b border-gray-300">
+                                {/* Step 01 */}
+                                <FadeIn delay={0.1}>
+                                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-16 items-start">
+                                        <div className="md:col-span-2">
+                                            <span className="text-8xl font-light text-gray-300">01</span>
+                                        </div>
+                                        <div className="md:col-span-8">
+                                            <h3 className="text-4xl font-light mb-6">UX Research</h3>
+                                            <p className="text-gray-600 text-lg leading-relaxed">
+                                                I began by exploring the global industrial storage landscape, analyzing competitor platforms and the specific documentation needs of EPC firms. This helped me identify the technical requirements and trust signals necessary for a high-stakes engineering site.
+                                            </p>
+                                        </div>
+                                        <div className="md:col-span-2 flex justify-end">
+                                            <span className="inline-block px-4 py-2 rounded-full bg-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wider">1 Week</span>
+                                        </div>
+                                    </div>
+                                </FadeIn>
+
+                                {/* Step 02 */}
+                                <FadeIn delay={0.2}>
+                                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-16 items-start">
+                                        <div className="md:col-span-2">
+                                            <span className="text-8xl font-light text-gray-300">02</span>
+                                        </div>
+                                        <div className="md:col-span-8">
+                                            <h3 className="text-4xl font-light mb-6">Personas</h3>
+                                            <p className="text-gray-600 text-lg leading-relaxed">
+                                                Based on my research, I developed personas representing lead engineers and procurement managers. These profiles focused on their need for data precision and compliance verification, which guided the site's content hierarchy and technical depth.
+                                            </p>
+                                        </div>
+                                        <div className="md:col-span-2 flex justify-end">
+                                            <span className="inline-block px-4 py-2 rounded-full bg-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wider">1 Week</span>
+                                        </div>
+                                    </div>
+                                </FadeIn>
+
+                                {/* Step 03 */}
+                                <FadeIn delay={0.3}>
+                                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-16 items-start">
+                                        <div className="md:col-span-2">
+                                            <span className="text-8xl font-light text-gray-300">03</span>
+                                        </div>
+                                        <div className="md:col-span-8">
+                                            <h3 className="text-4xl font-light mb-6">Wireframing</h3>
+                                            <p className="text-gray-600 text-lg leading-relaxed">
+                                                I mapped out a highly structured site architecture using low-fidelity wireframes. The focus was on ensuring a seamless path to technical specifications and project galleries, allowing professional users to find critical information in fewer than three clicks.
+                                            </p>
+                                        </div>
+                                        <div className="md:col-span-2 flex justify-end">
+                                            <span className="inline-block px-4 py-2 rounded-full bg-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wider">1 Week</span>
+                                        </div>
+                                    </div>
+                                </FadeIn>
+
+                                {/* Step 04 */}
+                                <FadeIn delay={0.4}>
+                                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-16 items-start">
+                                        <div className="md:col-span-2">
+                                            <span className="text-8xl font-light text-gray-300">04</span>
+                                        </div>
+                                        <div className="md:col-span-8">
+                                            <h3 className="text-4xl font-light mb-6">UI Design</h3>
+                                            <p className="text-gray-600 text-lg leading-relaxed">
+                                                I designed a high-contrast, industrial interface that combines technical authority with modern minimalism. Using a dark obsidian background and "Industrial Ember" accents, I created a visual language that reflects the precision and scale of Titan's engineering solutions.
+                                            </p>
+                                        </div>
+                                        <div className="md:col-span-2 flex justify-end">
+                                            <span className="inline-block px-4 py-2 rounded-full bg-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wider">2 Weeks</span>
+                                        </div>
+                                    </div>
+                                </FadeIn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Conclusion & Feedback Section */}
+            <section className="py-[50px] px-6 md:px-[80px] bg-[#181A1A] border-t border-white/5">
+                <div className="max-w-8xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">
+
+                        {/* Divider Line (Vertical on Desktop) */}
+                        <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 w-px bg-white/10 -translate-x-1/2" />
+
+                        {/* Left Column */}
+                        <div className="flex flex-col justify-between h-full space-y-12 lg:space-y-24">
+                            <FadeIn>
+                                <div className="flex items-baseline gap-4">
+                                    <span className="text-6xl md:text-8xl font-light text-white tracking-tighter">06</span>
+                                    <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">[ CONCLUSION & FEEDBACK ]</span>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.2} className="mt-8 lg:mt-auto">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 rounded-full overflow-hidden border border-white/20">
+                                        <img src={JoelAvatar} alt="Joel K" className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-white font-bold">Joel K</h4>
+                                        <p className="text-xs text-gray-500 uppercase tracking-wider">Founder, Titan Storage Solutions</p>
+                                    </div>
+                                </div>
+                                <blockquote className="text-gray-400 text-lg leading-relaxed max-w-md">
+                                    "The transformation of our digital presence is remarkable. The new site doesn't just look professional; it functions as a high-precision tool for our clients. The designer captured our technical scale perfectly while making the information incredibly easy to navigate. It has truly elevated our brand on the global stage."
+                                </blockquote>
+                            </FadeIn>
+                        </div>
+
+                        {/* Right Column */}
+                        <div className="space-y-12 pt-4">
+                            <FadeIn delay={0.4}>
+                                <h2 className="text-3xl md:text-5xl leading-tight font-light text-gray-200">
+                                    This project challenged me to translate complex industrial engineering into a clean, accessible digital experience. By balancing technical depth with modern UI patterns, I created a platform that establishes Titan Storage Solutions as a global authority while ensuring a seamless journey for engineers and procurement teams.
+                                </h2>
                             </FadeIn>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            {/* Fifth Mockup Section */}
+            <section className="bg-[#181A1A] px-4 md:px-[30px] pb-[50px]">
+                <FadeIn>
+                    <div className="w-full">
+                        <img
+                            src={FifthMockup}
+                            alt="Titan Storage Interface Mockup 5"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
             </section>
 
         </div >
