@@ -312,9 +312,8 @@ export default function TitanStorage() {
                         </div>
                     </FadeIn>
 
-                    {/* Typography Subsection */}
                     <FadeIn delay={0.2}>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center mb-32 border-b border-white/10 pb-24">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center mb-12 md:mb-32 border-b border-white/10 pb-12 md:pb-24">
                             <div>
                                 <h2 className="text-6xl md:text-8xl lg:text-[12rem] leading-none font-medium tracking-tighter text-white break-words">Manrope</h2>
                             </div>
