@@ -36,41 +36,61 @@ export default function TitanStorage() {
         <div className="bg-[#181A1A] min-h-screen text-slate-100 font-montreal selection:bg-slate-700 selection:text-white overflow-x-hidden">
 
             {/* Hero Section */}
+            {/* Hero Section */}
             <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-black text-white pt-20 pb-20 md:pt-12 md:pb-0">
 
-                {/* 1. Background Image Layer */}
-                <div className="absolute inset-0 z-0">
+                {/* 1. Background Image Layer - Slow Scale Out */}
+                <motion.div
+                    initial={{ scale: 1.2, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="absolute inset-0 z-0"
+                >
                     <img
                         src={FirstImageBackground}
                         alt="Background Texture"
                         className="w-full h-full object-cover opacity-30 grayscale"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black/90" />
-                </div>
+                </motion.div>
 
-                {/* 2. Text Layer */}
+                {/* 2. Text Layer - Mask Reveal */}
                 <div className="relative z-10 text-center max-w-5xl mx-auto mb-[-15%] md:mb-[-12%] pt-12 md:pt-0">
-                    <FadeIn delay={0.2}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                    >
                         <span className="inline-block px-4 py-1.5 mb-8 text-xs tracking-[0.2em] uppercase border border-white/20 rounded-full bg-white/5 text-gray-300 font-bold backdrop-blur-md">
                             Industrial Engineering
                         </span>
-                    </FadeIn>
+                    </motion.div>
 
-                    <FadeIn delay={0.3}>
-                        <h1 className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative">
+                    <div className="overflow-hidden">
+                        <motion.h1
+                            initial={{ y: "100%", rotate: 2 }}
+                            animate={{ y: 0, rotate: 0 }}
+                            transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative origin-bottom-left"
+                        >
                             <span className="relative z-10 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">TITAN STORAGE</span>
                             {/* Text Glow Effect */}
                             <div className="absolute inset-0 blur-[100px] bg-white/5 -z-10 rounded-full pointer-events-none" />
-                        </h1>
-                    </FadeIn>
+                        </motion.h1>
+                    </div>
                 </div>
 
-                {/* 3. Laptop Image Layer */}
-                {/* 3. Laptop Image Layer - Custom Faster Animation */}
+                {/* 3. Laptop Image Layer - Heavy Impact Animation */}
                 <motion.div
-                    initial={{ opacity: 0, y: 100, scale: 0.9 }}
+                    initial={{ opacity: 0, y: 150, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{
+                        duration: 1.2,
+                        delay: 0.8,
+                        type: "spring",
+                        bounce: 0.2, // Subtle bounce for weight
+                        stiffness: 100
+                    }}
                     className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
@@ -83,7 +103,7 @@ export default function TitanStorage() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
+                    transition={{ delay: 2, duration: 1 }}
                     className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 z-30 mix-blend-difference"
                 >
                     <span className="text-xs uppercase tracking-widest font-semibold text-white/80">Scroll to Explore</span>
