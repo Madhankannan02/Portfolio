@@ -1,4 +1,6 @@
 import React from 'react';
+import '@fontsource/manrope'; // Defaults to weight 400
+import '@fontsource/manrope/300.css'; // Light weight
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
@@ -8,6 +10,11 @@ import FirstImageBackground from '../../assets/titan-storage-slide/first image b
 import FirstImageLaptop from '../../assets/titan-storage-slide/first image laptop.svg';
 import SecondMockup from '../../assets/titan-storage-slide/second mockup.svg';
 import JoelAvatar from '../../assets/generated/joel_k_avatar_1769328668647.png';
+import AboutUsImage from '../../assets/titan-storage-slide/About us.svg';
+import ServicesImage from '../../assets/titan-storage-slide/Services.svg';
+import ThirdMockup from '../../assets/titan-storage-slide/third mockup image.svg';
+import FourthMockup from '../../assets/titan-storage-slide/fourth mockup.svg';
+import FifthMockup from '../../assets/titan-storage-slide/fifth mockup image.svg';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -26,7 +33,7 @@ export default function TitanStorage() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
     return (
-        <div className="bg-[#0A0A0A] min-h-screen text-slate-100 font-sans selection:bg-slate-700 selection:text-white overflow-x-hidden">
+        <div className="bg-[#0A0A0A] min-h-screen text-slate-100 font-montreal selection:bg-slate-700 selection:text-white overflow-x-hidden">
 
             {/* Hero Section */}
             <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-black text-white pt-20 pb-20 md:pt-12 md:pb-0">
@@ -59,13 +66,19 @@ export default function TitanStorage() {
                 </div>
 
                 {/* 3. Laptop Image Layer */}
-                <FadeIn delay={0.5} className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12">
+                {/* 3. Laptop Image Layer - Custom Faster Animation */}
+                <motion.div
+                    initial={{ opacity: 0, y: 100, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
+                >
                     <img
                         src={FirstImageLaptop}
                         alt="Titan Storage Dashboard Interface"
                         className="w-full h-auto drop-shadow-2xl"
                     />
-                </FadeIn>
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -144,6 +157,219 @@ export default function TitanStorage() {
                 </FadeIn>
             </section>
 
-        </div>
+            {/* User Research / Audience Analysis */}
+            {/* User Research / Audience Analysis */}
+            <section className="py-[50px] px-6 md:px-[80px] bg-[#E5E5E5] text-gray-900 relative border-t border-white/5 overflow-hidden">
+                {/* Background Shapes */}
+                <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-[#D4D4D4] rounded-bl-full opacity-50 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-[#D4D4D4] rounded-tr-full opacity-50 pointer-events-none" />
+
+                <div className="max-w-8xl mx-auto relative z-10">
+                    <FadeIn>
+                        <div className="flex justify-between items-start mb-16">
+                            <div>
+                                <span className="text-sm font-mono text-gray-500 uppercase tracking-widest block mb-4">[ 02 ]</span>
+                                <h2 className="text-6xl md:text-8xl font-light tracking-tighter mb-8 leading-none">
+                                    User <br /> Research
+                                </h2>
+                            </div>
+                            <div className="hidden md:block">
+                                <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">[ AUDIENCE ANALYSIS ]</span>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24 -mt-12">
+                            <div /> {/* Spacer */}
+                            <p className="text-2xl md:text-4xl text-gray-700 font-light leading-tight tracking-tight">
+                                I conducted a detailed audience analysis to align the site's UX with the technical needs, procurement workflows, and safety concerns of EPC contractors and industrial engineers.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {/* Persona 1: Mark */}
+                            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col gap-8">
+                                <div className="flex items-center gap-4">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
+                                        alt="Mark"
+                                        className="w-16 h-16 rounded-full object-cover"
+                                    />
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-gray-900">Mark, 48</h3>
+                                        <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mt-1">Senior Procurement Manager<br />at a Global EPC Firm</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <h4 className="font-bold text-xl text-gray-900">Profile:</h4>
+                                    <p className="text-sm text-gray-600 leading-relaxed">
+                                        Responsible for sourcing high-stakes equipment for large-scale energy projects. Values reliability, proven track records, and rapid access to technical certifications. He uses LinkedIn for industry networking and expects a website to function as a professional digital portfolio that proves a company's capacity to deliver.
+                                    </p>
+                                </div>
+                                <div className="mt-auto space-y-2">
+                                    <h4 className="font-bold text-xl text-gray-900">Pain Points:</h4>
+                                    <p className="text-sm text-gray-600 leading-relaxed">
+                                        Frustrated by "marketing-heavy" sites that lack technical depth. Needs to find specific compliance data and engineering standards quickly. Distrusts companies that don't clearly showcase their global project history or safety certifications.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Persona 2: Sanjay */}
+                            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col gap-8">
+                                <div className="flex items-center gap-4">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200"
+                                        alt="Sanjay"
+                                        className="w-16 h-16 rounded-full object-cover grayscale"
+                                    />
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-gray-900">Sanjay, 35</h3>
+                                        <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mt-1">Lead Structural Engineer</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <h4 className="font-bold text-xl text-gray-900">Profile:</h4>
+                                    <p className="text-sm text-gray-600 leading-relaxed">
+                                        Focuses on the technical integrity and design specifications of storage solutions. He is looking for detailed engineering drawings, material specifications, and pressure vessel standards. He prefers a clean, data-first interface that allows him to evaluate technical compatibility before making a recommendation.
+                                    </p>
+                                </div>
+                                <div className="mt-auto space-y-2">
+                                    <h4 className="font-bold text-xl text-gray-900">Pain Points:</h4>
+                                    <p className="text-sm text-gray-600 leading-relaxed">
+                                        Avoids sites with complex navigation or hidden information. He needs to download data sheets and view piping diagrams without having to jump through multiple contact forms. Expects a modern, high-performance site that reflects the precision of the engineering itself.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Goals Card (Black) */}
+                            <div className="bg-[#1A1A1A] text-white p-8 rounded-[2.5rem] shadow-xl flex flex-col gap-8">
+                                <h3 className="text-5xl font-light tracking-tight">Goals</h3>
+
+                                <ul className="space-y-6">
+                                    {[
+                                        { title: "Establish Technical Authority", desc: "Showcase deep expertise in tank design and pressure vessels through clear, professional documentation." },
+                                        { title: "Direct Lead Generation", desc: "Provide a seamless, professional 'Request a Quote' path for high-value procurement inquiries." },
+                                        { title: "Build Global Trust", desc: "Feature a structured project gallery that proves the ability to handle international industrial contracts." },
+                                        { title: "Streamline Data Access", desc: "Allow engineers to find specifications, certifications, and service breakdowns in two clicks or less." }
+                                    ].map((goal, i) => (
+                                        <li key={i} className="flex gap-4 items-start">
+                                            <div className="w-2 h-2 mt-2 rounded-full bg-white shrink-0" />
+                                            <div>
+                                                <p className="text-sm font-bold mb-1 text-gray-200">{goal.title}</p>
+                                                <p className="text-sm text-gray-400 leading-relaxed font-sans">{goal.desc}</p>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+
+            {/* Services Page Section */}
+            <section className="py-24 bg-[#0A0A0A] px-4 md:px-[60px]">
+                <FadeIn>
+                    <div className="max-w-7xl mx-auto mb-16">
+                        <div className="flex items-center gap-4 mb-6">
+                            <span className="w-12 h-[1px] bg-orange-500"></span>
+                            <span className="text-orange-500 uppercase tracking-widest text-xs font-bold">Capabilities</span>
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-light text-white mb-6">Engineering Services</h2>
+                        <p className="text-gray-400 max-w-2xl text-lg">
+                            We structured the services to provide immediate access to technical specifications.
+                            The layout prioritizes clarity, allowing contractors to quickly assess capabilities and certifications.
+                        </p>
+                    </div>
+                    <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-[#141414]">
+                        <img src={ServicesImage} alt="Titan Storage Services Page" className="w-full h-auto" />
+                    </div>
+                </FadeIn>
+            </section>
+
+            {/* About Page Design */}
+            <section className="py-24 bg-[#111111] px-4 md:px-[60px] border-y border-white/5">
+                <FadeIn>
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                            <div className="order-2 lg:order-1">
+                                <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-[#0A0A0A]">
+                                    <img src={AboutUsImage} alt="Titan Storage About Page" className="w-full h-auto" />
+                                </div>
+                            </div>
+                            <div className="order-1 lg:order-2">
+                                <h2 className="text-3xl md:text-5xl font-light text-white mb-8">Corporate Identity</h2>
+                                <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                                    The About page serves as the trust anchor. We designed it to highlight Titan's rigorous safety standards and global engineering footprint without overwhelming the user.
+                                </p>
+                                <div className="space-y-6">
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                                            <span className="text-xl">🏆</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-1">Legacy of Excellence</h4>
+                                            <p className="text-sm text-gray-500">Highlighting decades of industry leadership.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                                            <span className="text-xl">🌍</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-1">Global Reach</h4>
+                                            <p className="text-sm text-gray-500">Displaying operational capacity across continents.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </FadeIn>
+            </section>
+
+            {/* Visual Interface Showcase (Mockups 3, 4, 5) */}
+            <section className="py-32 bg-[#0A0A0A] px-4 md:px-[30px]">
+                <div className="max-w-7xl mx-auto">
+                    <FadeIn>
+                        <div className="text-center mb-20">
+                            <h2 className="text-3xl md:text-5xl font-light text-white mb-6">System Architecture</h2>
+                            <p className="text-gray-400">High-fidelity interface views across different modules.</p>
+                        </div>
+                    </FadeIn>
+
+                    <div className="space-y-32">
+                        {/* Mockup 3 */}
+                        <FadeIn>
+                            <div className="relative group">
+                                <div className="absolute -inset-4 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+                                <img src={ThirdMockup} alt="Interface Detail 1" className="relative w-full h-auto rounded-3xl border border-white/10 shadow-2xl" />
+                            </div>
+                        </FadeIn>
+
+                        {/* Mixed Grid for 4 & 5 */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                            <FadeIn delay={0.2}>
+                                <div className="space-y-4">
+                                    <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#141414]">
+                                        <img src={FourthMockup} alt="Mobile Interface" className="w-full h-auto" />
+                                    </div>
+                                    <p className="text-center text-sm text-gray-500 uppercase tracking-widest pt-4">Mobile Adaptation</p>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.4}>
+                                <div className="space-y-4 md:mt-16">
+                                    <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#141414]">
+                                        <img src={FifthMockup} alt="Data Visualization" className="w-full h-auto" />
+                                    </div>
+                                    <p className="text-center text-sm text-gray-500 uppercase tracking-widest pt-4">Data Visualization</p>
+                                </div>
+                            </FadeIn>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div >
     );
 }
