@@ -476,21 +476,7 @@ export default function TitanStorage() {
                             </FadeIn>
                         </div>
 
-                        {/* 4. Dashboard / System View */}
-                        <FadeIn delay={0.2}>
-                            <div className="group relative">
-                                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
-                                <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
-                                    <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
-                                        <div className="w-3 h-3 rounded-full bg-red-500/20" />
-                                        <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
-                                        <div className="w-3 h-3 rounded-full bg-green-500/20" />
-                                    </div>
-                                    <img src={FifthMockup} alt="System Dashboard" className="w-full h-auto" />
-                                </div>
-                                <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">System Dashboard</h3>
-                            </div>
-                        </FadeIn>
+
                     </div>
                 </div>
             </section>
