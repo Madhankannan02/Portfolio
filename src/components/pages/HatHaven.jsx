@@ -387,7 +387,7 @@ export default function HatHaven() {
                                     <h3 className="text-2xl font-bold">03. Blog</h3>
                                 </div>
                                 <div className="group relative rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white hover:shadow-xl transition-shadow">
-                                    <img src={BlogPage} alt="Blog Page" className="w-full h-auto" />
+                                    <img src={ContactPage} alt="Blog Page" className="w-full h-auto" />
                                 </div>
                             </FadeIn>
 
@@ -396,7 +396,7 @@ export default function HatHaven() {
                                     <h3 className="text-2xl font-bold">04. Contact</h3>
                                 </div>
                                 <div className="group relative rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white hover:shadow-xl transition-shadow">
-                                    <img src={ContactPage} alt="Contact Page" className="w-full h-auto" />
+                                    <img src={BlogPage} alt="Contact Page" className="w-full h-auto" />
                                 </div>
                             </FadeIn>
                         </div>
