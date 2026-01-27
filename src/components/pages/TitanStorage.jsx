@@ -31,17 +31,18 @@ const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
 export default function TitanStorage() {
     const { scrollYProgress } = useScroll();
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+    const textParallax = useTransform(scrollYProgress, [0, 0.5], [0, 250]); // Text moves down slowly
+    const laptopParallax = useTransform(scrollYProgress, [0, 0.5], [0, -100]); // Laptop moves up faster
 
     return (
         <div className="bg-[#181A1A] min-h-screen text-slate-100 font-montreal selection:bg-slate-700 selection:text-white overflow-x-hidden">
 
             {/* Hero Section */}
-            {/* Hero Section */}
             <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-black text-white pt-20 pb-20 md:pt-12 md:pb-0">
 
-                {/* 1. Background Image Layer - Slow Scale Out */}
+                {/* 1. Background Image Layer */}
                 <motion.div
-                    initial={{ scale: 1.2, opacity: 0 }}
+                    initial={{ scale: 1.1, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     className="absolute inset-0 z-0"
@@ -54,43 +55,35 @@ export default function TitanStorage() {
                     <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black/90" />
                 </motion.div>
 
-                {/* 2. Text Layer - Mask Reveal */}
-                <div className="relative z-10 text-center max-w-5xl mx-auto mb-[-15%] md:mb-[-12%] pt-12 md:pt-0">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 0.8 }}
-                    >
+                {/* 2. Text Layer - Parallax */}
+                <motion.div
+                    style={{ y: textParallax }}
+                    className="relative z-10 text-center max-w-5xl mx-auto mb-[-15%] md:mb-[-12%] pt-12 md:pt-0"
+                >
+                    <FadeIn delay={0.2}>
                         <span className="inline-block px-4 py-1.5 mb-8 text-xs tracking-[0.2em] uppercase border border-white/20 rounded-full bg-white/5 text-gray-300 font-bold backdrop-blur-md">
                             Industrial Engineering
                         </span>
-                    </motion.div>
+                    </FadeIn>
 
-                    <div className="overflow-hidden">
-                        <motion.h1
-                            initial={{ y: "100%", rotate: 2 }}
-                            animate={{ y: 0, rotate: 0 }}
-                            transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                            className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative origin-bottom-left"
-                        >
-                            <span className="relative z-10 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">TITAN STORAGE</span>
-                            {/* Text Glow Effect */}
-                            <div className="absolute inset-0 blur-[100px] bg-white/5 -z-10 rounded-full pointer-events-none" />
-                        </motion.h1>
-                    </div>
-                </div>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30, letterSpacing: "-0.05em" }}
+                        animate={{ opacity: 1, y: 0, letterSpacing: "-0.02em" }}
+                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                        className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative"
+                    >
+                        <span className="relative z-10 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">TITAN STORAGE</span>
+                        {/* Text Glow Effect */}
+                        <div className="absolute inset-0 blur-[100px] bg-white/5 -z-10 rounded-full pointer-events-none" />
+                    </motion.h1>
+                </motion.div>
 
-                {/* 3. Laptop Image Layer - Heavy Impact Animation */}
+                {/* 3. Laptop Image Layer - Parallax */}
                 <motion.div
-                    initial={{ opacity: 0, y: 150, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{
-                        duration: 1.2,
-                        delay: 0.8,
-                        type: "spring",
-                        bounce: 0.2, // Subtle bounce for weight
-                        stiffness: 100
-                    }}
+                    style={{ y: laptopParallax }}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
                     className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
