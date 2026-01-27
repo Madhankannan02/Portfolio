@@ -69,7 +69,7 @@ export default function TitanStorage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 30, letterSpacing: "-0.05em" }}
                         animate={{ opacity: 1, y: 0, letterSpacing: "-0.02em" }}
-                        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative"
                     >
                         <span className="relative z-10 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">TITAN STORAGE</span>
@@ -83,7 +83,7 @@ export default function TitanStorage() {
                     style={{ y: laptopParallax }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
