@@ -41,49 +41,36 @@ export default function TitanStorage() {
             <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-black text-white pt-20 pb-20 md:pt-12 md:pb-0">
 
                 {/* 1. Background Image Layer */}
-                <motion.div
-                    initial={{ scale: 1.1, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="absolute inset-0 z-0"
-                >
+                <div className="absolute inset-0 z-0">
                     <img
                         src={FirstImageBackground}
                         alt="Background Texture"
                         className="w-full h-full object-cover opacity-30 grayscale"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black/90" />
-                </motion.div>
+                </div>
 
                 {/* 2. Text Layer - Parallax */}
                 <motion.div
                     style={{ y: textParallax }}
                     className="relative z-10 text-center max-w-5xl mx-auto mb-[-8%] md:mb-[-6%] pt-12 md:pt-0"
                 >
-                    <FadeIn delay={0.2}>
-                        <span className="inline-block px-4 py-1.5 mb-8 text-xs tracking-[0.2em] uppercase border border-white/20 rounded-full bg-white/5 text-gray-300 font-bold backdrop-blur-md">
+                    <div className="mb-8">
+                        <span className="inline-block px-4 py-1.5 text-xs tracking-[0.2em] uppercase border border-white/20 rounded-full bg-white/5 text-gray-300 font-bold backdrop-blur-md">
                             Industrial Engineering
                         </span>
-                    </FadeIn>
+                    </div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30, letterSpacing: "-0.05em" }}
-                        animate={{ opacity: 1, y: 0, letterSpacing: "-0.02em" }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative"
-                    >
+                    <h1 className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative">
                         <span className="relative z-10 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">TITAN STORAGE</span>
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 blur-[100px] bg-white/5 -z-10 rounded-full pointer-events-none" />
-                    </motion.h1>
+                    </h1>
                 </motion.div>
 
                 {/* 3. Laptop Image Layer - Parallax */}
                 <motion.div
                     style={{ y: laptopParallax }}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
@@ -93,15 +80,10 @@ export default function TitanStorage() {
                     />
                 </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 2, duration: 1 }}
-                    className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 z-30 mix-blend-difference"
-                >
+                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 z-30 mix-blend-difference">
                     <span className="text-xs uppercase tracking-widest font-semibold text-white/80">Scroll to Explore</span>
                     <ArrowDown className="animate-bounce text-white" size={16} />
-                </motion.div>
+                </div>
             </section>
 
             {/* About the Project Section */}
