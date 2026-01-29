@@ -29,13 +29,10 @@ const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
 );
 
 export default function TitanStorage() {
-    // const { scrollYProgress } = useScroll(); // scrollYProgress might be used for scale elsewhere, but if not, remove. Keeping it safe if used below.
-    // Actually, looking at previous code, scale was used for... nothing in the visible code? 
-    // Wait, the user might want scale for other sections? The previous code showed `const scale = useTransform(...)`.
-    // I will check if `scale` is used elsewhere. In the previous `view_file` (Step 373), it wasn't used in the Hero section, maybe widely used?
-    // In step 373, line 33: `const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);`
-    // It seems unused in the hero section I see. 
-    // I will just remove the parallax variables and the motion.div usage in the Hero.
+    const { scrollYProgress } = useScroll();
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+    const textParallax = useTransform(scrollYProgress, [0, 0.5], [0, 200]); // Text moves down slowly on scroll
+    const laptopParallax = useTransform(scrollYProgress, [0, 0.5], [0, -80]); // Laptop moves up slightly on scroll
 
     return (
         <div className="bg-[#181A1A] min-h-screen text-slate-100 font-montreal selection:bg-slate-700 selection:text-white overflow-x-hidden">
@@ -43,18 +40,23 @@ export default function TitanStorage() {
             {/* Hero Section */}
             <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-black text-white pt-20 pb-20 md:pt-12 md:pb-0">
 
-                {/* 1. Background Image Layer */}
-                <div className="absolute inset-0 z-0">
+                {/* 1. Background Image Layer - Subtle Fade In */}
+                <motion.div
+                    className="absolute inset-0 z-0"
+                >
                     <img
                         src={FirstImageBackground}
                         alt="Background Texture"
                         className="w-full h-full object-cover opacity-30 grayscale"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black/90" />
-                </div>
+                </motion.div>
 
-                {/* 2. Text Layer - Static */}
-                <div className="relative z-10 text-center max-w-5xl mx-auto mb-[-8%] md:mb-[-6%] pt-12 md:pt-0">
+                {/* 2. Text Layer - Slight Parallax & Fade */}
+                <motion.div
+                    style={{ y: textParallax }}
+                    className="relative z-10 text-center max-w-5xl mx-auto mb-[-8%] md:mb-[-6%] pt-12 md:pt-0"
+                >
                     <div className="mb-8">
                         <span className="inline-block px-4 py-1.5 text-xs tracking-[0.2em] uppercase border border-white/20 rounded-full bg-white/5 text-gray-300 font-bold backdrop-blur-md">
                             Industrial Engineering
@@ -66,21 +68,31 @@ export default function TitanStorage() {
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 blur-[100px] bg-white/5 -z-10 rounded-full pointer-events-none" />
                     </h1>
-                </div>
+                </motion.div>
 
-                {/* 3. Laptop Image Layer - Static */}
-                <div className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12">
+                {/* 3. Laptop Image Layer - Slight Parallax & Fade */}
+                <motion.div
+                    style={{ y: laptopParallax }}
+                    className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
+                >
                     <img
                         src={FirstImageLaptop}
                         alt="Titan Storage Dashboard Interface"
+                        fetchPriority="high"
+                        decoding="async"
                         className="w-full h-auto drop-shadow-2xl"
                     />
-                </div>
+                </motion.div>
 
-                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 z-30 mix-blend-difference">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2, duration: 1 }}
+                    className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 z-30 mix-blend-difference"
+                >
                     <span className="text-xs uppercase tracking-widest font-semibold text-white/80">Scroll to Explore</span>
                     <ArrowDown className="animate-bounce text-white" size={16} />
-                </div>
+                </motion.div>
             </section>
 
             {/* About the Project Section */}
@@ -143,6 +155,8 @@ export default function TitanStorage() {
                         <img
                             src={SecondMockup}
                             alt="Titan Storage Interface Mockup"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -267,6 +281,8 @@ export default function TitanStorage() {
                         <img
                             src={ThirdMockup}
                             alt="Titan Storage Interface Mockup 3"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -394,6 +410,8 @@ export default function TitanStorage() {
                         <img
                             src={FourthMockup}
                             alt="Titan Storage Interface Mockup 4"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -627,6 +645,8 @@ export default function TitanStorage() {
                         <img
                             src={FifthMockup}
                             alt="Titan Storage Interface Mockup 5"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
