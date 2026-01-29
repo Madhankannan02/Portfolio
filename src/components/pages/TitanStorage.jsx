@@ -42,6 +42,9 @@ export default function TitanStorage() {
 
                 {/* 1. Background Image Layer - Subtle Fade In */}
                 <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
                     className="absolute inset-0 z-0"
                 >
                     <img
@@ -55,6 +58,9 @@ export default function TitanStorage() {
                 {/* 2. Text Layer - Slight Parallax & Fade */}
                 <motion.div
                     style={{ y: textParallax }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
                     className="relative z-10 text-center max-w-5xl mx-auto mb-[-8%] md:mb-[-6%] pt-12 md:pt-0"
                 >
                     <div className="mb-8">
@@ -73,13 +79,14 @@ export default function TitanStorage() {
                 {/* 3. Laptop Image Layer - Slight Parallax & Fade */}
                 <motion.div
                     style={{ y: laptopParallax }}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
                     className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
                         src={FirstImageLaptop}
                         alt="Titan Storage Dashboard Interface"
-                        fetchPriority="high"
-                        decoding="async"
                         className="w-full h-auto drop-shadow-2xl"
                     />
                 </motion.div>
@@ -155,8 +162,6 @@ export default function TitanStorage() {
                         <img
                             src={SecondMockup}
                             alt="Titan Storage Interface Mockup"
-                            loading="lazy"
-                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -281,8 +286,6 @@ export default function TitanStorage() {
                         <img
                             src={ThirdMockup}
                             alt="Titan Storage Interface Mockup 3"
-                            loading="lazy"
-                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -410,8 +413,6 @@ export default function TitanStorage() {
                         <img
                             src={FourthMockup}
                             alt="Titan Storage Interface Mockup 4"
-                            loading="lazy"
-                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -645,8 +646,6 @@ export default function TitanStorage() {
                         <img
                             src={FifthMockup}
                             alt="Titan Storage Interface Mockup 5"
-                            loading="lazy"
-                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>

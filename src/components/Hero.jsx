@@ -23,6 +23,9 @@ const Hero = () => {
 
             <div className="flex flex-col items-center text-center space-y-8 max-w-4xl z-10 px-4">
                 <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
                 >
                     <span className="relative flex h-2 w-2">
@@ -32,20 +35,29 @@ const Hero = () => {
                     <span className="text-gray-300 text-sm font-medium tracking-wide uppercas">Available for new projects</span>
                 </motion.div>
 
-                <h1
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                     className="text-6xl md:text-8xl font-bold leading-tight tracking-tighter"
                 >
                     Designing the <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Future of Digital.</span>
-                </h1>
+                </motion.h1>
 
-                <p
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed"
                 >
                     Hi, I am Madhan Kannan. I craft aesthetically pleasing and highly functional user interfaces that drive business growth and user satisfaction.
-                </p>
+                </motion.p>
 
-                <div
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex flex-col sm:flex-row items-center gap-4 pt-4"
                 >
                     <a
@@ -61,7 +73,7 @@ const Hero = () => {
                     >
                         Let's Collaborate
                     </a>
-                </div>
+                </motion.div>
             </div>
 
             <motion.div
