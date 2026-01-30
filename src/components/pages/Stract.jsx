@@ -88,55 +88,120 @@ export default function Stract() {
             </section>
 
             {/* About the Project Section */}
-            <section className="py-[50px] px-6 md:px-[80px] bg-[#181A1A] border-t border-white/5">
-                <div className="max-w-8xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">
+            <section className="py-32 px-6 md:px-[80px] bg-[#181A1A] relative overflow-hidden">
+                {/* Background Glows */}
+                <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
 
-                        {/* Divider Line (Vertical on Desktop) */}
-                        <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 w-px bg-white/10 -translate-x-1/2" />
+                <div className="max-w-[90rem] mx-auto relative z-10">
 
-                        {/* Left Column */}
-                        <div className="flex flex-col justify-between h-full space-y-12 lg:space-y-24">
-                            <FadeIn>
-                                <div className="flex items-baseline gap-4">
-                                    <span className="text-6xl md:text-8xl font-light text-white tracking-tighter">01</span>
-                                    <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">[ About the project ]</span>
-                                </div>
-                            </FadeIn>
+                    {/* Top Label */}
+                    <FadeIn>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-12">
+                            <span className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></span>
+                            <span className="text-sm font-medium text-gray-300">What is Stract?</span>
+                        </div>
+                    </FadeIn>
 
-                            <FadeIn delay={0.2} className="mt-8 lg:mt-auto">
-                                <blockquote className="text-gray-400 text-lg leading-relaxed max-w-md border-l-2 border-purple-500 pl-6 mb-6">
-                                    "Stract provided us with the financial visibility we didn't know we were missing. It's not just a tool; it's a competitive advantage."
-                                </blockquote>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-900/20">
-                                        ER
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-bold">Elena Rodriguez</h4>
-                                        <p className="text-xs text-gray-500 uppercase tracking-wider">CFO, TechFlow Inc.</p>
-                                    </div>
-                                </div>
+                    {/* Main Typography Header with Floating Elements */}
+                    <div className="relative mb-32">
+                        {/* Floating Element 1: Purple Blur Icon */}
+                        <motion.div
+                            animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute -top-10 left-[20%] z-20 hidden md:flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/80 to-indigo-600/80 backdrop-blur-xl border border-white/20 shadow-2xl shadow-purple-900/50"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </motion.div>
+
+                        {/* Floating Element 2: Mic/Voice Icon */}
+                        <motion.div
+                            animate={{ y: [0, 20, 0] }}
+                            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                            className="absolute top-[20%] right-[15%] z-20 hidden md:flex items-center justify-center w-14 h-14 rounded-full bg-[#1A1A1A]/80 backdrop-blur-md border border-white/10 shadow-xl"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
+                                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /><line x1="12" x2="12" y1="19" y2="22" />
+                            </svg>
+                        </motion.div>
+
+                        {/* Floating Element 3: Lightning Icon */}
+                        <motion.div
+                            animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                            className="absolute bottom-0 left-[40%] z-20 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white text-black shadow-lg shadow-white/20"
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </motion.div>
+
+                        <FadeIn delay={0.2}>
+                            <h2 className="text-5xl md:text-8xl font-normal leading-[1.1] tracking-tight text-white max-w-7xl">
+                                Stract is the singular <span className="text-white/20">financial engine</span> that moves your business beyond mere <span className="text-white/20">feature comparison</span> and into <span className="text-white/20">measurable market</span> domination.
+                            </h2>
+                        </FadeIn>
+                    </div>
+
+                    {/* Bottom Grid Info */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-end">
+
+                        {/* Left Text */}
+                        <div className="lg:col-span-5">
+                            <FadeIn delay={0.4}>
+                                <p className="text-lg text-gray-400 leading-relaxed font-light">
+                                    This multi-functional platform provides a unified toolkit that fundamentally re-engineers how your team works. It transcends the limitations of conventional dashboards by integrating powerful capabilities—from sophisticated data forecasting and strategic analysis to complex financial workflow automation.
+                                </p>
                             </FadeIn>
                         </div>
 
-                        {/* Right Column */}
-                        <div className="space-y-12 pt-4">
-                            <FadeIn delay={0.4}>
-                                <h2 className="text-3xl md:text-5xl leading-tight font-light text-gray-200">
-                                    Redefining financial clarity. Stract acts as the central nervous system for modern enterprises, unifying disparate data streams into a single, cohesive interface.
-                                </h2>
-                            </FadeIn>
+                        {/* Spacer */}
+                        <div className="lg:col-span-1"></div>
 
-                            <FadeIn delay={0.6} className="flex flex-wrap gap-3">
-                                {["Fintech", "Dashboard", "SaaS", "Data Visualization", "UX Design"].map((tag, i) => (
-                                    <span key={i} className="px-6 py-3 rounded-full border border-white/10 text-gray-400 text-sm hover:border-purple-500/50 hover:text-white transition-colors duration-300">
-                                        {tag}
-                                    </span>
-                                ))}
+                        {/* Right Tags */}
+                        <div className="lg:col-span-6">
+                            <FadeIn delay={0.6}>
+                                <div className="flex flex-col gap-4 items-start">
+                                    <div className="flex flex-wrap gap-4">
+                                        <div className="px-5 py-3 rounded-2xl bg-[#222] border border-white/5 flex items-center gap-3 text-sm text-gray-300">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-purple-500">
+                                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                            </svg>
+                                            Stract System
+                                        </div>
+                                        <div className="px-5 py-3 rounded-2xl bg-[#222] border border-white/5 flex items-center gap-3 text-sm text-gray-300">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-500">
+                                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                                            </svg>
+                                            SaaS Platform
+                                        </div>
+                                    </div>
+
+                                    <div className="px-5 py-3 rounded-2xl bg-[#222] border border-white/5 flex items-center gap-3 text-sm text-gray-300">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-500">
+                                            <crop className="w-4 h-4" /> {/* Fallback generic icon shape */}
+                                            <path d="M5 15h14" /><path d="M5 9h14" />
+                                        </svg>
+                                        UX & UI, Branding, Motion, Web & Mobile
+                                    </div>
+
+                                    <div className="px-5 py-3 rounded-2xl bg-[#222] border border-white/5 flex items-center gap-3 text-sm text-gray-300">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-500">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        November 2025
+                                    </div>
+                                </div>
                             </FadeIn>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>
