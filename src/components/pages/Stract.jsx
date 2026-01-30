@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 // Assets
-import HeroImage from '../../assets/stract-slides/hero mockup.svg';
+import HeroImage from '../../assets/stract-slides/first mockup.svg';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -85,6 +85,59 @@ export default function Stract() {
                     <span className="text-xs uppercase tracking-widest font-semibold text-white/80">Scroll to Explore</span>
                     <ArrowDown className="animate-bounce text-white" size={16} />
                 </motion.div>
+            </section>
+
+            {/* About the Project Section */}
+            <section className="py-[50px] px-6 md:px-[80px] bg-[#181A1A] border-t border-white/5">
+                <div className="max-w-8xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">
+
+                        {/* Divider Line (Vertical on Desktop) */}
+                        <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 w-px bg-white/10 -translate-x-1/2" />
+
+                        {/* Left Column */}
+                        <div className="flex flex-col justify-between h-full space-y-12 lg:space-y-24">
+                            <FadeIn>
+                                <div className="flex items-baseline gap-4">
+                                    <span className="text-6xl md:text-8xl font-light text-white tracking-tighter">01</span>
+                                    <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">[ About the project ]</span>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.2} className="mt-8 lg:mt-auto">
+                                <blockquote className="text-gray-400 text-lg leading-relaxed max-w-md border-l-2 border-purple-500 pl-6 mb-6">
+                                    "Stract provided us with the financial visibility we didn't know we were missing. It's not just a tool; it's a competitive advantage."
+                                </blockquote>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-900/20">
+                                        ER
+                                    </div>
+                                    <div>
+                                        <h4 className="text-white font-bold">Elena Rodriguez</h4>
+                                        <p className="text-xs text-gray-500 uppercase tracking-wider">CFO, TechFlow Inc.</p>
+                                    </div>
+                                </div>
+                            </FadeIn>
+                        </div>
+
+                        {/* Right Column */}
+                        <div className="space-y-12 pt-4">
+                            <FadeIn delay={0.4}>
+                                <h2 className="text-3xl md:text-5xl leading-tight font-light text-gray-200">
+                                    Redefining financial clarity. Stract acts as the central nervous system for modern enterprises, unifying disparate data streams into a single, cohesive interface.
+                                </h2>
+                            </FadeIn>
+
+                            <FadeIn delay={0.6} className="flex flex-wrap gap-3">
+                                {["Fintech", "Dashboard", "SaaS", "Data Visualization", "UX Design"].map((tag, i) => (
+                                    <span key={i} className="px-6 py-3 rounded-full border border-white/10 text-gray-400 text-sm hover:border-purple-500/50 hover:text-white transition-colors duration-300">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </FadeIn>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     );
