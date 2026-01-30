@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 // Lazy Load Pages
 const HatHaven = lazy(() => import('./components/pages/HatHaven'));
 const TitanStorage = lazy(() => import('./components/pages/TitanStorage'));
+const Stract = lazy(() => import('./components/pages/Stract'));
 
 // Loading Fallback
 const PageLoader = () => (
@@ -32,6 +33,7 @@ function App() {
           } />
           <Route path="/hathaven" element={<HatHaven />} />
           <Route path="/titan-storage" element={<TitanStorage />} />
+          <Route path="/stract" element={<Stract />} />
         </Routes>
       </Suspense>
     </>

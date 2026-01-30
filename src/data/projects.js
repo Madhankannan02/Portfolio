@@ -23,7 +23,8 @@ export const projects = [
         description: "Stract is a comprehensive digital platform designed to streamline complex workflows and data management. It positions itself as an all-in-one solution for professionals or enterprises looking to scale their digital operations with high-performance tools.",
         tags: ["Landing Page", "Theme", "Industrial Website"],
         image: stractHero,
-        link: stractPresentation
+        link: stractPresentation,
+        route: '/stract'
     },
     {
         id: 3,
