@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '@fontsource/manrope'; // Defaults to weight 400
 import '@fontsource/manrope/300.css'; // Light weight
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown, Lightbulb, Compass, Triangle, LayoutTemplate, Palette, Brain, PenTool, Share2 } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { ArrowDown, Lightbulb, Compass, Triangle, LayoutTemplate, Palette, Brain, PenTool, Share2, Sun, Moon } from 'lucide-react';
 
 // Assets
 import HeroImage from '../../assets/stract-slides/hero mockup.png';
@@ -10,6 +10,8 @@ import Mockup2 from '../../assets/stract-slides/mockup 2.png';
 import Mockup3 from '../../assets/stract-slides/mockup 3.png';
 import Mockup4 from '../../assets/stract-slides/mockup 4.png';
 import Mockup5 from '../../assets/stract-slides/mockup 5.png';
+import CRMDark from '../../assets/stract-slides/CRM page dark.png';
+import CRMLight from '../../assets/stract-slides/CRM page light.png';
 
 import '@fontsource/inter';
 
@@ -27,6 +29,7 @@ const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
 
 export default function Stract() {
     const { scrollYProgress } = useScroll();
+    const [activeTheme, setActiveTheme] = useState('dark');
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
     const textParallax = useTransform(scrollYProgress, [0, 0.5], [0, 200]); // Text moves down slowly on scroll
     const laptopParallax = useTransform(scrollYProgress, [0, 0.5], [0, -80]); // Laptop moves up slightly on scroll
@@ -301,6 +304,53 @@ export default function Stract() {
                 </div>
             </section>
 
+            {/* Theme Comparison Section */}
+            <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A] relative overflow-hidden">
+                <div className="max-w-[90rem] mx-auto">
+                    <div className="text-center mb-16">
+                        <FadeIn>
+                            <h2 className="text-4xl md:text-6xl font-medium text-white mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                Seamless in any environment.
+                            </h2>
+                            {/* Theme Toggle */}
+                            <div className="inline-flex bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md relative">
+                                <button
+                                    onClick={() => setActiveTheme('light')}
+                                    className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${activeTheme === 'light' ? 'bg-white text-black shadow-lg' : 'text-gray-400 hover:text-white'}`}
+                                >
+                                    <Sun size={18} />
+                                    Light Mode
+                                </button>
+                                <button
+                                    onClick={() => setActiveTheme('dark')}
+                                    className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${activeTheme === 'dark' ? 'bg-[#222] text-white shadow-lg border border-white/10' : 'text-gray-400 hover:text-white'}`}
+                                >
+                                    <Moon size={18} />
+                                    Dark Mode
+                                </button>
+                            </div>
+                        </FadeIn>
+                    </div>
+
+                    <FadeIn delay={0.2}>
+                        <div className="relative w-full aspect-[16/9] md:aspect-[16/10] bg-[#141414] rounded-2xl md:rounded-[40px] border border-white/5 overflow-hidden shadow-2xl">
+                            <AnimatePresence mode="wait">
+                                <motion.img
+                                    key={activeTheme}
+                                    initial={{ opacity: 0, scale: 1.02 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.4 }}
+                                    src={activeTheme === 'dark' ? CRMDark : CRMLight}
+                                    alt={`${activeTheme} mode preview`}
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+                            </AnimatePresence>
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+
             {/* Feature Showcase Grid */}
             <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A]">
                 <div className="max-w-[90rem] mx-auto">
@@ -357,6 +407,6 @@ export default function Stract() {
                     </FadeIn>
                 </div>
             </section>
-        </div>
+        </div >
     );
 }
