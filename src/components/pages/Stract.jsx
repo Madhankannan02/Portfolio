@@ -5,7 +5,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 // Assets
-import HeroImage from '../../assets/stract-slides/first mockup.svg';
+import HeroImage from '../../assets/stract-slides/hero mockup.png';
+
+import '@fontsource/outfit';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -54,7 +56,7 @@ export default function Stract() {
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative">
+                    <h1 className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative" style={{ fontFamily: 'Outfit, sans-serif' }}>
                         <span className="relative z-10 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">STRACT</span>
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 blur-[100px] bg-purple-500/10 -z-10 rounded-full pointer-events-none" />
