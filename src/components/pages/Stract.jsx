@@ -6,6 +6,7 @@ import { ArrowDown } from 'lucide-react';
 
 // Assets
 import HeroImage from '../../assets/stract-slides/hero mockup.png';
+import Mockup2 from '../../assets/stract-slides/mockup 2.png';
 
 import '@fontsource/outfit';
 
@@ -14,7 +15,7 @@ const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
         initial={{ opacity: 0, y }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.8, delay, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay, ease: "easeOut" }}
         className={className}
     >
         {children}
@@ -69,7 +70,7 @@ export default function Stract() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-                    className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
+                    className="relative z-20 w-full max-w-[70rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
                         src={HeroImage}
@@ -205,6 +206,19 @@ export default function Stract() {
                     </div>
 
                 </div>
+            </section>
+
+            {/* Mockup 2 Section */}
+            <section className="bg-[#181A1A] px-4 md:px-[30px] pb-[50px]">
+                <FadeIn>
+                    <div className="w-full">
+                        <img
+                            src={Mockup2}
+                            alt="Stract Interface Mockup"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
             </section>
         </div>
     );
