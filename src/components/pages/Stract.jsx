@@ -11,7 +11,7 @@ import Mockup3 from '../../assets/stract-slides/mockup 3.png';
 import Mockup4 from '../../assets/stract-slides/mockup 4.png';
 import Mockup5 from '../../assets/stract-slides/mockup 5.png';
 
-import '@fontsource/outfit';
+import '@fontsource/inter';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -60,7 +60,7 @@ export default function Stract() {
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                    <h1 className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative" style={{ fontFamily: 'Inter, sans-serif' }}>
                         <span className="relative z-10 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">STRACT</span>
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 blur-[100px] bg-purple-500/10 -z-10 rounded-full pointer-events-none" />
@@ -233,7 +233,7 @@ export default function Stract() {
                                 <span className="w-2 h-2 rounded-full bg-purple-500"></span>
                                 <span className="text-sm font-medium text-gray-300">Design System</span>
                             </div>
-                            <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-white mb-8" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                            <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-white mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
                                 Bold typography & <br /> <span className="text-purple-400">Electric</span> colors.
                             </h2>
                         </div>
@@ -243,13 +243,13 @@ export default function Stract() {
                         {/* Typography */}
                         <FadeIn delay={0.2}>
                             <div className="p-12 rounded-[2.5rem] bg-[#141414] border border-white/5 h-full relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 p-8 opacity-20 text-[10rem] font-bold leading-none select-none pointer-events-none" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                                <div className="absolute top-0 right-0 p-8 opacity-20 text-[10rem] font-bold leading-none select-none pointer-events-none" style={{ fontFamily: 'Inter, sans-serif' }}>
                                     Aa
                                 </div>
                                 <h3 className="text-2xl text-gray-400 mb-8 font-mono uppercase tracking-widest">Typography</h3>
                                 <div className="space-y-4 relative z-10">
-                                    <div className="text-6xl md:text-8xl font-bold text-white tracking-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                                        Outfit
+                                    <div className="text-6xl md:text-8xl font-bold text-white tracking-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                        Inter
                                     </div>
                                     <div className="flex flex-wrap gap-4 pt-8">
                                         <span className="px-4 py-2 rounded-lg bg-white/5 text-gray-300 border border-white/10">Regular</span>
@@ -343,7 +343,7 @@ export default function Stract() {
             <section className="py-32 px-6 md:px-[80px] bg-[#0A0A0A] border-t border-white/5">
                 <div className="max-w-4xl mx-auto text-center">
                     <FadeIn>
-                        <h2 className="text-4xl md:text-6xl font-medium text-white mb-8" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                        <h2 className="text-4xl md:text-6xl font-medium text-white mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
                             Ready to transform your <br /> financial operations?
                         </h2>
                         <p className="text-xl text-gray-400 mb-12 leading-relaxed">
