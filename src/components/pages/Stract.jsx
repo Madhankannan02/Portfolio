@@ -254,6 +254,7 @@ export default function Stract() {
                                     <div className="flex flex-wrap gap-4 pt-8">
                                         <span className="px-4 py-2 rounded-lg bg-white/5 text-gray-300 border border-white/10">Regular</span>
                                         <span className="px-4 py-2 rounded-lg bg-white/5 text-gray-300 border border-white/10 font-medium">Medium</span>
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-white border border-white/10 font-semibold">Semi-Bold</span>
                                         <span className="px-4 py-2 rounded-lg bg-white/5 text-white border border-white/10 font-bold">Bold</span>
                                     </div>
                                 </div>
@@ -266,31 +267,31 @@ export default function Stract() {
                                 <h3 className="text-2xl text-gray-400 mb-8 font-mono uppercase tracking-widest">Color Palette</h3>
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="space-y-3">
-                                        <div className="h-32 rounded-2xl bg-purple-600 shadow-lg shadow-purple-900/20"></div>
+                                        <div className="h-32 rounded-2xl bg-white border border-white/10"></div>
                                         <div className="flex justify-between text-sm text-gray-400 font-mono">
-                                            <span>Primary</span>
-                                            <span>#9333EA</span>
-                                        </div>
-                                    </div>
-                                    <div className="space-y-3">
-                                        <div className="h-32 rounded-2xl bg-[#0A0A0A] border border-white/10"></div>
-                                        <div className="flex justify-between text-sm text-gray-400 font-mono">
-                                            <span>Surface</span>
-                                            <span>#0A0A0A</span>
-                                        </div>
-                                    </div>
-                                    <div className="space-y-3">
-                                        <div className="h-32 rounded-2xl bg-white"></div>
-                                        <div className="flex justify-between text-sm text-gray-400 font-mono">
-                                            <span>Text</span>
+                                            <span>White</span>
                                             <span>#FFFFFF</span>
                                         </div>
                                     </div>
                                     <div className="space-y-3">
-                                        <div className="h-32 rounded-2xl bg-[#222]"></div>
+                                        <div className="h-32 rounded-2xl bg-black border border-white/10"></div>
                                         <div className="flex justify-between text-sm text-gray-400 font-mono">
-                                            <span>Secondary</span>
-                                            <span>#222222</span>
+                                            <span>Black</span>
+                                            <span>#000000</span>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <div className="h-32 rounded-2xl bg-[#636363]"></div>
+                                        <div className="flex justify-between text-sm text-gray-400 font-mono">
+                                            <span>Gray</span>
+                                            <span>#636363</span>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <div className="h-32 rounded-2xl bg-[#A1A1AA]"></div>
+                                        <div className="flex justify-between text-sm text-gray-400 font-mono">
+                                            <span>Zinc</span>
+                                            <span>#A1A1AA</span>
                                         </div>
                                     </div>
                                 </div>
