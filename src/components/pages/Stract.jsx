@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '@fontsource/manrope'; // Defaults to weight 400
 import '@fontsource/manrope/300.css'; // Light weight
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
@@ -10,8 +10,8 @@ import Mockup2 from '../../assets/stract-slides/mockup 2.png';
 import Mockup3 from '../../assets/stract-slides/mockup 3.png';
 import Mockup4 from '../../assets/stract-slides/mockup 4.png';
 import Mockup5 from '../../assets/stract-slides/mockup 5.png';
-import CRMDark from '../../assets/stract-slides/CRM page dark.png';
-import CRMLight from '../../assets/stract-slides/CRM page light.png';
+import LandingPageDark from '../../assets/stract-slides/Landing page dark theme.png';
+import LandingPageLight from '../../assets/stract-slides/Landing page light theem.png';
 
 import '@fontsource/inter';
 
@@ -29,7 +29,6 @@ const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
 
 export default function Stract() {
     const { scrollYProgress } = useScroll();
-    const [activeTheme, setActiveTheme] = useState('dark');
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
     const textParallax = useTransform(scrollYProgress, [0, 0.5], [0, 200]); // Text moves down slowly on scroll
     const laptopParallax = useTransform(scrollYProgress, [0, 0.5], [0, -80]); // Laptop moves up slightly on scroll
@@ -214,6 +213,144 @@ export default function Stract() {
                 </div>
             </section>
 
+            {/* Project Timeline Section */}
+            <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A] relative overflow-hidden">
+                {/* Background Glows */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-900/10 rounded-full blur-[120px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[100px] pointer-events-none" />
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    {/* Header */}
+                    <div className="text-center mb-32">
+                        <FadeIn>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+                                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                                <span className="text-sm font-medium text-gray-300">Project timeline</span>
+                            </div>
+                        </FadeIn>
+                        <FadeIn delay={0.2}>
+                            <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-white mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                Mapping the <span className="text-white/30">entire design</span><br />
+                                and <span className="text-white/30">execution</span> flow.
+                            </h2>
+                        </FadeIn>
+                    </div>
+
+                    {/* Timeline Container */}
+                    <div className="relative">
+                        {/* Connecting Line SVG (Hidden on mobile, visible on lg) */}
+                        <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block" style={{ zIndex: 0 }}>
+                            <path
+                                d="M 150 60 L 950 60 C 1050 60 1050 180 950 180 L 350 180 C 250 180 250 300 350 300 L 950 300"
+                                fill="none"
+                                stroke="#333"
+                                strokeWidth="2"
+                                strokeDasharray="8 8"
+                                className="opacity-50"
+                            />
+                        </svg>
+
+                        {/* Row 1 (Left to Right) */}
+                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-32 items-center justify-start lg:pl-12 mb-16 lg:mb-24 relative z-10">
+                            <FadeIn delay={0.3}>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-14 h-14 rounded-full bg-[#D8B4FE] text-black flex items-center justify-center shadow-[0_0_20px_rgba(216,180,254,0.3)]">
+                                        <Lightbulb size={24} strokeWidth={2} />
+                                    </div>
+                                    <div className="px-6 py-3 rounded-full bg-[#D8B4FE] text-black font-semibold text-lg">
+                                        Ideation stage
+                                    </div>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.4}>
+                                <div className="flex items-center gap-4 group">
+                                    <div className="w-14 h-14 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-400 flex items-center justify-center group-hover:border-purple-500/50 group-hover:text-purple-400 transition-colors">
+                                        <Compass size={24} strokeWidth={1.5} />
+                                    </div>
+                                    <div className="px-6 py-3 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-300 group-hover:border-purple-500/50 transition-colors">
+                                        Discovery stage
+                                    </div>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.5}>
+                                <div className="flex items-center gap-4 group">
+                                    <div className="w-14 h-14 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-400 flex items-center justify-center group-hover:border-purple-500/50 group-hover:text-purple-400 transition-colors">
+                                        <Triangle size={24} strokeWidth={1.5} />
+                                    </div>
+                                    <div className="px-6 py-3 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-300 group-hover:border-purple-500/50 transition-colors">
+                                        Hypothesis test
+                                    </div>
+                                </div>
+                            </FadeIn>
+                        </div>
+
+                        {/* Row 2 (Right to Left) */}
+                        <div className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-32 items-center justify-start lg:pr-32 mb-16 lg:mb-24 relative z-10">
+                            <FadeIn delay={0.6}>
+                                <div className="flex items-center gap-4 group flex-row-reverse lg:flex-row">
+                                    <div className="px-6 py-3 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-300 group-hover:border-purple-500/50 transition-colors">
+                                        Brand Identity
+                                    </div>
+                                    <div className="w-14 h-14 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-400 flex items-center justify-center group-hover:border-purple-500/50 group-hover:text-purple-400 transition-colors">
+                                        <Palette size={24} strokeWidth={1.5} />
+                                    </div>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.7}>
+                                <div className="flex items-center gap-4 group flex-row-reverse lg:flex-row">
+                                    <div className="px-6 py-3 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-300 group-hover:border-purple-500/50 transition-colors">
+                                        Wireframing
+                                    </div>
+                                    <div className="w-14 h-14 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-400 flex items-center justify-center group-hover:border-purple-500/50 group-hover:text-purple-400 transition-colors">
+                                        <LayoutTemplate size={24} strokeWidth={1.5} />
+                                    </div>
+                                </div>
+                            </FadeIn>
+                        </div>
+
+                        {/* Row 3 (Left to Right) */}
+                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-32 items-center justify-start lg:pl-32 relative z-10">
+                            <FadeIn delay={0.8}>
+                                <div className="flex items-center gap-4 group">
+                                    <div className="px-6 py-3 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-300 group-hover:border-purple-500/50 transition-colors">
+                                        UX Analysis
+                                    </div>
+                                    <div className="w-14 h-14 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-400 flex items-center justify-center group-hover:border-purple-500/50 group-hover:text-purple-400 transition-colors">
+                                        <Brain size={24} strokeWidth={1.5} />
+                                    </div>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.9}>
+                                <div className="flex items-center gap-4 group">
+                                    <div className="px-6 py-3 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-300 group-hover:border-purple-500/50 transition-colors">
+                                        UI Design
+                                    </div>
+                                    <div className="w-14 h-14 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-400 flex items-center justify-center group-hover:border-purple-500/50 group-hover:text-purple-400 transition-colors">
+                                        <PenTool size={24} strokeWidth={1.5} />
+                                    </div>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={1.0}>
+                                <div className="flex items-center gap-4 group">
+                                    <div className="px-6 py-3 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-300 group-hover:border-purple-500/50 transition-colors">
+                                        Prototyping
+                                    </div>
+                                    <div className="w-14 h-14 rounded-full bg-[#1A1A1A] border border-white/10 text-gray-400 flex items-center justify-center group-hover:border-purple-500/50 group-hover:text-purple-400 transition-colors">
+                                        <Share2 size={24} strokeWidth={1.5} />
+                                    </div>
+                                </div>
+                            </FadeIn>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
             {/* Mockup 2 Section */}
             <section className="bg-[#181A1A] px-4 md:px-[30px] pb-[50px]">
                 <FadeIn>
@@ -304,7 +441,7 @@ export default function Stract() {
                 </div>
             </section>
 
-            {/* Theme Comparison Section */}
+            {/* Theme Comparison Section - STATIC GRID */}
             <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A] relative overflow-hidden">
                 <div className="max-w-[90rem] mx-auto">
                     <div className="text-center mb-16">
@@ -312,42 +449,51 @@ export default function Stract() {
                             <h2 className="text-4xl md:text-6xl font-medium text-white mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
                                 Seamless in any environment.
                             </h2>
-                            {/* Theme Toggle */}
-                            <div className="inline-flex bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md relative">
-                                <button
-                                    onClick={() => setActiveTheme('light')}
-                                    className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${activeTheme === 'light' ? 'bg-white text-black shadow-lg' : 'text-gray-400 hover:text-white'}`}
-                                >
-                                    <Sun size={18} />
-                                    Light Mode
-                                </button>
-                                <button
-                                    onClick={() => setActiveTheme('dark')}
-                                    className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${activeTheme === 'dark' ? 'bg-[#222] text-white shadow-lg border border-white/10' : 'text-gray-400 hover:text-white'}`}
-                                >
-                                    <Moon size={18} />
-                                    Dark Mode
-                                </button>
-                            </div>
+                            <p className="text-gray-400 text-lg">
+                                Designed meticulously for both dark and light preferences.
+                            </p>
                         </FadeIn>
                     </div>
 
-                    <FadeIn delay={0.2}>
-                        <div className="relative w-full aspect-[16/9] md:aspect-[16/10] bg-[#141414] rounded-2xl md:rounded-[40px] border border-white/5 overflow-hidden shadow-2xl">
-                            <AnimatePresence mode="wait">
-                                <motion.img
-                                    key={activeTheme}
-                                    initial={{ opacity: 0, scale: 1.02 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ duration: 0.4 }}
-                                    src={activeTheme === 'dark' ? CRMDark : CRMLight}
-                                    alt={`${activeTheme} mode preview`}
-                                    className="absolute inset-0 w-full h-full object-cover"
-                                />
-                            </AnimatePresence>
-                        </div>
-                    </FadeIn>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Dark Mode */}
+                        <FadeIn delay={0.2}>
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2 justify-center md:justify-start">
+                                    <div className="p-2 rounded-full bg-[#222] border border-white/10 text-white">
+                                        <Moon size={16} />
+                                    </div>
+                                    <span className="text-sm font-medium text-gray-400">Dark Mode</span>
+                                </div>
+                                <div className="relative w-full h-[500px] md:h-[800px] bg-[#141414] rounded-2xl md:rounded-[40px] border border-white/5 overflow-y-auto shadow-2xl scrollbar-hide">
+                                    <img
+                                        src={LandingPageDark}
+                                        alt="Dark Theme"
+                                        className="w-full h-auto block"
+                                    />
+                                </div>
+                            </div>
+                        </FadeIn>
+
+                        {/* Light Mode */}
+                        <FadeIn delay={0.3}>
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2 justify-center md:justify-start">
+                                    <div className="p-2 rounded-full bg-white text-black border border-white/10">
+                                        <Sun size={16} />
+                                    </div>
+                                    <span className="text-sm font-medium text-gray-400">Light Mode</span>
+                                </div>
+                                <div className="relative w-full h-[500px] md:h-[800px] bg-[#E5E5E5] rounded-2xl md:rounded-[40px] border border-white/5 overflow-y-auto shadow-2xl scrollbar-hide">
+                                    <img
+                                        src={LandingPageLight}
+                                        alt="Light Theme"
+                                        className="w-full h-auto block"
+                                    />
+                                </div>
+                            </div>
+                        </FadeIn>
+                    </div>
                 </div>
             </section>
 
