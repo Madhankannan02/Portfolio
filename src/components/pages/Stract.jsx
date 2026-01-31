@@ -2,11 +2,14 @@ import React from 'react';
 import '@fontsource/manrope'; // Defaults to weight 400
 import '@fontsource/manrope/300.css'; // Light weight
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Lightbulb, Compass, Triangle, LayoutTemplate, Palette, Brain, PenTool, Share2 } from 'lucide-react';
 
 // Assets
 import HeroImage from '../../assets/stract-slides/hero mockup.png';
 import Mockup2 from '../../assets/stract-slides/mockup 2.png';
+import Mockup3 from '../../assets/stract-slides/mockup 3.png';
+import Mockup4 from '../../assets/stract-slides/mockup 4.png';
+import Mockup5 from '../../assets/stract-slides/mockup 5.png';
 
 import '@fontsource/outfit';
 
@@ -219,6 +222,139 @@ export default function Stract() {
                         />
                     </div>
                 </FadeIn>
+            </section>
+
+            {/* Design System Section */}
+            <section className="py-32 px-6 md:px-[60px] bg-[#0F0F0F] border-t border-white/5">
+                <div className="max-w-7xl mx-auto">
+                    <FadeIn>
+                        <div className="mb-24">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+                                <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                                <span className="text-sm font-medium text-gray-300">Design System</span>
+                            </div>
+                            <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-white mb-8" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                                Bold typography & <br /> <span className="text-purple-400">Electric</span> colors.
+                            </h2>
+                        </div>
+                    </FadeIn>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        {/* Typography */}
+                        <FadeIn delay={0.2}>
+                            <div className="p-12 rounded-[2.5rem] bg-[#141414] border border-white/5 h-full relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-8 opacity-20 text-[10rem] font-bold leading-none select-none pointer-events-none" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                                    Aa
+                                </div>
+                                <h3 className="text-2xl text-gray-400 mb-8 font-mono uppercase tracking-widest">Typography</h3>
+                                <div className="space-y-4 relative z-10">
+                                    <div className="text-6xl md:text-8xl font-bold text-white tracking-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                                        Outfit
+                                    </div>
+                                    <div className="flex flex-wrap gap-4 pt-8">
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-gray-300 border border-white/10">Regular</span>
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-gray-300 border border-white/10 font-medium">Medium</span>
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-white border border-white/10 font-bold">Bold</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeIn>
+
+                        {/* Colors */}
+                        <FadeIn delay={0.3}>
+                            <div className="p-12 rounded-[2.5rem] bg-[#141414] border border-white/5 h-full">
+                                <h3 className="text-2xl text-gray-400 mb-8 font-mono uppercase tracking-widest">Color Palette</h3>
+                                <div className="grid grid-cols-2 gap-6">
+                                    <div className="space-y-3">
+                                        <div className="h-32 rounded-2xl bg-purple-600 shadow-lg shadow-purple-900/20"></div>
+                                        <div className="flex justify-between text-sm text-gray-400 font-mono">
+                                            <span>Primary</span>
+                                            <span>#9333EA</span>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <div className="h-32 rounded-2xl bg-[#0A0A0A] border border-white/10"></div>
+                                        <div className="flex justify-between text-sm text-gray-400 font-mono">
+                                            <span>Surface</span>
+                                            <span>#0A0A0A</span>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <div className="h-32 rounded-2xl bg-white"></div>
+                                        <div className="flex justify-between text-sm text-gray-400 font-mono">
+                                            <span>Text</span>
+                                            <span>#FFFFFF</span>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <div className="h-32 rounded-2xl bg-[#222]"></div>
+                                        <div className="flex justify-between text-sm text-gray-400 font-mono">
+                                            <span>Secondary</span>
+                                            <span>#222222</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeIn>
+                    </div>
+                </div>
+            </section>
+
+            {/* Feature Showcase Grid */}
+            <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A]">
+                <div className="max-w-[90rem] mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                        <FadeIn delay={0.2}>
+                            <div className="space-y-6">
+                                <img src={Mockup3} alt="Analytics Feature" className="w-full h-auto rounded-[2rem] border border-white/10 shadow-2xl" />
+                                <div className="px-4">
+                                    <h3 className="text-2xl text-white font-medium mb-2">Real-time Analytics</h3>
+                                    <p className="text-gray-400 leading-relaxed">Instantly visualize cash flow, recurring revenue, and churn rates with interactive charts that update in milli-seconds.</p>
+                                </div>
+                            </div>
+                        </FadeIn>
+                        <FadeIn delay={0.4} className="lg:mt-24">
+                            <div className="space-y-6">
+                                <img src={Mockup4} alt="Team Management" className="w-full h-auto rounded-[2rem] border border-white/10 shadow-2xl" />
+                                <div className="px-4">
+                                    <h3 className="text-2xl text-white font-medium mb-2">Team Collaboration</h3>
+                                    <p className="text-gray-400 leading-relaxed">A unified workspace where finance teams can assign tasks, leave comments on invoices, and track approval workflows.</p>
+                                </div>
+                            </div>
+                        </FadeIn>
+                    </div>
+                </div>
+            </section>
+
+            {/* Full Width Visual */}
+            <section className="px-4 md:px-[30px] pb-[50px] bg-[#0A0A0A]">
+                <FadeIn>
+                    <div className="w-full max-w-[90rem] mx-auto">
+                        <img
+                            src={Mockup5}
+                            alt="Stract Full Interface"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
+            </section>
+
+            {/* Conclusion */}
+            <section className="py-32 px-6 md:px-[80px] bg-[#0A0A0A] border-t border-white/5">
+                <div className="max-w-4xl mx-auto text-center">
+                    <FadeIn>
+                        <h2 className="text-4xl md:text-6xl font-medium text-white mb-8" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                            Ready to transform your <br /> financial operations?
+                        </h2>
+                        <p className="text-xl text-gray-400 mb-12 leading-relaxed">
+                            Stract isn't just a dashboard—it's the clarity your business has been waiting for. Designed for scale, security, and speed.
+                        </p>
+                        <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-lg hover:bg-purple-400 hover:text-white transition-all duration-300">
+                            Start a Project
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </FadeIn>
+                </div>
             </section>
         </div>
     );
