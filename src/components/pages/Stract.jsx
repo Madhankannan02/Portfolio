@@ -1,8 +1,8 @@
 import React from 'react';
 import '@fontsource/manrope'; // Defaults to weight 400
 import '@fontsource/manrope/300.css'; // Light weight
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { ArrowDown, Lightbulb, Compass, Triangle, LayoutTemplate, Palette, Brain, PenTool, Share2, Sun, Moon } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowDown, Sun, Moon } from 'lucide-react';
 
 // Assets
 import HeroImage from '../../assets/stract-slides/hero mockup.png';
@@ -222,6 +222,8 @@ export default function Stract() {
                         <img
                             src={Mockup2}
                             alt="Stract Interface Mockup"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -305,58 +307,60 @@ export default function Stract() {
                 </div>
             </section>
 
-            {/* Theme Comparison Section - STATIC GRID */}
-            <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A] relative overflow-hidden">
-                <div className="max-w-[90rem] mx-auto">
-                    <div className="text-center mb-16">
+            {/* Theme Comparison Section - 3D Perspective */}
+            <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A] relative overflow-hidden flex flex-col items-center">
+                {/* Background Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-900/20 rounded-full blur-[150px] pointer-events-none" />
+
+                <div className="max-w-[90rem] mx-auto relative z-10 w-full">
+                    <div className="text-center mb-24">
                         <FadeIn>
-                            <h2 className="text-4xl md:text-6xl font-medium text-white mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
-                                Seamless in any environment.
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+                                <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
+                                <span className="text-sm font-medium text-gray-300">Dual Appearance</span>
+                            </div>
+                            <h2 className="text-4xl md:text-7xl font-medium text-white mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                Crafted for <span className="text-purple-400">every</span><br /> working hour.
                             </h2>
-                            <p className="text-gray-400 text-lg">
-                                Designed meticulously for both dark and light preferences.
-                            </p>
                         </FadeIn>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Dark Mode */}
-                        <FadeIn delay={0.2}>
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-2 justify-center md:justify-start">
-                                    <div className="p-2 rounded-full bg-[#222] border border-white/10 text-white">
-                                        <Moon size={16} />
-                                    </div>
-                                    <span className="text-sm font-medium text-gray-400">Dark Mode</span>
-                                </div>
-                                <div className="relative w-full h-[500px] md:h-[800px] bg-[#141414] rounded-2xl md:rounded-[40px] border border-white/5 overflow-y-auto shadow-2xl scrollbar-hide">
-                                    <img
-                                        src={LandingPageDark}
-                                        alt="Dark Theme"
-                                        className="w-full h-auto block"
-                                    />
-                                </div>
+                    <div className="relative w-full h-[600px] md:h-[800px] flex items-center justify-center p-10" style={{ perspective: '2000px' }}>
+                        {/* Light Theme Card (Left/Back) */}
+                        <motion.div
+                            initial={{ rotateY: 30, x: -50, opacity: 0 }}
+                            whileInView={{ rotateY: 15, x: -30, opacity: 1 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="absolute w-[60%] md:w-[50%] h-auto -left-4 md:left-[5%] top-20 z-10 origin-right"
+                            style={{ transformStyle: 'preserve-3d' }}
+                        >
+                            <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-[#E5E5E5] max-h-[500px] md:max-h-[700px] overflow-y-auto scrollbar-hide group">
+                                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm z-20 pointer-events-none mix-blend-overlay group-hover:bg-transparent transition-all duration-500"></div> {/* Gloss */}
+                                <img src={LandingPageLight} alt="Light Theme" loading="lazy" decoding="async" className="w-full h-auto" />
                             </div>
-                        </FadeIn>
+                            <div className="text-center mt-6 flex items-center justify-center gap-2">
+                                <Sun size={14} className="text-gray-400" />
+                                <span className="text-sm font-mono text-gray-400 uppercase tracking-widest">Light Mode</span>
+                            </div>
+                        </motion.div>
 
-                        {/* Light Mode */}
-                        <FadeIn delay={0.3}>
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-2 justify-center md:justify-start">
-                                    <div className="p-2 rounded-full bg-white text-black border border-white/10">
-                                        <Sun size={16} />
-                                    </div>
-                                    <span className="text-sm font-medium text-gray-400">Light Mode</span>
-                                </div>
-                                <div className="relative w-full h-[500px] md:h-[800px] bg-[#E5E5E5] rounded-2xl md:rounded-[40px] border border-white/5 overflow-y-auto shadow-2xl scrollbar-hide">
-                                    <img
-                                        src={LandingPageLight}
-                                        alt="Light Theme"
-                                        className="w-full h-auto block"
-                                    />
-                                </div>
+                        {/* Dark Theme Card (Right/Front) */}
+                        <motion.div
+                            initial={{ rotateY: -30, x: 50, opacity: 0 }}
+                            whileInView={{ rotateY: -15, x: 30, opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+                            className="absolute w-[60%] md:w-[50%] h-auto -right-4 md:right-[5%] top-10 z-20 origin-left"
+                            style={{ transformStyle: 'preserve-3d' }}
+                        >
+                            <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.8)] bg-[#141414] max-h-[500px] md:max-h-[700px] overflow-y-auto scrollbar-hide">
+                                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 z-20 pointer-events-none mix-blend-overlay"></div>
+                                <img src={LandingPageDark} alt="Dark Theme" loading="lazy" decoding="async" className="w-full h-auto" />
                             </div>
-                        </FadeIn>
+                            <div className="text-center mt-6 flex items-center justify-center gap-2">
+                                <Moon size={14} className="text-gray-400" />
+                                <span className="text-sm font-mono text-gray-400 uppercase tracking-widest">Dark Mode</span>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -367,7 +371,7 @@ export default function Stract() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                         <FadeIn delay={0.2}>
                             <div className="space-y-6">
-                                <img src={Mockup3} alt="Analytics Feature" className="w-full h-auto rounded-[2rem] border border-white/10 shadow-2xl" />
+                                <img src={Mockup3} alt="Analytics Feature" loading="lazy" decoding="async" className="w-full h-auto rounded-[2rem] border border-white/10 shadow-2xl" />
                                 <div className="px-4">
                                     <h3 className="text-2xl text-white font-medium mb-2">Real-time Analytics</h3>
                                     <p className="text-gray-400 leading-relaxed">Instantly visualize cash flow, recurring revenue, and churn rates with interactive charts that update in milli-seconds.</p>
@@ -376,7 +380,7 @@ export default function Stract() {
                         </FadeIn>
                         <FadeIn delay={0.4} className="lg:mt-24">
                             <div className="space-y-6">
-                                <img src={Mockup4} alt="Team Management" className="w-full h-auto rounded-[2rem] border border-white/10 shadow-2xl" />
+                                <img src={Mockup4} alt="Team Management" loading="lazy" decoding="async" className="w-full h-auto rounded-[2rem] border border-white/10 shadow-2xl" />
                                 <div className="px-4">
                                     <h3 className="text-2xl text-white font-medium mb-2">Team Collaboration</h3>
                                     <p className="text-gray-400 leading-relaxed">A unified workspace where finance teams can assign tasks, leave comments on invoices, and track approval workflows.</p>
@@ -394,6 +398,8 @@ export default function Stract() {
                         <img
                             src={Mockup5}
                             alt="Stract Full Interface"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
