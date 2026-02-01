@@ -329,9 +329,9 @@ export default function Stract() {
                         {/* Light Theme Card */}
                         <FadeIn delay={0.2}>
                             <div className="relative group">
-                                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-[2.5rem] opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                                 <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-[#E5E5E5]">
-                                    <div className="absolute inset-0 bg-white/10 backdrop-blur-sm z-20 pointer-events-none mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <div className="absolute inset-0 bg-white/10 z-20 pointer-events-none mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     <img src={LandingPageLight} alt="Light Theme" loading="lazy" decoding="async" className="w-full h-auto" />
                                 </div>
                                 <div className="text-center mt-6 flex items-center justify-center gap-3">
@@ -346,7 +346,7 @@ export default function Stract() {
                         {/* Dark Theme Card - Staggered Down */}
                         <FadeIn delay={0.4} className="md:mt-32">
                             <div className="relative group">
-                                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-[2.5rem] opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                                 <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-[#141414]">
                                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 z-20 pointer-events-none mix-blend-overlay"></div>
                                     <img src={LandingPageDark} alt="Dark Theme" loading="lazy" decoding="async" className="w-full h-auto" />
