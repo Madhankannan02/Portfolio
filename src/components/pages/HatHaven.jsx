@@ -178,6 +178,7 @@ export default function HatHaven() {
                                             <img
                                                 src={HeroAsset}
                                                 alt="Hero Asset"
+                                                loading="eager"
                                                 className="w-full h-auto object-cover"
                                             />
                                         </div>
@@ -364,7 +365,7 @@ export default function HatHaven() {
                                     <h3 className="text-4xl font-bold text-stone-900">01. Home</h3>
                                     <span className="text-gray-400 font-mono">Main Page</span>
                                 </div>
-                                <ProjectImage src={MainPage} alt="Main Page Design" />
+                                <ProjectImage src={MainPage} alt="Main Page Design" loading="lazy" />
                             </div>
                         </div>
 
@@ -376,27 +377,27 @@ export default function HatHaven() {
                                     <h3 className="text-4xl font-bold text-gray-900">02. Product</h3>
                                     <span className="text-gray-400 font-mono">Details View</span>
                                 </div>
-                                <ProjectImage src={ProductPage} alt="Product Page Design" />
+                                <ProjectImage src={ProductPage} alt="Product Page Design" loading="lazy" />
                             </div>
                         </div>
 
-                        {/* Grid of smaller pages */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                        {/* Grid of smaller pages - Staggered */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
                             <FadeIn delay={0.2}>
                                 <div className="flex items-center justify-between mb-4">
                                     <h3 className="text-2xl font-bold">03. Blog</h3>
                                 </div>
                                 <div className="group relative rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white hover:shadow-xl transition-shadow">
-                                    <img src={ContactPage} alt="Blog Page" className="w-full h-auto" />
+                                    <img src={ContactPage} alt="Blog Page" loading="lazy" decoding="async" className="w-full h-auto" />
                                 </div>
                             </FadeIn>
 
-                            <FadeIn delay={0.4}>
+                            <FadeIn delay={0.4} className="md:mt-32">
                                 <div className="flex items-center justify-between mb-4">
                                     <h3 className="text-2xl font-bold">04. Contact</h3>
                                 </div>
                                 <div className="group relative rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white hover:shadow-xl transition-shadow">
-                                    <img src={BlogPage} alt="Contact Page" className="w-full h-auto" />
+                                    <img src={BlogPage} alt="Contact Page" loading="lazy" decoding="async" className="w-full h-auto" />
                                 </div>
                             </FadeIn>
                         </div>

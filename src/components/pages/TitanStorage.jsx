@@ -162,6 +162,8 @@ export default function TitanStorage() {
                         <img
                             src={SecondMockup}
                             alt="Titan Storage Interface Mockup"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -286,6 +288,8 @@ export default function TitanStorage() {
                         <img
                             src={ThirdMockup}
                             alt="Titan Storage Interface Mockup 3"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -413,6 +417,8 @@ export default function TitanStorage() {
                         <img
                             src={FourthMockup}
                             alt="Titan Storage Interface Mockup 4"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
@@ -449,15 +455,15 @@ export default function TitanStorage() {
                                         <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
                                         <div className="w-3 h-3 rounded-full bg-green-500/20" />
                                     </div>
-                                    <img src={HeroImage} alt="Home Page Design" className="w-full h-auto" />
+                                    <img src={HeroImage} alt="Home Page Design" loading="lazy" decoding="async" className="w-full h-auto" />
                                 </div>
                                 <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Home Screen</h3>
                             </div>
                         </FadeIn>
 
-                        {/* 2 & 3. Split View: Services & About */}
+                        {/* 2 & 3. Split View: Services & About - Staggered */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-                            <FadeIn delay={0.2} className="lg:mt-24">
+                            <FadeIn delay={0.2}>
                                 <div className="group relative">
                                     <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
                                         <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
@@ -465,13 +471,13 @@ export default function TitanStorage() {
                                             <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
                                             <div className="w-3 h-3 rounded-full bg-green-500/20" />
                                         </div>
-                                        <img src={ServicesImage} alt="Services Page" className="w-full h-auto" />
+                                        <img src={ServicesImage} alt="Services Page" loading="lazy" decoding="async" className="w-full h-auto" />
                                     </div>
                                     <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Engineering Services</h3>
                                 </div>
                             </FadeIn>
 
-                            <FadeIn delay={0.4}>
+                            <FadeIn delay={0.4} className="lg:mt-32">
                                 <div className="group relative">
                                     <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
                                         <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
@@ -479,7 +485,7 @@ export default function TitanStorage() {
                                             <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
                                             <div className="w-3 h-3 rounded-full bg-green-500/20" />
                                         </div>
-                                        <img src={AboutUsImage} alt="About Us Page" className="w-full h-auto" />
+                                        <img src={AboutUsImage} alt="About Us Page" loading="lazy" decoding="async" className="w-full h-auto" />
                                     </div>
                                     <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Company Profile</h3>
                                 </div>
@@ -646,6 +652,8 @@ export default function TitanStorage() {
                         <img
                             src={FifthMockup}
                             alt="Titan Storage Interface Mockup 5"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
                         />
                     </div>
