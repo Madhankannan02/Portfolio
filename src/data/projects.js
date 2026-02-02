@@ -1,10 +1,26 @@
-import titanStorageHero from "../assets/images/general/Tital Storage hero.webp";
+
+// Titan Storage Imports
+import titanStorageHero400 from "../assets/images/general/Tital Storage hero-400.webp";
+import titanStorageHero800 from "../assets/images/general/Tital Storage hero-800.webp";
+import titanStorageHero1200 from "../assets/images/general/Tital Storage hero-1200.webp";
 import titanStoragePresentation from '../assets/images/general/Tital-Storage-Presentation.png';
-import stractHero from '../assets/images/general/Stract Hero.webp';
+
+// Stract Imports
+import stractHero400 from '../assets/images/general/Stract Hero-400.webp';
+import stractHero800 from '../assets/images/general/Stract Hero-800.webp';
+import stractHero1200 from '../assets/images/general/Stract Hero-1200.webp';
 import stractPresentation from '../assets/images/general/Stract Presentation.png';
-import butcherBoxHero from '../assets/images/general/butcherbox-projectcard.webp';
+
+// Butcher Box Imports
+import butcherBoxHero400 from '../assets/images/general/butcherbox-projectcard-400.webp';
+import butcherBoxHero800 from '../assets/images/general/butcherbox-projectcard-800.webp';
+import butcherBoxHero1200 from '../assets/images/general/butcherbox-projectcard-1200.webp';
 import butcherBoxPresentation from '../assets/images/general/Butcher Box Presentation.webp';
-import hathaveHero from '../assets/images/general/hathaven-projectcard.webp';
+
+// Hathaven Imports
+import hathaveHero400 from '../assets/images/general/hathaven-projectcard-400.webp';
+import hathaveHero800 from '../assets/images/general/hathaven-projectcard-800.webp';
+import hathaveHero1200 from '../assets/images/general/hathaven-projectcard-1200.webp';
 import hathavePresentation from '../assets/images/general/hathave presentation.jpg';
 
 export const projects = [
@@ -13,7 +29,11 @@ export const projects = [
         title: "Titan Storage Solutions",
         description: "A new era of industrial engineering defined by technical precision and global reach. Titan Storage Solutions bridges the gap between complex engineering and digital accessibility through a modern, informative interface.",
         tags: ["UI/UX", "Web Design", "Figma"],
-        image: titanStorageHero,
+        image: {
+            src: titanStorageHero800,
+            srcSet: `${titanStorageHero400} 400w, ${titanStorageHero800} 800w, ${titanStorageHero1200} 1200w`,
+            sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
+        },
         link: titanStoragePresentation,
         route: '/titan-storage'
     },
@@ -22,7 +42,11 @@ export const projects = [
         title: "Stract Landing Page",
         description: "Stract is a comprehensive digital platform designed to streamline complex workflows and data management. It positions itself as an all-in-one solution for professionals or enterprises looking to scale their digital operations with high-performance tools.",
         tags: ["Landing Page", "Theme", "Industrial Website"],
-        image: stractHero,
+        image: {
+            src: stractHero800,
+            srcSet: `${stractHero400} 400w, ${stractHero800} 800w, ${stractHero1200} 1200w`,
+            sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
+        },
         link: stractPresentation,
         route: '/stract'
     },
@@ -31,7 +55,11 @@ export const projects = [
         title: "Butcher Box Web Design",
         description: "Butcher Box Digital Marketplace – A Premium E-Commerce Experience Engineered to Connect Discerning Palates with Farm-Fresh Meats through a Seamless, High-Fidelity Interface.",
         tags: ["Ecommerce", "Website Design", "UI Design"],
-        image: butcherBoxHero,
+        image: {
+            src: butcherBoxHero800,
+            srcSet: `${butcherBoxHero400} 400w, ${butcherBoxHero800} 800w, ${butcherBoxHero1200} 1200w`,
+            sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
+        },
         link: butcherBoxPresentation
     },
     {
@@ -39,7 +67,11 @@ export const projects = [
         title: "HatHaven Website",
         description: "HatHaven Project – A Premium Headwear Marketplace Crafted To Redefine Style Discovery, Streamline The Shopping Experience, And Elevate Personal Expression For Fashion Enthusiasts.",
         tags: ["UX Research", "Case Study", "Ecommerce Website"],
-        image: hathaveHero,
+        image: {
+            src: hathaveHero800,
+            srcSet: `${hathaveHero400} 400w, ${hathaveHero800} 800w, ${hathaveHero1200} 1200w`,
+            sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
+        },
         link: hathavePresentation,
         route: '/hathaven'
     },
