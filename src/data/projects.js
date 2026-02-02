@@ -1,11 +1,11 @@
-import titanStorageHero from "../assets/general/Tital Storage hero.png";
-import titanStoragePresentation from '../assets/general/Tital-Storage-Presentation.png';
-import stractHero from '../assets/general/Stract Hero.png';
-import stractPresentation from '../assets/general/Stract Presentation.png';
-import butcherBoxHero from '../assets/general/butcherbox-projectcard.webp';
-import butcherBoxPresentation from '../assets/general/Butcher Box Presentation.png';
-import hathaveHero from '../assets/general/hathaven-projectcard.png';
-import hathavePresentation from '../assets/general/hathave presentation.jpg';
+import titanStorageHero from "../assets/images/general/Tital Storage hero.png";
+import titanStoragePresentation from '../assets/images/general/Tital-Storage-Presentation.png';
+import stractHero from '../assets/images/general/Stract Hero.png';
+import stractPresentation from '../assets/images/general/Stract Presentation.png';
+import butcherBoxHero from '../assets/images/general/butcherbox-projectcard.webp';
+import butcherBoxPresentation from '../assets/images/general/Butcher Box Presentation.png';
+import hathaveHero from '../assets/images/general/hathaven-projectcard.png';
+import hathavePresentation from '../assets/images/general/hathave presentation.jpg';
 
 export const projects = [
     {

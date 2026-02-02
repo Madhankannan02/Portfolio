@@ -3,10 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
-import ProjectsGrid from './components/ProjectsGrid';
-import Contact from './components/Contact';
-
-// Lazy Load Pages
+// Lazy Load Components
+const ProjectsGrid = lazy(() => import('./components/ProjectsGrid'));
+const Contact = lazy(() => import('./components/Contact'));
 const HatHaven = lazy(() => import('./components/pages/HatHaven'));
 const TitanStorage = lazy(() => import('./components/pages/TitanStorage'));
 const Stract = lazy(() => import('./components/pages/Stract'));
@@ -27,8 +26,10 @@ function App() {
           <Route path="/" element={
             <Layout>
               <Hero />
-              <ProjectsGrid />
-              <Contact />
+              <Suspense fallback={<div className="min-h-screen" />}>
+                <ProjectsGrid />
+                <Contact />
+              </Suspense>
             </Layout>
           } />
           <Route path="/hathaven" element={<HatHaven />} />

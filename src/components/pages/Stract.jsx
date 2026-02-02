@@ -5,13 +5,13 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, Sun, Moon } from 'lucide-react';
 
 // Assets
-import HeroImage from '../../assets/stract-slides/hero mockup.png';
-import Mockup2 from '../../assets/stract-slides/mockup 2.png';
-import Mockup3 from '../../assets/stract-slides/mockup 3.png';
-import Mockup4 from '../../assets/stract-slides/mockup 4.png';
-import Mockup5 from '../../assets/stract-slides/mockup 5.png';
-import LandingPageDark from '../../assets/stract-slides/Landing page dark theme.png';
-import LandingPageLight from '../../assets/stract-slides/Landing page light theem.png';
+import HeroImage from '../../assets/images/stract-slides/hero mockup.png';
+import Mockup2 from '../../assets/images/stract-slides/mockup 2.png';
+import Mockup3 from '../../assets/images/stract-slides/mockup 3.png';
+import Mockup4 from '../../assets/images/stract-slides/mockup 4.png';
+import Mockup5 from '../../assets/images/stract-slides/mockup 5.png';
+import LandingPageDark from '../../assets/images/stract-slides/Landing page dark theme.png';
+import LandingPageLight from '../../assets/images/stract-slides/Landing page light theem.png';
 
 import '@fontsource/inter';
 

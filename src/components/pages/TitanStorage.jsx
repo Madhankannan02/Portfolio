@@ -5,15 +5,15 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 // Assets
-import HeroImage from '../../assets/titan-storage-slide/HomeScreen.svg';
-import HeroLaptop from '../../assets/titan-storage-slide/herosection-laptop.png';
-import SecondMockup from '../../assets/titan-storage-slide/second mockup.svg';
-import JoelAvatar from '../../assets/generated/joel_k_avatar_1769328668647.png';
-import AboutUsImage from '../../assets/titan-storage-slide/About us.svg';
-import ServicesImage from '../../assets/titan-storage-slide/Services.svg';
-import ThirdMockup from '../../assets/titan-storage-slide/third mockup image.svg';
-import FourthMockup from '../../assets/titan-storage-slide/fourth mockup.svg';
-import FifthMockup from '../../assets/titan-storage-slide/fifth mockup image.svg';
+import HeroImage from '../../assets/images/titan-storage-slide/HomeScreen.svg';
+import HeroLaptop from '../../assets/images/titan-storage-slide/herosection-laptop.png';
+import SecondMockup from '../../assets/images/titan-storage-slide/second mockup.svg';
+import JoelAvatar from '../../assets/images/generated/joel_k_avatar_1769328668647.png';
+import AboutUsImage from '../../assets/images/titan-storage-slide/About us.svg';
+import ServicesImage from '../../assets/images/titan-storage-slide/Services.svg';
+import ThirdMockup from '../../assets/images/titan-storage-slide/third mockup image.svg';
+import FourthMockup from '../../assets/images/titan-storage-slide/fourth mockup.svg';
+import FifthMockup from '../../assets/images/titan-storage-slide/fifth mockup image.svg';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div

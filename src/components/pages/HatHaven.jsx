@@ -12,13 +12,13 @@ import {
 } from 'lucide-react';
 
 // Import Assets
-import MainPage from '../../assets/hathaven-slides/Main Page.svg';
-import ProductPage from '../../assets/hathaven-slides/Product Page.svg';
-import BlogPage from '../../assets/hathaven-slides/Blog Page.svg';
-import ContactPage from '../../assets/hathaven-slides/Contact Us Page.svg';
-import HeroAsset from '../../assets/hathaven-slides/Hero.svg';
-import Mockup1 from '../../assets/hathaven-slides/mockup1.svg';
-import Mockup2 from '../../assets/hathaven-slides/mockup2.svg';
+import MainPage from '../../assets/images/hathaven-slides/Main Page.svg';
+import ProductPage from '../../assets/images/hathaven-slides/Product Page.svg';
+import BlogPage from '../../assets/images/hathaven-slides/Blog Page.svg';
+import ContactPage from '../../assets/images/hathaven-slides/Contact Us Page.svg';
+import HeroAsset from '../../assets/images/hathaven-slides/Hero.svg';
+import Mockup1 from '../../assets/images/hathaven-slides/mockup1.svg';
+import Mockup2 from '../../assets/images/hathaven-slides/mockup2.svg';
 
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
