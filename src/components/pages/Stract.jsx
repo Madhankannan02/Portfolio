@@ -10,8 +10,8 @@ import Mockup2 from '../../assets/images/stract-slides/mockup 2.webp';
 import Mockup3 from '../../assets/images/stract-slides/mockup 3.webp';
 import Mockup4 from '../../assets/images/stract-slides/mockup 4.webp';
 import Mockup5 from '../../assets/images/stract-slides/mockup 5.webp';
-import LandingPageDark from '../../assets/images/stract-slides/Landing page dark theme.webp';
-import LandingPageLight from '../../assets/images/stract-slides/Landing page light theem.webp';
+import LandingPageDark from '../../assets/images/stract-slides/Landing page dark theme.png';
+import LandingPageLight from '../../assets/images/stract-slides/Landing page light theem.png';
 
 import '@fontsource/inter';
 
