@@ -6,8 +6,7 @@ import { ArrowDown } from 'lucide-react';
 
 // Assets
 import HeroImage from '../../assets/titan-storage-slide/HomeScreen.svg';
-import FirstImageBackground from '../../assets/titan-storage-slide/first image background.svg';
-import FirstImageLaptop from '../../assets/titan-storage-slide/first image laptop.svg';
+import HeroLaptop from '../../assets/titan-storage-slide/herosection-laptop.png';
 import SecondMockup from '../../assets/titan-storage-slide/second mockup.svg';
 import JoelAvatar from '../../assets/generated/joel_k_avatar_1769328668647.png';
 import AboutUsImage from '../../assets/titan-storage-slide/About us.svg';
@@ -45,14 +44,9 @@ export default function TitanStorage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="absolute inset-0 z-0"
+                    className="absolute inset-0 z-0 bg-gradient-to-b from-[#181A1A] via-[#1E1E1E] to-[#FF7420]/20"
                 >
-                    <img
-                        src={FirstImageBackground}
-                        alt="Background Texture"
-                        className="w-full h-full object-cover opacity-30 grayscale"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black/90" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-800/20 via-[#181A1A] to-[#181A1A] opacity-70" />
                 </motion.div>
 
                 {/* 2. Text Layer - Slight Parallax & Fade */}
@@ -85,7 +79,7 @@ export default function TitanStorage() {
                     className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
-                        src={FirstImageLaptop}
+                        src={HeroLaptop}
                         alt="Titan Storage Dashboard Interface"
                         className="w-full h-auto drop-shadow-2xl"
                     />
