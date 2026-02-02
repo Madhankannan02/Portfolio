@@ -13,7 +13,7 @@ import Mockup5 from '../../assets/images/stract-slides/mockup 5.webp';
 import LandingPageDark from '../../assets/images/stract-slides/Landing page dark theme.png';
 import LandingPageLight from '../../assets/images/stract-slides/Landing page light theem.png';
 
-import '@fontsource/inter';
+
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div

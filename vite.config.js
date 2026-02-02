@@ -22,7 +22,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
-          ui: ['lucide-react', '@fontsource/inter', '@fontsource/manrope', '@fontsource/outfit']
+          ui: ['lucide-react', '@fontsource/manrope', '@fontsource/outfit']
         }
       }
     }
