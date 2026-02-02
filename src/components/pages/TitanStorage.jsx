@@ -1,6 +1,7 @@
 import React from 'react';
 import '@fontsource/manrope'; // Defaults to weight 400
 import '@fontsource/manrope/300.css'; // Light weight
+import './TitanStorage.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
