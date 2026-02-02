@@ -2,9 +2,9 @@ import titanStorageHero from "../assets/general/Tital Storage hero.png";
 import titanStoragePresentation from '../assets/general/Tital-Storage-Presentation.png';
 import stractHero from '../assets/general/Stract Hero.png';
 import stractPresentation from '../assets/general/Stract Presentation.png';
-import butcherBoxHero from '../assets/general/Butcher Box Hero.png';
+import butcherBoxHero from '../assets/general/butcherbox-projectcard.webp';
 import butcherBoxPresentation from '../assets/general/Butcher Box Presentation.png';
-import hathaveHero from '../assets/general/Hathaven Hero.png';
+import hathaveHero from '../assets/general/hathaven-projectcard.png';
 import hathavePresentation from '../assets/general/hathave presentation.jpg';
 
 export const projects = [
