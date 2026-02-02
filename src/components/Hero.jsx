@@ -35,15 +35,12 @@ const Hero = () => {
                     <span className="text-gray-300 text-sm font-medium tracking-wide uppercas">Available for new projects</span>
                 </motion.div>
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
+                <h1
                     className="text-6xl md:text-8xl font-bold leading-tight tracking-tighter"
                 >
                     Designing the <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Future of Digital.</span>
-                </motion.h1>
+                </h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
