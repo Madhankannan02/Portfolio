@@ -12,6 +12,11 @@ import '@fontsource/inter/700.css'; // Bold
 import HeroLaptop from '../../assets/images/butcherbox-slides/hero laptop.png';
 import Mockup1 from '../../assets/images/butcherbox-slides/mockup 1.svg';
 import Mockup2 from '../../assets/images/butcherbox-slides/mockup 2.png';
+import LandingPage from '../../assets/images/butcherbox-slides/Landing Page HighFi.png';
+import ProductPage from '../../assets/images/butcherbox-slides/Product Page High Fi.png';
+import SearchPage from '../../assets/images/butcherbox-slides/Search Page High Fi.png';
+import CartPage from '../../assets/images/butcherbox-slides/Cart Page High Fi.png';
+import CheckoutPage from '../../assets/images/butcherbox-slides/Checkout Page High Fi.png';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -254,6 +259,108 @@ export default function ButcherBox() {
                 </FadeIn>
             </section>
 
+            {/* High Fidelity Preview Section */}
+            <section className="py-32 px-6 md:px-[60px] bg-[#0A0A0A] border-t border-white/5 font-sans">
+                <div className="max-w-[90rem] mx-auto">
+                    <FadeIn>
+                        <div className="flex justify-between items-end mb-24">
+                            <div>
+                                <h2 className="text-6xl md:text-8xl font-light text-white tracking-tighter" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    Full Preview
+                                </h2>
+                            </div>
+                            <div className="hidden md:block">
+                                <p className="text-gray-400 max-w-md text-right leading-relaxed">
+                                    A cohesive design system applied across key application interfaces, ensuring consistency and clarity.
+                                </p>
+                            </div>
+                        </div>
+                    </FadeIn>
+
+                    <div className="space-y-32">
+                        {/* 1. Landing Page Preview */}
+                        <FadeIn>
+                            <div className="group relative">
+                                <div className="absolute -inset-1 bg-gradient-to-b from-white/10 to-transparent rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+                                <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                    <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                        <div className="w-3 h-3 rounded-full bg-[#EF4444]/20" />
+                                        <div className="w-3 h-3 rounded-full bg-[#E1FF00]/20" />
+                                        <div className="w-3 h-3 rounded-full bg-[#3C22FC]/20" />
+                                    </div>
+                                    <img src={LandingPage} alt="Landing Page Design" loading="lazy" decoding="async" className="w-full h-auto" />
+                                </div>
+                                <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Landing Page</h3>
+                            </div>
+                        </FadeIn>
+
+                        {/* 2 & 3. Split View: Product & Search */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                            <FadeIn delay={0.2}>
+                                <div className="group relative">
+                                    <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                        <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-[#EF4444]/20" />
+                                            <div className="w-3 h-3 rounded-full bg-[#E1FF00]/20" />
+                                            <div className="w-3 h-3 rounded-full bg-[#3C22FC]/20" />
+                                        </div>
+                                        <img src={ProductPage} alt="Product Page" loading="lazy" decoding="async" className="w-full h-auto" />
+                                    </div>
+                                    <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Product Details</h3>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.4} className="lg:mt-32">
+                                <div className="group relative">
+                                    <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                        <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-[#EF4444]/20" />
+                                            <div className="w-3 h-3 rounded-full bg-[#E1FF00]/20" />
+                                            <div className="w-3 h-3 rounded-full bg-[#3C22FC]/20" />
+                                        </div>
+                                        <img src={SearchPage} alt="Search Page" loading="lazy" decoding="async" className="w-full h-auto" />
+                                    </div>
+                                    <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Search & Filter</h3>
+                                </div>
+                            </FadeIn>
+                        </div>
+
+                        {/* 4 & 5. Split View: Cart & Checkout */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                            <FadeIn delay={0.2}>
+                                <div className="group relative">
+                                    <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                        <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-[#EF4444]/20" />
+                                            <div className="w-3 h-3 rounded-full bg-[#E1FF00]/20" />
+                                            <div className="w-3 h-3 rounded-full bg-[#3C22FC]/20" />
+                                        </div>
+                                        <img src={CartPage} alt="Cart Page" loading="lazy" decoding="async" className="w-full h-auto" />
+                                    </div>
+                                    <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Shopping Cart</h3>
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.4} className="lg:mt-32">
+                                <div className="group relative">
+                                    <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                                        <div className="h-12 bg-[#1A1A1A] border-b border-white/5 flex items-center px-6 gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-[#EF4444]/20" />
+                                            <div className="w-3 h-3 rounded-full bg-[#E1FF00]/20" />
+                                            <div className="w-3 h-3 rounded-full bg-[#3C22FC]/20" />
+                                        </div>
+                                        <img src={CheckoutPage} alt="Checkout Page" loading="lazy" decoding="async" className="w-full h-auto" />
+                                    </div>
+                                    <h3 className="text-xl text-gray-500 mt-6 font-mono text-center uppercase tracking-widest">Secure Checkout</h3>
+                                </div>
+                            </FadeIn>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
         </div>
     );
 }
+
