@@ -8,6 +8,7 @@ const ProjectsGrid = lazy(() => import('./components/ProjectsGrid'));
 const Contact = lazy(() => import('./components/Contact'));
 const HatHaven = lazy(() => import('./components/pages/HatHaven'));
 const TitanStorage = lazy(() => import('./components/pages/TitanStorage'));
+const ButcherBox = lazy(() => import('./components/pages/ButcherBox'));
 const Stract = lazy(() => import('./components/pages/Stract'));
 
 // Loading Fallback
@@ -34,6 +35,7 @@ function App() {
           } />
           <Route path="/hathaven" element={<HatHaven />} />
           <Route path="/titan-storage" element={<TitanStorage />} />
+          <Route path="/butcher-box" element={<ButcherBox />} />
           <Route path="/stract" element={<Stract />} />
         </Routes>
       </Suspense>

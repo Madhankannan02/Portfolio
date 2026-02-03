@@ -64,7 +64,8 @@ export const projects = [
             srcSet: `${butcherBoxHero400} 400w, ${butcherBoxHero600} 600w, ${butcherBoxHero800} 800w, ${butcherBoxHero1200} 1200w`,
             sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
         },
-        link: butcherBoxPresentation
+        link: butcherBoxPresentation,
+        route: '/butcher-box'
     },
     {
         id: 4,
