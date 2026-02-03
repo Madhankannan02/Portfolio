@@ -11,6 +11,7 @@ import '@fontsource/inter/700.css'; // Bold
 // Import Assets
 import HeroLaptop from '../../assets/images/butcherbox-slides/hero laptop.png';
 import Mockup1 from '../../assets/images/butcherbox-slides/mockup 1.svg';
+import Mockup2 from '../../assets/images/butcherbox-slides/mockup 2.png';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -236,6 +237,21 @@ export default function ButcherBox() {
                         </div>
                     </FadeIn>
                 </div>
+            </section>
+
+            {/* Mockup 2 Section */}
+            <section className="bg-[#0a0a0a] px-4 md:px-[30px] pb-[50px]">
+                <FadeIn>
+                    <div className="w-full">
+                        <img
+                            src={Mockup2}
+                            alt="Butcher Box Interface Mockup 2"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
             </section>
 
         </div>
