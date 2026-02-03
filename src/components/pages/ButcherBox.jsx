@@ -1,9 +1,16 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, Utensils } from 'lucide-react';
+import '@fontsource/poppins';
+import '@fontsource/poppins/300.css'; // Light
+import '@fontsource/inter';
+import '@fontsource/inter/300.css'; // Light
+import '@fontsource/inter/500.css'; // Medium
+import '@fontsource/inter/700.css'; // Bold
 
 // Import Assets
 import HeroLaptop from '../../assets/images/butcherbox-slides/hero laptop.png';
+import Mockup1 from '../../assets/images/butcherbox-slides/mockup 1.svg';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
     <motion.div
@@ -116,6 +123,118 @@ export default function ButcherBox() {
                             </div>
                         </FadeIn>
                     </div>
+                </div>
+            </section>
+
+            {/* Mockup 1 Section */}
+            <section className="bg-[#0a0a0a] px-4 md:px-[30px] pb-[50px]">
+                <FadeIn>
+                    <div className="w-full">
+                        <img
+                            src={Mockup1}
+                            alt="Butcher Box Mobile Interface"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
+            </section>
+
+            {/* Typography & Colors Section */}
+            <section className="py-24 px-6 md:px-[60px] bg-[#0F0F0F] text-white border-t border-white/5 font-sans">
+                <div className="max-w-7xl mx-auto">
+                    <FadeIn>
+                        <div className="mb-24">
+                            <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-white mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                Typography & Colors
+                            </h2>
+                            <p className="text-gray-400">The foundation of the visual identity.</p>
+                        </div>
+                    </FadeIn>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+                        {/* Typography: Poppins */}
+                        <FadeIn delay={0.2}>
+                            <div className="p-10 rounded-[2.5rem] bg-[#141414] border border-white/5 h-full relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-8 opacity-10 text-[8rem] font-bold leading-none select-none pointer-events-none" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    Aa
+                                </div>
+                                <h3 className="text-sm text-gray-500 mb-8 font-mono uppercase tracking-widest">Headline Font</h3>
+                                <div className="space-y-4 relative z-10">
+                                    <div className="text-6xl md:text-7xl font-bold text-white tracking-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                        Poppins
+                                    </div>
+                                    <div className="flex flex-wrap gap-4 pt-8">
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-gray-300 border border-white/10 font-light" style={{ fontFamily: 'Poppins, sans-serif' }}>Light</span>
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-white border border-white/10" style={{ fontFamily: 'Poppins, sans-serif' }}>Regular</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeIn>
+
+                        {/* Typography: Inter */}
+                        <FadeIn delay={0.3}>
+                            <div className="p-10 rounded-[2.5rem] bg-[#141414] border border-white/5 h-full relative overflow-hidden">
+                                <div className="absolute top-0 right-0 p-8 opacity-10 text-[8rem] font-bold leading-none select-none pointer-events-none" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                    Aa
+                                </div>
+                                <h3 className="text-sm text-gray-500 mb-8 font-mono uppercase tracking-widest">Body Font</h3>
+                                <div className="space-y-4 relative z-10">
+                                    <div className="text-6xl md:text-7xl font-bold text-white tracking-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                        Inter
+                                    </div>
+                                    <div className="flex flex-wrap gap-4 pt-8">
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-gray-300 border border-white/10 font-light" style={{ fontFamily: 'Inter, sans-serif' }}>Light</span>
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-white border border-white/10" style={{ fontFamily: 'Inter, sans-serif' }}>Regular</span>
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-white border border-white/10 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>Medium</span>
+                                        <span className="px-4 py-2 rounded-lg bg-white/5 text-white border border-white/10 font-bold" style={{ fontFamily: 'Inter, sans-serif' }}>Bold</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeIn>
+                    </div>
+
+                    {/* Colors */}
+                    <FadeIn delay={0.4}>
+                        <div className="p-10 rounded-[2.5rem] bg-[#141414] border border-white/5">
+                            <h3 className="text-sm text-gray-500 mb-8 font-mono uppercase tracking-widest">Color Palette</h3>
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                                {/* Off White */}
+                                <div className="space-y-3">
+                                    <div className="h-32 rounded-2xl bg-[#F6F6F6] border border-white/10"></div>
+                                    <div className="flex flex-col text-xs text-gray-400 font-mono">
+                                        <span className="text-white font-bold mb-1">Off White</span>
+                                        <span>#F6F6F6</span>
+                                    </div>
+                                </div>
+                                {/* Electric Lime */}
+                                <div className="space-y-3">
+                                    <div className="h-32 rounded-2xl bg-[#E1FF00] border border-white/10 shadow-[0_0_20px_rgba(225,255,0,0.3)]"></div>
+                                    <div className="flex flex-col text-xs text-gray-400 font-mono">
+                                        <span className="text-white font-bold mb-1">Electric Lime</span>
+                                        <span>#E1FF00</span>
+                                    </div>
+                                </div>
+                                {/* Hyper Blue */}
+                                <div className="space-y-3">
+                                    <div className="h-32 rounded-2xl bg-[#3C22FC] border border-white/10 shadow-[0_0_20px_rgba(60,34,252,0.3)]"></div>
+                                    <div className="flex flex-col text-xs text-gray-400 font-mono">
+                                        <span className="text-white font-bold mb-1">Hyper Blue</span>
+                                        <span>#3C22FC</span>
+                                    </div>
+                                </div>
+                                {/* Light Gray */}
+                                <div className="space-y-3">
+                                    <div className="h-32 rounded-2xl bg-[#F6F6F6] border border-white/10"></div>
+                                    <div className="flex flex-col text-xs text-gray-400 font-mono">
+                                        <span className="text-white font-bold mb-1">Paper</span>
+                                        <span>#F6F6F6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </FadeIn>
                 </div>
             </section>
 
