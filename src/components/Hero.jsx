@@ -14,7 +14,7 @@ const Hero = () => {
                     rotate: [0, 90, 0]
                 }}
                 transition={{
-                    duration: 10,
+                    duration: 15,
                     repeat: Infinity,
                     ease: "linear"
                 }}
