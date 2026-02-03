@@ -40,7 +40,7 @@ const Contact = () => {
                     transition={{ delay: 0.2 }}
                     className="pt-8"
                 >
-                    <a href="mailto:madhankannan29@gmail.com" className="text-2xl md:text-4xl font-bold border-b-2 border-white/20 hover:border-primary hover:text-primary transition-colors pb-2">
+                    <a href="mailto:madhankannan29@gmail.com" className="text-lg sm:text-2xl md:text-4xl font-bold border-b-2 border-white/20 hover:border-primary hover:text-primary transition-colors pb-2 break-all sm:break-normal">
                         madhankannan29@gmail.com
                     </a>
                 </motion.div>

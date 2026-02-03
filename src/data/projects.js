@@ -36,7 +36,7 @@ export const projects = [
         image: {
             src: titanStorageHero800,
             srcSet: `${titanStorageHero400} 400w, ${titanStorageHero600} 600w, ${titanStorageHero800} 800w, ${titanStorageHero1200} 1200w`,
-            sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
+            sizes: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 568px"
         },
         link: titanStoragePresentation,
         route: '/titan-storage'
@@ -49,7 +49,7 @@ export const projects = [
         image: {
             src: stractHero800,
             srcSet: `${stractHero400} 400w, ${stractHero600} 600w, ${stractHero800} 800w, ${stractHero1200} 1200w`,
-            sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
+            sizes: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 568px"
         },
         link: stractPresentation,
         route: '/stract'
@@ -62,7 +62,7 @@ export const projects = [
         image: {
             src: butcherBoxHero800,
             srcSet: `${butcherBoxHero400} 400w, ${butcherBoxHero600} 600w, ${butcherBoxHero800} 800w, ${butcherBoxHero1200} 1200w`,
-            sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
+            sizes: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 568px"
         },
         link: butcherBoxPresentation,
         route: '/butcher-box'
@@ -75,7 +75,7 @@ export const projects = [
         image: {
             src: hathaveHero800,
             srcSet: `${hathaveHero400} 400w, ${hathaveHero600} 600w, ${hathaveHero800} 800w, ${hathaveHero1200} 1200w`,
-            sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 568px"
+            sizes: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 568px"
         },
         link: hathavePresentation,
         route: '/hathaven'
