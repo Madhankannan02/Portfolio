@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Utensils } from 'lucide-react';
 
 // Import Assets
 import HeroLaptop from '../../assets/images/butcherbox-slides/hero laptop.png';
@@ -66,6 +66,57 @@ export default function ButcherBox() {
                     <span className="text-xs uppercase tracking-widest font-semibold text-white/80">Scroll to Explore</span>
                     <ArrowDown className="animate-bounce text-white" size={16} />
                 </motion.div>
+            </section>
+
+            {/* Problem & Solution Section */}
+            <section className="relative py-32 px-6 bg-[#0a0a0a] text-white border-t border-white/5 overflow-hidden">
+                {/* Grid Background */}
+                <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
+                    style={{
+                        backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
+                        backgroundSize: '50px 50px'
+                    }}
+                />
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <FadeIn>
+                        <h2 className="text-4xl md:text-6xl font-serif text-center mb-24 leading-tight">
+                            High-quality meat,<br />
+                            <span className="text-white/40 italic">humanely raised,</span><br />
+                            delivered to you.
+                        </h2>
+                    </FadeIn>
+
+                    <FadeIn delay={0.2} className="flex justify-center mb-24 relative">
+                        {/* Glowing Icon */}
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-red-500 blur-[40px] opacity-40 rounded-full" />
+                            <div className="relative w-20 h-20 rounded-full border border-red-500/30 bg-[#0a0a0a] flex items-center justify-center shadow-[0_0_30px_rgba(239,68,68,0.2)]">
+                                <Utensils className="text-red-500 w-8 h-8" />
+                            </div>
+                        </div>
+                    </FadeIn>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32">
+                        <FadeIn delay={0.3}>
+                            <div>
+                                <h3 className="text-sm font-semibold tracking-widest text-white/40 mb-6 uppercase">Problem</h3>
+                                <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light">
+                                    Butcher Box required a digital presence that could effectively showcase their portfolio of high-quality meats while reflecting both professionalism and culinary excellence. The main challenge was to design a platform that communicated their expertise and ethical sourcing approach, while also highlighting the brand's bold, premium character.
+                                </p>
+                            </div>
+                        </FadeIn>
+
+                        <FadeIn delay={0.4}>
+                            <div>
+                                <h3 className="text-sm font-semibold tracking-widest text-white/40 mb-6 uppercase">Solution</h3>
+                                <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light">
+                                    We designed a website and visual identity that balance professionalism with appetite appeal. Rich color accents and refined typography reflect Butcher Box's premium quality, while a clean layout ensures clarity and trust. The result is a digital presence that is both distinctive and reliable, simplifying the path from farm to table.
+                                </p>
+                            </div>
+                        </FadeIn>
+                    </div>
+                </div>
             </section>
 
         </div>
