@@ -46,7 +46,7 @@ export default function ButcherBox() {
                 </div>
 
                 {/* Hero Laptop Image */}
-                <FadeIn delay={0.8} className="relative z-20 w-full max-w-[80rem] mx-auto -translate-y-8 md:-translate-y-12 px-4">
+                <FadeIn delay={0.8} className="relative z-20 w-full max-w-[70rem] mx-auto -translate-y-8 md:-translate-y-12 px-4">
                     <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-b from-red-500/20 to-transparent blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-1000" />
                         <img
