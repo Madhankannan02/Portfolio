@@ -12,6 +12,8 @@ import '@fontsource/inter/700.css'; // Bold
 import HeroLaptop from '../../assets/images/butcherbox-slides/hero laptop.png';
 import Mockup1 from '../../assets/images/butcherbox-slides/mockup 1.svg';
 import Mockup2 from '../../assets/images/butcherbox-slides/mockup 2.png';
+import Mockup3 from '../../assets/images/butcherbox-slides/mockup 3.jpg';
+import Mockup4 from '../../assets/images/butcherbox-slides/mockup 4.jpg';
 import LandingPage from '../../assets/images/butcherbox-slides/Landing Page HighFi.png';
 import ProductPage from '../../assets/images/butcherbox-slides/Product Page High Fi.png';
 import SearchPage from '../../assets/images/butcherbox-slides/Search Page High Fi.png';
@@ -358,6 +360,36 @@ export default function ButcherBox() {
 
                     </div>
                 </div>
+            </section>
+
+            {/* Mockup 3 Section */}
+            <section className="bg-[#0a0a0a] px-4 md:px-[30px] pb-[50px]">
+                <FadeIn>
+                    <div className="w-full">
+                        <img
+                            src={Mockup3}
+                            alt="Butcher Box Interface Mockup 3"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
+            </section>
+
+            {/* Mockup 4 Section */}
+            <section className="bg-[#0a0a0a] px-4 md:px-[30px] pb-[50px]">
+                <FadeIn>
+                    <div className="w-full">
+                        <img
+                            src={Mockup4}
+                            alt="Butcher Box Interface Mockup 4"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-white/5"
+                        />
+                    </div>
+                </FadeIn>
             </section>
 
         </div>
