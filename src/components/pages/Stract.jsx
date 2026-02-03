@@ -414,7 +414,7 @@ export default function Stract() {
                         <p className="text-xl text-gray-400 mb-12 leading-relaxed">
                             Stract isn't just a dashboard—it's the clarity your business has been waiting for. Designed for scale, security, and speed.
                         </p>
-                        <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-lg hover:bg-purple-400 hover:text-white transition-all duration-300">
+                        <a href="mailto:madhankannan29@gmail.com" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-lg hover:bg-purple-400 hover:text-white transition-all duration-300">
                             Start a Project
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>

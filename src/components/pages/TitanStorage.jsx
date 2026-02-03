@@ -655,6 +655,24 @@ export default function TitanStorage() {
                 </FadeIn>
             </section>
 
-        </div >
+            {/* Footer / Call to Action */}
+            <section className="py-32 px-6 md:px-[80px] bg-[#181A1A] border-t border-white/5">
+                <div className="max-w-4xl mx-auto text-center">
+                    <FadeIn>
+                        <h2 className="text-4xl md:text-6xl font-medium text-white mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                            Ready to scale your <br /> industrial infrastructure?
+                        </h2>
+                        <p className="text-xl text-gray-400 mb-12 leading-relaxed">
+                            Titan Storage Solutions delivers the precision your engineering projects demand. Built for safety, compliance, and global reach.
+                        </p>
+                        <a href="mailto:madhankannan29@gmail.com" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-lg hover:bg-[#FF7420] hover:text-white transition-all duration-300">
+                            Start a Project
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </FadeIn>
+                </div>
+            </section>
+
+        </div>
     );
 }

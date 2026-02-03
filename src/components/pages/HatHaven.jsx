@@ -541,17 +541,23 @@ export default function HatHaven() {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="py-20 bg-gray-900 text-white relative z-10 text-center">
-                <FadeIn>
-                    <p className="text-3xl font-bold mb-4 tracking-tight">HATHAVEN</p>
-                    <p className="text-stone-400 mb-8">E-Commerce Concept & Design</p>
-                    <div className="flex justify-center gap-6">
-                        <span className="w-10 h-1 rounded-full bg-orange-500" />
-                    </div>
-                    <p className="mt-12 text-sm text-stone-600">© 2026 Hathaven Project. All Rights Reserved.</p>
-                </FadeIn>
-            </footer>
+            {/* Footer / Call to Action */}
+            <section className="py-32 px-6 md:px-[80px] bg-white border-t border-stone-100">
+                <div className="max-w-4xl mx-auto text-center">
+                    <FadeIn>
+                        <h2 className="text-4xl md:text-6xl font-medium text-gray-900 mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+                            Ready to redefine your <br /> style signature?
+                        </h2>
+                        <p className="text-xl text-stone-600 mb-12 leading-relaxed">
+                            HatHaven merges urban aesthetics with premium quality. Designed for the bold, the classic, and everyone in between.
+                        </p>
+                        <a href="mailto:madhankannan29@gmail.com" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black text-white font-semibold text-lg hover:bg-orange-600 transition-all duration-300">
+                            Start a Project
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </FadeIn>
+                </div>
+            </section>
 
         </div>
     );
