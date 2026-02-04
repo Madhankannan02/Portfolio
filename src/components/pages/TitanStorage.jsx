@@ -6,14 +6,14 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 // Assets
-import HeroImage from '../../assets/images/titan-storage-slide/HomeScreen.svg';
+import HeroImage from '../../assets/images/titan-storage-slide/HomeScreen.webp';
 import HeroLaptop from '../../assets/images/titan-storage-slide/herosection-laptop.webp';
 import SecondMockup from '../../assets/images/titan-storage-slide/second mockup.webp';
 import JoelAvatar from '../../assets/images/generated/joel_k_avatar_1769328668647.webp';
-import AboutUsImage from '../../assets/images/titan-storage-slide/About us.svg';
-import ServicesImage from '../../assets/images/titan-storage-slide/Services.svg';
+import AboutUsImage from '../../assets/images/titan-storage-slide/About us.webp';
+import ServicesImage from '../../assets/images/titan-storage-slide/Services.webp';
 import ThirdMockup from '../../assets/images/titan-storage-slide/third mockup image.svg';
-import FourthMockup from '../../assets/images/titan-storage-slide/fourth mockup.svg';
+import FourthMockup from '../../assets/images/titan-storage-slide/fourth mockup.webp';
 import FifthMockup from '../../assets/images/titan-storage-slide/fifth mockup image.svg';
 
 const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
