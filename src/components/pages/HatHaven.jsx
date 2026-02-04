@@ -26,7 +26,7 @@ const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
         initial={{ opacity: 0, y }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.8, delay, ease: "easeOut" }}
+        transition={{ duration: 0.6, delay, ease: "easeOut" }}
         className={className}
     >
         {children}
@@ -124,7 +124,7 @@ export default function HatHaven() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
+                    transition={{ delay: 1.0, duration: 0.6 }}
                     className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-400"
                 >
                     <span className="text-xs uppercase tracking-widest">Scroll to View Project</span>
@@ -504,7 +504,7 @@ export default function HatHaven() {
                                         <motion.div
                                             initial={{ opacity: 0, x: 20 }}
                                             whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: 0.3, duration: 0.8 }}
+                                            transition={{ delay: 0.3, duration: 0.6 }}
                                             className="relative"
                                         >
                                             <img

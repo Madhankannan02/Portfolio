@@ -43,7 +43,7 @@ export default function Stract() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    transition={{ duration: 1.0, ease: "easeOut" }}
                     className="absolute inset-0 z-0 bg-gradient-to-b from-purple-900/20 to-black/90"
                 >
                 </motion.div>
@@ -53,7 +53,7 @@ export default function Stract() {
                     style={{ y: textParallax }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="relative z-10 text-center max-w-5xl mx-auto mb-[-8%] md:mb-[-6%] pt-12 md:pt-0"
                 >
                     <div className="mb-8">
@@ -74,7 +74,7 @@ export default function Stract() {
                     style={{ y: laptopParallax }}
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                     className="relative z-20 w-full max-w-[70rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
@@ -87,7 +87,7 @@ export default function Stract() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2, duration: 1 }}
+                    transition={{ delay: 1.0, duration: 0.6 }}
                     className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 z-30 mix-blend-difference"
                 >
                     <span className="text-xs uppercase tracking-widest font-semibold text-white/80">Scroll to Explore</span>
@@ -115,7 +115,7 @@ export default function Stract() {
                         {/* Floating Element 1: Purple Blur Icon */}
                         <motion.div
                             animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                             className="absolute -top-10 left-[20%] z-20 hidden md:flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/80 to-indigo-600/80 backdrop-blur-xl border border-white/20 shadow-2xl shadow-purple-900/50"
                         >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white">
@@ -126,7 +126,7 @@ export default function Stract() {
                         {/* Floating Element 2: Mic/Voice Icon */}
                         <motion.div
                             animate={{ y: [0, 20, 0] }}
-                            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                            transition={{ duration: 5.0, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                             className="absolute top-[20%] right-[15%] z-20 hidden md:flex items-center justify-center w-14 h-14 rounded-full bg-[#1A1A1A]/80 backdrop-blur-md border border-white/10 shadow-xl"
                         >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
@@ -137,7 +137,7 @@ export default function Stract() {
                         {/* Floating Element 3: Lightning Icon */}
                         <motion.div
                             animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                            transition={{ duration: 3.0, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                             className="absolute bottom-0 left-[40%] z-20 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white text-black shadow-lg shadow-white/20"
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

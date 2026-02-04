@@ -10,7 +10,7 @@ const Preloader = ({ onComplete }) => {
         if (index === words.length - 1) return;
         const timeout = setTimeout(() => {
             setIndex((prev) => prev + 1);
-        }, index === 0 ? 1000 : 250); // Initial delay, then fast cycle
+        }, index === 0 ? 800 : 180); // Initial delay, then fast cycle
 
         return () => clearTimeout(timeout);
     }, [index]);
@@ -19,19 +19,19 @@ const Preloader = ({ onComplete }) => {
         if (index === words.length - 1) {
             const timer = setTimeout(() => {
                 onComplete();
-            }, 800);
+            }, 500);
             return () => clearTimeout(timer);
         }
     }, [index, onComplete]);
 
     const slideUp = {
         initial: { y: 0 },
-        exit: { y: "-100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }
+        exit: { y: "-100%", transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } }
     };
 
     const slideDown = {
         initial: { y: 0 },
-        exit: { y: "100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }
+        exit: { y: "100%", transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } }
     };
 
     return (
@@ -61,7 +61,7 @@ const Preloader = ({ onComplete }) => {
                         initial={{ y: "100%" }}
                         animate={{ y: "0%" }}
                         exit={{ y: "-100%" }}
-                        transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+                        transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
                         className="text-5xl md:text-8xl font-black tracking-tighter text-white"
                     >
                         {words[index]}

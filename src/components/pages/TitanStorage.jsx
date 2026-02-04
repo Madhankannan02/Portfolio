@@ -21,7 +21,7 @@ const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
         initial={{ opacity: 0, y }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.8, delay, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay, ease: "easeOut" }}
         className={className}
     >
         {children}
@@ -44,7 +44,7 @@ export default function TitanStorage() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    transition={{ duration: 1.0, ease: "easeOut" }}
                     className="absolute inset-0 z-0 bg-gradient-to-b from-[#181A1A] via-[#1E1E1E] to-[#FF7420]/20"
                 >
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-800/20 via-[#181A1A] to-[#181A1A] opacity-70" />
@@ -55,7 +55,7 @@ export default function TitanStorage() {
                     style={{ y: textParallax }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="relative z-10 text-center max-w-5xl mx-auto mb-[-8%] md:mb-[-6%] pt-12 md:pt-0"
                 >
                     <div className="mb-8">
@@ -76,7 +76,7 @@ export default function TitanStorage() {
                     style={{ y: laptopParallax }}
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                     className="relative z-20 w-full max-w-[90rem] mx-auto -translate-y-8 md:-translate-y-12"
                 >
                     <img
@@ -89,7 +89,7 @@ export default function TitanStorage() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2, duration: 1 }}
+                    transition={{ delay: 1.0, duration: 0.6 }}
                     className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 z-30 mix-blend-difference"
                 >
                     <span className="text-xs uppercase tracking-widest font-semibold text-white/80">Scroll to Explore</span>

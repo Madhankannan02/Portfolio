@@ -53,6 +53,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
                         className="md:hidden bg-background border-b border-white/5 overflow-hidden"
                     >
                         <div className="flex flex-col p-6 gap-4">

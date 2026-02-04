@@ -14,7 +14,7 @@ const Hero = () => {
                     rotate: [0, 90, 0]
                 }}
                 transition={{
-                    duration: 15,
+                    duration: 10,
                     repeat: Infinity,
                     ease: "linear"
                 }}
@@ -25,7 +25,7 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.3 }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
                 >
                     <span className="relative flex h-2 w-2">
@@ -45,7 +45,7 @@ const Hero = () => {
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
                     className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed"
                 >
                     Hi, I am Madhan Kannan. I craft aesthetically pleasing and highly functional user interfaces that drive business growth and user satisfaction.
@@ -54,7 +54,7 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    transition={{ duration: 0.3, delay: 0.15 }}
                     className="flex flex-col sm:flex-row items-center gap-4 pt-4"
                 >
                     <a
@@ -76,7 +76,7 @@ const Hero = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500 text-sm animate-bounce"
             >
                 Scroll to explore

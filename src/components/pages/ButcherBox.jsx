@@ -25,7 +25,7 @@ const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
         initial={{ opacity: 0, y }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.8, delay, ease: "easeOut" }}
+        transition={{ duration: 0.6, delay, ease: "easeOut" }}
         className={className}
     >
         {children}
@@ -75,7 +75,7 @@ export default function ButcherBox() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
+                    transition={{ delay: 1.0, duration: 0.6 }}
                     className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 z-30 mix-blend-difference"
                 >
                     <span className="text-xs uppercase tracking-widest font-semibold text-white/80">Scroll to Explore</span>

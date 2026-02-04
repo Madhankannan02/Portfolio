@@ -27,6 +27,7 @@ const ProjectsGrid = () => {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
+                        transition={{ duration: 0.4 }}
                         className="text-sm font-semibold text-primary uppercase tracking-widest"
                     >
                         Selected Work
@@ -35,7 +36,7 @@ const ProjectsGrid = () => {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ duration: 0.4, delay: 0.1 }}
                         className="text-3xl md:text-5xl font-bold"
                     >
                         Crafting digital perfection.
@@ -60,6 +61,7 @@ const ProjectsGrid = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         onClick={() => setSelectedProject(null)}
                         className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
                     >
@@ -67,6 +69,7 @@ const ProjectsGrid = () => {
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
                             onClick={(e) => e.stopPropagation()}
                             className="relative max-w-5xl w-full max-h-[90vh] overflow-auto rounded-xl bg-surface border border-white/10 no-scrollbar"
                         >

@@ -17,8 +17,8 @@ const Stract = lazy(() => import('./components/pages/Stract'));
 // Loading Fallback for Suspense
 const PageLoader = () => (
   <div className="fixed inset-0 bg-[#0A0A0A] flex flex-col items-center justify-center z-50">
-    <div className="text-2xl font-mono text-gray-500 mb-4 animate-pulse">Loading...</div>
-    <div className="w-8 h-8 border-2 border-white/10 border-t-white rounded-full animate-spin" />
+    <div className="text-2xl font-mono text-gray-500 mb-4 animate-pulse" style={{ animationDuration: '1s' }}>Loading...</div>
+    <div className="w-8 h-8 border-2 border-white/10 border-t-white rounded-full animate-spin" style={{ animationDuration: '0.5s' }} />
   </div>
 );
 
