@@ -1,74 +1,102 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-
-const words = ["THINK", "DESIGN", "BUILD", "SCALE"];
+import { motion, AnimatePresence } from 'framer-motion';
+import { PenTool, Layers, Layout, Palette } from 'lucide-react';
 
 const Preloader = ({ onComplete }) => {
-    const [index, setIndex] = useState(0);
+    const [step, setStep] = useState(0);
 
     useEffect(() => {
-        if (index === words.length - 1) return;
-        const timeout = setTimeout(() => {
-            setIndex((prev) => prev + 1);
-        }, index === 0 ? 800 : 180); // Initial delay, then fast cycle
+        const timer = setInterval(() => {
+            setStep((prev) => {
+                if (prev >= 4) {
+                    clearInterval(timer);
+                    setTimeout(onComplete, 600);
+                    return prev;
+                }
+                return prev + 1;
+            });
+        }, 400);
 
-        return () => clearTimeout(timeout);
-    }, [index]);
+        return () => clearInterval(timer);
+    }, [onComplete]);
 
-    useEffect(() => {
-        if (index === words.length - 1) {
-            const timer = setTimeout(() => {
-                onComplete();
-            }, 500);
-            return () => clearTimeout(timer);
-        }
-    }, [index, onComplete]);
-
-    const slideUp = {
-        initial: { y: 0 },
-        exit: { y: "-100%", transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } }
-    };
-
-    const slideDown = {
-        initial: { y: 0 },
-        exit: { y: "100%", transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } }
+    const draw = {
+        hidden: { pathLength: 0, opacity: 0 },
+        visible: (i) => ({
+            pathLength: 1,
+            opacity: 1,
+            transition: {
+                pathLength: { delay: i * 0.1, type: "spring", duration: 0.5, bounce: 0 },
+                opacity: { delay: i * 0.1, duration: 0.01 }
+            }
+        })
     };
 
     return (
         <motion.div
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            className="fixed inset-0 z-[9999] flex flex-col pointer-events-none font-sans cursor-wait"
+            initial={{ opacity: 1 }}
+            exit={{ y: "-100%", transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } }}
+            className="fixed inset-0 z-[9999] bg-[#0A0A0A] flex flex-col items-center justify-center font-sans text-white cursor-wait"
         >
-            {/* Top Shutter */}
-            <motion.div variants={slideUp} className="relative w-full h-1/2 bg-[#0a0a0a] flex items-end justify-center z-20 border-b border-white/5">
-            </motion.div>
+            <div className="relative w-32 h-32 md:w-48 md:h-48 mb-12">
+                {/* Abstract Design Grid/Wireframe Animation */}
+                <svg viewBox="0 0 100 100" className="w-full h-full stroke-white stroke-[1.5] fill-none stroke-linecap-round stroke-linejoin-round">
+                    {/* 1. Frame */}
+                    <motion.rect
+                        x="10" y="10" width="80" height="80" rx="4"
+                        initial="hidden" animate={step >= 1 ? "visible" : "hidden"} variants={draw} custom={0}
+                    />
 
-            {/* Bottom Shutter */}
-            <motion.div variants={slideDown} className="relative w-full h-1/2 bg-[#0a0a0a] flex items-start justify-center z-20 border-t border-white/5">
-            </motion.div>
+                    {/* 2. Header / Nav */}
+                    <motion.line
+                        x1="10" y1="30" x2="90" y2="30"
+                        initial="hidden" animate={step >= 2 ? "visible" : "hidden"} variants={draw} custom={1}
+                    />
 
-            {/* Centered Content Overlay */}
-            <motion.div
-                className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
-                initial={{ opacity: 1 }}
-                exit={{ opacity: 0, transition: { duration: 0.3 } }}
-            >
-                <div className="flex items-center gap-4 overflow-hidden h-[100px] md:h-[150px]">
-                    <motion.p
-                        key={index}
-                        initial={{ y: "100%" }}
-                        animate={{ y: "0%" }}
-                        exit={{ y: "-100%" }}
-                        transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
-                        className="text-5xl md:text-8xl font-black tracking-tighter text-white"
-                    >
-                        {words[index]}
-                    </motion.p>
-                    <span className="text-5xl md:text-8xl font-black text-primary">.</span>
-                </div>
-            </motion.div>
+                    {/* 3. Hero Section / Image Placeholders */}
+                    <motion.rect
+                        x="20" y="40" width="25" height="25" rx="2"
+                        initial="hidden" animate={step >= 3 ? "visible" : "hidden"} variants={draw} custom={2}
+                    />
+                    <motion.rect
+                        x="55" y="40" width="25" height="25" rx="2"
+                        initial="hidden" animate={step >= 3 ? "visible" : "hidden"} variants={draw} custom={3}
+                    />
+
+                    {/* 4. Text Lines / Details */}
+                    <motion.line
+                        x1="20" y1="75" x2="80" y2="75"
+                        initial="hidden" animate={step >= 4 ? "visible" : "hidden"} variants={draw} custom={4}
+                    />
+                </svg>
+
+                {/* Floating Tool Icons - Decorative */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={step >= 1 ? { opacity: 1, scale: 1, x: -40, y: -20 } : {}}
+                    className="absolute top-0 right-0 text-purple-400"
+                >
+                    <PenTool size={24} />
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={step >= 3 ? { opacity: 1, scale: 1, x: 40, y: 20 } : {}}
+                    className="absolute bottom-0 left-0 text-orange-400"
+                >
+                    <Palette size={24} />
+                </motion.div>
+            </div>
+
+            {/* Loading Text */}
+            <div className="h-8 overflow-hidden flex flex-col items-center justify-start">
+                <AnimatePresence mode="popLayout">
+                    {step === 0 && <motion.p key="start" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-gray-500 font-mono text-sm tracking-[0.2em] uppercase">Initializing...</motion.p>}
+                    {step === 1 && <motion.p key="grid" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-gray-500 font-mono text-sm tracking-[0.2em] uppercase">Building Grid...</motion.p>}
+                    {step === 2 && <motion.p key="layout" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-gray-500 font-mono text-sm tracking-[0.2em] uppercase">Defining Layout...</motion.p>}
+                    {step === 3 && <motion.p key="assets" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-gray-500 font-mono text-sm tracking-[0.2em] uppercase">Vectorizing Assets...</motion.p>}
+                    {step === 4 && <motion.p key="polish" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-white font-mono text-sm tracking-[0.2em] uppercase font-bold">Rendering Pixel Perfect.</motion.p>}
+                </AnimatePresence>
+            </div>
         </motion.div>
     );
 };
