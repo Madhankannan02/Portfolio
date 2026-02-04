@@ -1,85 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+const words = ["THINK", "DESIGN", "BUILD", "SCALE"];
+
 const Preloader = ({ onComplete }) => {
-    const [count, setCount] = useState(0);
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setCount((prev) => {
-                if (prev === 100) {
-                    clearInterval(timer);
-                    setTimeout(onComplete, 800);
-                    return 100;
-                }
-                return prev + 1;
-            });
-        }, 20);
+        if (index === words.length - 1) return;
+        const timeout = setTimeout(() => {
+            setIndex((prev) => prev + 1);
+        }, index === 0 ? 1000 : 250); // Initial delay, then fast cycle
 
-        return () => clearInterval(timer);
-    }, [onComplete]);
+        return () => clearTimeout(timeout);
+    }, [index]);
+
+    useEffect(() => {
+        if (index === words.length - 1) {
+            const timer = setTimeout(() => {
+                onComplete();
+            }, 800);
+            return () => clearTimeout(timer);
+        }
+    }, [index, onComplete]);
+
+    const slideUp = {
+        initial: { y: 0 },
+        exit: { y: "-100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }
+    };
+
+    const slideDown = {
+        initial: { y: 0 },
+        exit: { y: "100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }
+    };
 
     return (
         <motion.div
-            initial={{ y: 0 }}
-            exit={{ y: '-100%' }}
-            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[9999] bg-[#0a0a0a] text-white flex flex-col justify-between p-6 md:p-12 font-sans"
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className="fixed inset-0 z-[9999] flex flex-col pointer-events-none font-sans cursor-wait"
         >
-            {/* Top Bar */}
-            <div className="flex justify-between items-start overflow-hidden">
-                <motion.div
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                    <span className="text-xs md:text-sm font-mono text-gray-500 uppercase tracking-widest">Madhan Kannan</span>
-                </motion.div>
-                <motion.div
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                    <span className="text-xs md:text-sm font-mono text-gray-500 uppercase tracking-widest">Portfolio 2026</span>
-                </motion.div>
-            </div>
+            {/* Top Shutter */}
+            <motion.div variants={slideUp} className="relative w-full h-1/2 bg-[#0a0a0a] flex items-end justify-center z-20 border-b border-white/5">
+            </motion.div>
 
-            {/* Center Content - Counter */}
-            <div className="flex flex-col items-center justify-center relative">
-                <motion.h1
-                    className="text-[15vw] md:text-[12vw] font-bold leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-600"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    {count}
-                </motion.h1>
-                <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: "100px" }}
-                    className="h-1 bg-white mt-4 md:mt-8"
-                />
-            </div>
+            {/* Bottom Shutter */}
+            <motion.div variants={slideDown} className="relative w-full h-1/2 bg-[#0a0a0a] flex items-start justify-center z-20 border-t border-white/5">
+            </motion.div>
 
-            {/* Bottom Bar */}
-            <div className="flex justify-between items-end overflow-hidden">
-                <motion.div
-                    initial={{ y: "-100%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className=" hidden md:block"
-                >
-                    <span className="text-xs md:text-sm font-mono text-gray-500 uppercase tracking-widest">Creating Digital Experiences</span>
-                </motion.div>
-
-                <motion.div
-                    initial={{ y: "-100%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                    <span className="text-xs md:text-sm font-mono text-gray-500 uppercase tracking-widest">Loading...</span>
-                </motion.div>
-            </div>
+            {/* Centered Content Overlay */}
+            <motion.div
+                className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
+                initial={{ opacity: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
+            >
+                <div className="flex items-center gap-4 overflow-hidden h-[100px] md:h-[150px]">
+                    <motion.p
+                        key={index}
+                        initial={{ y: "100%" }}
+                        animate={{ y: "0%" }}
+                        exit={{ y: "-100%" }}
+                        transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+                        className="text-5xl md:text-8xl font-black tracking-tighter text-white"
+                    >
+                        {words[index]}
+                    </motion.p>
+                    <span className="text-5xl md:text-8xl font-black text-primary">.</span>
+                </div>
+            </motion.div>
         </motion.div>
     );
 };
