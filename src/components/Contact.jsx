@@ -12,7 +12,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.6 }}
                     className="space-y-4"
                 >
                     <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
@@ -27,7 +27,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.1 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
                     className="text-xl text-gray-400 max-w-lg"
                 >
                     I am currently available for freelance projects and designs.
@@ -38,7 +38,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.15 }}
+                    transition={{ duration: 0.6, delay: 0.15 }}
                     className="pt-8"
                 >
                     <a href="mailto:madhankannan29@gmail.com" className="text-lg sm:text-2xl md:text-4xl font-bold border-b-2 border-white/20 hover:border-primary hover:text-primary transition-colors pb-2 break-all sm:break-normal">

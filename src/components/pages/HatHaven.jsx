@@ -21,7 +21,7 @@ import Mockup1 from '../../assets/images/hathaven-slides/mockup1.svg';
 import Mockup2 from '../../assets/images/hathaven-slides/mockup2.svg';
 
 
-const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
+const FadeIn = ({ children, delay = 0, y = 20, className = "" }) => (
     <motion.div
         initial={{ opacity: 0, y }}
         whileInView={{ opacity: 1, y: 0 }}

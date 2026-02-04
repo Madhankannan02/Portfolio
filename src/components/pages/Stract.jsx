@@ -15,12 +15,12 @@ import LandingPageLight from '../../assets/images/stract-slides/Landing page lig
 
 
 
-const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
+const FadeIn = ({ children, delay = 0, y = 20, className = "" }) => (
     <motion.div
         initial={{ opacity: 0, y }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.5, delay, ease: "easeOut" }}
+        transition={{ duration: 0.6, delay, ease: "easeOut" }}
         className={className}
     >
         {children}

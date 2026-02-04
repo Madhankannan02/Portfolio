@@ -25,7 +25,7 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.6 }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
                 >
                     <span className="relative flex h-2 w-2">
@@ -45,7 +45,7 @@ const Hero = () => {
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
                     className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed"
                 >
                     Hi, I am Madhan Kannan. I craft aesthetically pleasing and highly functional user interfaces that drive business growth and user satisfaction.
@@ -54,7 +54,7 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.15 }}
+                    transition={{ duration: 0.6, delay: 0.15 }}
                     className="flex flex-col sm:flex-row items-center gap-4 pt-4"
                 >
                     <a

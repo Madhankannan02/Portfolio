@@ -20,7 +20,7 @@ import SearchPage from '../../assets/images/butcherbox-slides/Search Page High F
 import CartPage from '../../assets/images/butcherbox-slides/Cart Page High Fi.png';
 import CheckoutPage from '../../assets/images/butcherbox-slides/Checkout Page High Fi.png';
 
-const FadeIn = ({ children, delay = 0, y = 30, className = "" }) => (
+const FadeIn = ({ children, delay = 0, y = 20, className = "" }) => (
     <motion.div
         initial={{ opacity: 0, y }}
         whileInView={{ opacity: 1, y: 0 }}

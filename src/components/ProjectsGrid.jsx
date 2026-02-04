@@ -24,19 +24,19 @@ const ProjectsGrid = () => {
             <section id="work" className="py-24">
                 <div className="space-y-4 mb-16">
                     <motion.h2
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4 }}
+                        transition={{ duration: 0.6 }}
                         className="text-sm font-semibold text-primary uppercase tracking-widest"
                     >
                         Selected Work
                     </motion.h2>
                     <motion.h3
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 0.1 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-3xl md:text-5xl font-bold"
                     >
                         Crafting digital perfection.
