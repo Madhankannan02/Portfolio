@@ -2,8 +2,7 @@
 
 A high-performance, aesthetically pleasing portfolio website designed to showcase premium UI/UX work. Built with **React** and **Framer Motion**, this project emphasizes smooth transitions, unified animation timing, and a "luxury minimalist" design philosophy.
 
-![Portfolio Preview](src/assets/images/hathaven-slides/Hero.svg) 
-*(Note: Replace with actual screenshot path if available)*
+![Portfolio Preview](src/assets/images/portfolio-preview.png)
 
 ## 🚀 Key Features
 
