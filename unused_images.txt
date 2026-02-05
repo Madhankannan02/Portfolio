@@ -1,0 +1,36 @@
+src\assets\images\butcherbox-slides\Cart Page High Fi.svg
+src\assets\images\butcherbox-slides\Checkout Page High Fi.svg
+src\assets\images\butcherbox-slides\Landing Page HighFi.svg
+src\assets\images\butcherbox-slides\Product Page High Fi.svg
+src\assets\images\butcherbox-slides\Search Page High Fi.svg
+src\assets\images\general\Butcher Box Hero.webp
+src\assets\images\general\butcherbox-projectcard.webp
+src\assets\images\general\Group 74 1.webp
+src\assets\images\general\Hathaven Hero.webp
+src\assets\images\general\hathaven-projectcard.webp
+src\assets\images\general\react.svg
+src\assets\images\general\Stract Hero.webp
+src\assets\images\general\Tital Storage hero.webp
+src\assets\images\hathaven-slides\Character overlay.svg
+src\assets\images\stract-slides\CRM page dark.png
+src\assets\images\stract-slides\CRM page dark.svg
+src\assets\images\stract-slides\CRM page light.png
+src\assets\images\stract-slides\CRM page light.svg
+src\assets\images\stract-slides\ERP Page dark.png
+src\assets\images\stract-slides\ERP Page dark.svg
+src\assets\images\stract-slides\ERP page light.png
+src\assets\images\stract-slides\ERP page light.svg
+src\assets\images\stract-slides\first mockup.svg
+src\assets\images\stract-slides\Landing page dark theme.svg
+src\assets\images\stract-slides\Landing page light theme.svg
+src\assets\images\stract-slides\mockup 6.webp
+src\assets\images\stract-slides\mockup 7.webp
+src\assets\images\titan-storage-slide\About us.svg
+src\assets\images\titan-storage-slide\first image background.svg
+src\assets\images\titan-storage-slide\first image laptop.svg
+src\assets\images\titan-storage-slide\First image mockup.svg
+src\assets\images\titan-storage-slide\fourth mockup.svg
+src\assets\images\titan-storage-slide\hero-section.svg
+src\assets\images\titan-storage-slide\HomeScreen.svg
+src\assets\images\titan-storage-slide\second mockup.svg
+src\assets\images\titan-storage-slide\Services.svg
