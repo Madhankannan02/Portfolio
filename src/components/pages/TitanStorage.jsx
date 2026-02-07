@@ -45,7 +45,7 @@ export default function TitanStorage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.0, ease: "easeOut" }}
-                    className="absolute inset-0 z-0 bg-gradient-to-b from-[#181A1A] via-[#1E1E1E] to-[#FF7420]/20"
+                    className="absolute inset-0 z-0 bg-gradient-to-b from-[#181A1A] via-[#1E1E1E] to-[#1F1F1F]/20"
                 >
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-800/20 via-[#181A1A] to-[#181A1A] opacity-70" />
                 </motion.div>
