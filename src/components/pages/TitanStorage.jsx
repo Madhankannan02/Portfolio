@@ -8,7 +8,7 @@ import { ArrowDown } from 'lucide-react';
 // Assets
 import HeroImage from '../../assets/images/titan-storage-slide/HomeScreen.webp';
 import HeroLaptop from '../../assets/images/titan-storage-slide/herosection-laptop.webp';
-import SecondMockup from '../../assets/images/titan-storage-slide/second mockup.webp';
+import SecondMockup from '../../assets/images/titan-storage-slide/second mockup2.webp';
 import JoelAvatar from '../../assets/images/generated/joel_k_avatar_1769328668647.webp';
 import AboutUsImage from '../../assets/images/titan-storage-slide/About us.webp';
 import ServicesImage from '../../assets/images/titan-storage-slide/Services.webp';
