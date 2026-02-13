@@ -9,6 +9,7 @@ import Preloader from './components/Preloader';
 // Lazy Load Components
 const ProjectsGrid = lazy(() => import('./components/ProjectsGrid'));
 const Contact = lazy(() => import('./components/Contact'));
+const WorkExperience = lazy(() => import('./components/WorkExperience'));
 const HatHaven = lazy(() => import('./components/pages/HatHaven'));
 const TitanStorage = lazy(() => import('./components/pages/TitanStorage'));
 const ButcherBox = lazy(() => import('./components/pages/ButcherBox'));
@@ -41,6 +42,7 @@ function App() {
                   <Hero />
                   <Suspense fallback={<div className="min-h-screen" />}>
                     <ProjectsGrid />
+                    <WorkExperience />
                     <Contact />
                   </Suspense>
                 </Layout>
