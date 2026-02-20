@@ -1,5 +1,12 @@
 export const experiences = [
     {
+        id: 4,
+        role: "UI/UX Designer & Front-End Developer",
+        company: "ALF_inIT",
+        period: "Feb 2025 - Present",
+        description: "Working on websites for companies present in Gulf countries."
+    },
+    {
         id: 1,
         role: "UI/UX Designer",
         company: "Nulinz Technology",
