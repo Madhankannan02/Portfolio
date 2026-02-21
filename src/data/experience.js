@@ -4,7 +4,7 @@ export const experiences = [
         role: "UI/UX Designer & Front-End Developer",
         company: "ALF_inIT",
         period: "Feb 2025 - Present",
-        description: "Working on websites for companies present in Gulf countries."
+        description: "Leading the UI/UX strategy and front-end development for international enterprises across the Gulf region. Focused on architecting premium, user-centric web platforms that bridge the gap between sophisticated industrial design and high-performance technical execution."
     },
     {
         id: 1,
