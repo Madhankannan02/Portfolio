@@ -35,6 +35,13 @@ import realEstatePost from '../assets/images/social-media-posts/Real Estate.png'
 import travelPost from '../assets/images/social-media-posts/Travel Company.png';
 import lemonSodaPost from '../assets/images/social-media-posts/Lemon Soda.png';
 
+// Product Poster Imports
+import beautyCreamPoster from '../assets/images/product-poster/Beauty Cream.png';
+import jewelPoster from '../assets/images/product-poster/Jewel.png';
+import oatsPoster from '../assets/images/product-poster/Oats Design.png';
+import shoePoster from '../assets/images/product-poster/Shoe.png';
+import watchPoster from '../assets/images/product-poster/Watch.png';
+
 export const projects = [
     {
         id: 1,
@@ -163,5 +170,65 @@ export const projects = [
         link: lemonSodaPost,
         category: 'graphic-design',
         subCategory: 'social-media'
+    },
+    {
+        id: 11,
+        title: "Beauty Cream Poster",
+        description: "An elegant, minimalist product poster design emphasizing the premium qualities of a luxurious beauty cream.",
+        tags: ["Graphic Design", "Beauty", "Poster"],
+        image: {
+            src: beautyCreamPoster
+        },
+        link: beautyCreamPoster,
+        category: 'graphic-design',
+        subCategory: 'product-poster'
+    },
+    {
+        id: 12,
+        title: "Jewelry Poster",
+        description: "A sophisticated product poster emphasizing intricate jewelry details, styled for high-end fashion and elegance.",
+        tags: ["Graphic Design", "Jewelry", "Poster"],
+        image: {
+            src: jewelPoster
+        },
+        link: jewelPoster,
+        category: 'graphic-design',
+        subCategory: 'product-poster'
+    },
+    {
+        id: 13,
+        title: "Oats Design Poster",
+        description: "A wholesome, vibrant product poster layout for organic oats, perfectly capturing modern health and lifestyle vibes.",
+        tags: ["Graphic Design", "Food & Bev", "Packaging"],
+        image: {
+            src: oatsPoster
+        },
+        link: oatsPoster,
+        category: 'graphic-design',
+        subCategory: 'product-poster'
+    },
+    {
+        id: 14,
+        title: "Shoe Poster",
+        description: "A dynamic and heavily stylized product poster for athletic footwear showcasing modern style and motion.",
+        tags: ["Graphic Design", "Footwear", "Apparel"],
+        image: {
+            src: shoePoster
+        },
+        link: shoePoster,
+        category: 'graphic-design',
+        subCategory: 'product-poster'
+    },
+    {
+        id: 15,
+        title: "Premium Watch Poster",
+        description: "A sleek, cinematic poster design highlighting the timeless craftsmanship of a luxury timepiece.",
+        tags: ["Graphic Design", "Watches", "Luxury"],
+        image: {
+            src: watchPoster
+        },
+        link: watchPoster,
+        category: 'graphic-design',
+        subCategory: 'product-poster'
     }
 ];
