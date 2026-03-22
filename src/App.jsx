@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/ScrollToTop';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
@@ -53,6 +54,7 @@ function App() {
               <Route path="/stract" element={<Stract />} />
             </Routes>
           </Suspense>
+          <Analytics />
         </>
       )}
     </>
