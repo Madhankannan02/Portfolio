@@ -7,6 +7,7 @@ import { projects } from '../data/projects';
 
 const ProjectsGrid = () => {
     const [selectedProject, setSelectedProject] = useState(null);
+    const [activeCategory, setActiveCategory] = useState('ui-ux');
     const navigate = useNavigate();
 
     const handleProjectClick = (project) => {
@@ -43,16 +44,82 @@ const ProjectsGrid = () => {
                     </motion.h3>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-y-24">
-                    {projects.map((project, index) => (
-                        <ProjectCard
-                            key={project.id}
-                            project={project}
-                            index={index}
-                            onClick={handleProjectClick}
-                        />
-                    ))}
-                </div>
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="flex flex-wrap gap-4 mb-12"
+                >
+                    <button
+                        onClick={() => setActiveCategory('ui-ux')}
+                        className={`px-6 py-2 rounded-full border text-sm md:text-base transition-all duration-300 ${
+                            activeCategory === 'ui-ux' 
+                                ? 'bg-white border-white text-black font-semibold' 
+                                : 'border-white/20 text-white/70 hover:border-white/40 hover:text-white'
+                        }`}
+                    >
+                        UI/UX Design
+                    </button>
+                    <button
+                        onClick={() => setActiveCategory('graphic-design')}
+                        className={`px-6 py-2 rounded-full border text-sm md:text-base transition-all duration-300 ${
+                            activeCategory === 'graphic-design' 
+                                ? 'bg-white border-white text-black font-semibold' 
+                                : 'border-white/20 text-white/70 hover:border-white/40 hover:text-white'
+                        }`}
+                    >
+                        Graphic Design
+                    </button>
+                </motion.div>
+
+                <motion.div 
+                    layout
+                    className={activeCategory === 'ui-ux' ? "grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-y-24" : "columns-1 md:columns-2 lg:columns-3 gap-8 block"}
+                >
+                    <AnimatePresence mode="popLayout">
+                        {projects.filter(p => p.category === activeCategory).map((project, index) => (
+                            <motion.div
+                                key={project.id}
+                                layout
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{ duration: 0.3 }}
+                                className={activeCategory === 'graphic-design' ? "break-inside-avoid mb-8" : ""}
+                            >
+                                {activeCategory === 'graphic-design' ? (
+                                    <div className="relative rounded-2xl overflow-hidden group">
+                                        <img 
+                                            src={project.image.src} 
+                                            alt={project.title} 
+                                            className="w-full h-auto block object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                            loading="lazy"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
+                                            <div>
+                                                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                                                <p className="text-sm text-gray-300 line-clamp-2">{project.description}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <ProjectCard
+                                        project={project}
+                                        index={index}
+                                        onClick={handleProjectClick}
+                                    />
+                                )}
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                    
+                    {projects.filter(p => p.category === activeCategory).length === 0 && (
+                        <div className="col-span-1 md:col-span-2 py-24 text-center text-white/50">
+                            <p className="text-xl">More projects coming soon.</p>
+                        </div>
+                    )}
+                </motion.div>
             </section>
 
             <AnimatePresence>
