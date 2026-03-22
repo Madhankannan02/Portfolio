@@ -73,53 +73,125 @@ const ProjectsGrid = () => {
                     </button>
                 </motion.div>
 
-                <motion.div 
-                    layout
-                    className={activeCategory === 'ui-ux' ? "grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-y-24" : "columns-1 md:columns-2 lg:columns-3 gap-8 block"}
-                >
-                    <AnimatePresence mode="popLayout">
-                        {projects.filter(p => p.category === activeCategory).map((project, index) => (
-                            <motion.div
-                                key={project.id}
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                                className={activeCategory === 'graphic-design' ? "break-inside-avoid mb-8" : ""}
-                            >
-                                {activeCategory === 'graphic-design' ? (
-                                    <div className="relative rounded-2xl overflow-hidden group">
-                                        <img 
-                                            src={project.image.src} 
-                                            alt={project.title} 
-                                            className="w-full h-auto block object-cover transform transition-transform duration-700 group-hover:scale-105"
-                                            loading="lazy"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
-                                            <div>
-                                                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                                                <p className="text-sm text-gray-200">{project.description}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ) : (
+                <AnimatePresence mode="wait">
+                    {activeCategory === 'ui-ux' && (
+                        <motion.div 
+                            key="ui-ux"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.4 }}
+                            className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-y-24"
+                        >
+                            {projects.filter(p => p.category === 'ui-ux').map((project, index) => (
+                                <motion.div
+                                    key={project.id}
+                                    layout
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                                >
                                     <ProjectCard
                                         project={project}
                                         index={index}
                                         onClick={handleProjectClick}
                                     />
-                                )}
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                    
-                    {projects.filter(p => p.category === activeCategory).length === 0 && (
-                        <div className="col-span-1 md:col-span-2 py-24 text-center text-white/50">
-                            <p className="text-xl">More projects coming soon.</p>
-                        </div>
+                                </motion.div>
+                            ))}
+                            
+                            {projects.filter(p => p.category === 'ui-ux').length === 0 && (
+                                <div className="col-span-1 md:col-span-2 py-24 text-center text-white/50">
+                                    <p className="text-xl">More projects coming soon.</p>
+                                </div>
+                            )}
+                        </motion.div>
                     )}
-                </motion.div>
+
+                    {activeCategory === 'graphic-design' && (
+                        <motion.div 
+                            key="graphic-design"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.4 }}
+                            className="space-y-24"
+                        >
+                            <div>
+                                <h4 className="text-2xl md:text-3xl font-bold mb-8 text-white border-b border-white/10 pb-4">Social Media Post Design</h4>
+                                {projects.filter(p => p.category === 'graphic-design' && p.subCategory === 'social-media').length > 0 ? (
+                                    <div className="columns-1 md:columns-2 lg:columns-3 gap-8 block">
+                                        {projects.filter(p => p.category === 'graphic-design' && p.subCategory === 'social-media').map((project, index) => (
+                                            <motion.div
+                                                key={project.id}
+                                                layout
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                                                className="break-inside-avoid mb-8"
+                                            >
+                                                <div className="relative rounded-2xl overflow-hidden group">
+                                                    <img 
+                                                        src={project.image.src} 
+                                                        alt={project.title} 
+                                                        className="w-full h-auto block object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                        loading="lazy"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
+                                                        <div>
+                                                            <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                                                            <p className="text-sm text-gray-200">{project.description}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="py-12 text-center text-white/50 bg-white/5 rounded-2xl border border-white/10">
+                                        <p className="text-xl">More projects coming soon.</p>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div>
+                                <h4 className="text-2xl md:text-3xl font-bold mb-8 text-white border-b border-white/10 pb-4">Product Poster Design</h4>
+                                {projects.filter(p => p.category === 'graphic-design' && p.subCategory === 'product-poster').length > 0 ? (
+                                    <div className="columns-1 md:columns-2 lg:columns-3 gap-8 block">
+                                        {projects.filter(p => p.category === 'graphic-design' && p.subCategory === 'product-poster').map((project, index) => (
+                                            <motion.div
+                                                key={project.id}
+                                                layout
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                                                className="break-inside-avoid mb-8"
+                                            >
+                                                <div className="relative rounded-2xl overflow-hidden group">
+                                                    <img 
+                                                        src={project.image.src} 
+                                                        alt={project.title} 
+                                                        className="w-full h-auto block object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                        loading="lazy"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
+                                                        <div>
+                                                            <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                                                            <p className="text-sm text-gray-200">{project.description}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="py-12 text-center text-white/50 bg-white/5 rounded-2xl border border-white/10">
+                                        <p className="text-xl">More projects coming soon.</p>
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </section>
 
             <AnimatePresence>

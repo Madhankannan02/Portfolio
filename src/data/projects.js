@@ -101,7 +101,8 @@ export const projects = [
             src: constructionPost
         },
         link: constructionPost,
-        category: 'graphic-design'
+        category: 'graphic-design',
+        subCategory: 'social-media'
     },
     {
         id: 6,
@@ -112,7 +113,8 @@ export const projects = [
             src: institutePost
         },
         link: institutePost,
-        category: 'graphic-design'
+        category: 'graphic-design',
+        subCategory: 'social-media'
     },
     {
         id: 7,
@@ -123,7 +125,8 @@ export const projects = [
             src: pizzaPost
         },
         link: pizzaPost,
-        category: 'graphic-design'
+        category: 'graphic-design',
+        subCategory: 'social-media'
     },
     {
         id: 8,
@@ -134,7 +137,8 @@ export const projects = [
             src: realEstatePost
         },
         link: realEstatePost,
-        category: 'graphic-design'
+        category: 'graphic-design',
+        subCategory: 'social-media'
     },
     {
         id: 9,
@@ -145,7 +149,8 @@ export const projects = [
             src: travelPost
         },
         link: travelPost,
-        category: 'graphic-design'
+        category: 'graphic-design',
+        subCategory: 'social-media'
     },
     {
         id: 10,
@@ -156,6 +161,7 @@ export const projects = [
             src: lemonSodaPost
         },
         link: lemonSodaPost,
-        category: 'graphic-design'
+        category: 'graphic-design',
+        subCategory: 'social-media'
     }
 ];
