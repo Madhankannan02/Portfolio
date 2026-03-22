@@ -96,10 +96,10 @@ const ProjectsGrid = () => {
                                             className="w-full h-auto block object-cover transform transition-transform duration-700 group-hover:scale-105"
                                             loading="lazy"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
                                             <div>
                                                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                                                <p className="text-sm text-gray-300 line-clamp-2">{project.description}</p>
+                                                <p className="text-sm text-gray-200">{project.description}</p>
                                             </div>
                                         </div>
                                     </div>
