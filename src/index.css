@@ -1,21 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0a0a0a;
-  --color-surface: #121212;
-  --color-primary: #3b82f6;
-  --color-secondary: #64748b;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-primary: #CFFFEF;
+  --color-background: #F8FFFD;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #0B1F1A;
+  --color-text-secondary: #5F7D76;
+  --color-border: #DFF7F1;
+  --color-hover: #A8F5E0;
+  
+  --font-brand: 'Satoshi', sans-serif;
+  --font-ui: 'Inter', sans-serif;
+
+  --radius-button: 10px;
+  --radius-card: 12px;
+
+  --shadow-card: 0px 4px 12px rgba(11, 31, 26, 0.03);
 }
 
 :root {
-  font-family: var(--font-sans);
+  font-family: var(--font-ui);
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: #fff;
-  background-color: #0f0f0f;
+  color-scheme: light;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+
+  /* Spacing Scale (8pt grid) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
 }
 
 body {
@@ -25,8 +44,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: var(--color-background);
-  color: #fff;
-  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
   -moz-osx-font-smoothing: grayscale;
 }
 

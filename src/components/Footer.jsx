@@ -23,16 +23,16 @@ const Behance = ({ size = 20, className }) => (
 
 const Footer = () => {
     return (
-        <footer className="py-8 mt-20 border-t border-white/5">
+        <footer className="py-8 mt-20 border-t border-border">
             <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p className="text-gray-500 text-sm">
+                <p className="text-text-secondary font-ui text-sm">
                     © {new Date().getFullYear()} Madhan Kannan. All rights reserved.
                 </p>
 
                 <div className="flex items-center gap-6">
-                    <a href="https://www.linkedin.com/in/madhankannan/" target='_blank' className="text-gray-500 hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin size={20} /></a>
-                    <a href="https://github.com/Madhankannan02" target='_blank' className="text-gray-500 hover:text-white transition-colors" aria-label="GitHub"><Github size={20} /></a>
-                    <a href="https://www.behance.net/madhankannan" target='_blank' className="text-gray-500 hover:text-white transition-colors" aria-label="Behance"><Behance size={20} /></a>
+                    <a href="https://www.linkedin.com/in/madhankannan/" target='_blank' className="text-text-secondary hover:text-text-primary transition-colors" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                    <a href="https://github.com/Madhankannan02" target='_blank' className="text-text-secondary hover:text-text-primary transition-colors" aria-label="GitHub"><Github size={20} /></a>
+                    <a href="https://www.behance.net/madhankannan" target='_blank' className="text-text-secondary hover:text-text-primary transition-colors" aria-label="Behance"><Behance size={20} /></a>
                 </div>
             </div>
         </footer>

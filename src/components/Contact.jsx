@@ -15,10 +15,10 @@ const Contact = () => {
                     transition={{ duration: 0.6 }}
                     className="space-y-4"
                 >
-                    <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+                    <h2 className="text-5xl md:text-7xl font-brand font-medium tracking-tight text-text-primary">
                         Have an idea?
                     </h2>
-                    <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-500">
+                    <h2 className="text-5xl md:text-7xl font-brand font-medium tracking-tight text-text-secondary">
                         Let's build it.
                     </h2>
                 </motion.div>
@@ -28,7 +28,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-xl text-gray-400 max-w-lg"
+                    className="text-xl text-text-secondary font-ui max-w-lg"
                 >
                     I am currently available for freelance projects and designs.
                     Reach out if you want to collaborate.
@@ -41,7 +41,7 @@ const Contact = () => {
                     transition={{ duration: 0.6, delay: 0.15 }}
                     className="pt-8"
                 >
-                    <a href="mailto:madhankannan29@gmail.com" className="text-lg sm:text-2xl md:text-4xl font-bold border-b-2 border-white/20 hover:border-primary hover:text-primary transition-colors pb-2 break-all sm:break-normal">
+                    <a href="mailto:madhankannan29@gmail.com" className="text-lg sm:text-2xl md:text-4xl font-brand font-medium border-b-2 border-border hover:border-primary hover:text-text-primary transition-colors pb-2 break-all sm:break-normal text-text-primary">
                         madhankannan29@gmail.com
                     </a>
                 </motion.div>

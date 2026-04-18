@@ -36,11 +36,11 @@ const Preloader = ({ onComplete }) => {
         <motion.div
             initial={{ opacity: 1 }}
             exit={{ y: "-100%", transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } }}
-            className="fixed inset-0 z-[9999] bg-[#0A0A0A] flex flex-col items-center justify-center font-sans text-white cursor-wait"
+            className="fixed inset-0 z-[9999] bg-background flex flex-col items-center justify-center font-ui text-text-primary cursor-wait"
         >
             <div className="relative w-32 h-32 md:w-48 md:h-48 mb-12">
                 {/* Abstract Design Grid/Wireframe Animation */}
-                <svg viewBox="0 0 100 100" className="w-full h-full stroke-white stroke-[1.5] fill-none stroke-linecap-round stroke-linejoin-round">
+                <svg viewBox="0 0 100 100" className="w-full h-full stroke-text-primary stroke-[1.5] fill-none stroke-linecap-round stroke-linejoin-round">
                     {/* 1. Frame */}
                     <motion.rect
                         x="10" y="10" width="80" height="80" rx="4"
@@ -74,14 +74,14 @@ const Preloader = ({ onComplete }) => {
                 <motion.div
                     initial={{ opacity: 0, scale: 0 }}
                     animate={step >= 1 ? { opacity: 1, scale: 1, x: -40, y: -20 } : {}}
-                    className="absolute top-0 right-0 text-purple-400"
+                    className="absolute top-0 right-0 text-text-secondary"
                 >
                     <PenTool size={24} />
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0 }}
                     animate={step >= 3 ? { opacity: 1, scale: 1, x: 40, y: 20 } : {}}
-                    className="absolute bottom-0 left-0 text-orange-400"
+                    className="absolute bottom-0 left-0 text-primary"
                 >
                     <Palette size={24} />
                 </motion.div>
@@ -90,11 +90,11 @@ const Preloader = ({ onComplete }) => {
             {/* Loading Text */}
             <div className="h-8 overflow-hidden flex flex-col items-center justify-start">
                 <AnimatePresence mode="popLayout">
-                    {step === 0 && <motion.p key="start" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-gray-500 font-mono text-sm tracking-[0.2em] uppercase">Initializing...</motion.p>}
-                    {step === 1 && <motion.p key="grid" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-gray-500 font-mono text-sm tracking-[0.2em] uppercase">Building Grid...</motion.p>}
-                    {step === 2 && <motion.p key="layout" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-gray-500 font-mono text-sm tracking-[0.2em] uppercase">Defining Layout...</motion.p>}
-                    {step === 3 && <motion.p key="assets" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-gray-500 font-mono text-sm tracking-[0.2em] uppercase">Vectorizing Assets...</motion.p>}
-                    {step === 4 && <motion.p key="polish" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-white font-mono text-sm tracking-[0.2em] uppercase font-bold">Rendering Pixel Perfect.</motion.p>}
+                    {step === 0 && <motion.p key="start" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-text-secondary font-ui text-sm tracking-[0.2em] uppercase">Initializing...</motion.p>}
+                    {step === 1 && <motion.p key="grid" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-text-secondary font-ui text-sm tracking-[0.2em] uppercase">Building Grid...</motion.p>}
+                    {step === 2 && <motion.p key="layout" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-text-secondary font-ui text-sm tracking-[0.2em] uppercase">Defining Layout...</motion.p>}
+                    {step === 3 && <motion.p key="assets" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-text-secondary font-ui text-sm tracking-[0.2em] uppercase">Vectorizing Assets...</motion.p>}
+                    {step === 4 && <motion.p key="polish" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} className="text-text-primary font-ui text-sm tracking-[0.2em] uppercase font-bold">Rendering Pixel Perfect.</motion.p>}
                 </AnimatePresence>
             </div>
         </motion.div>

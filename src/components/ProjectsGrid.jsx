@@ -29,7 +29,7 @@ const ProjectsGrid = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-sm font-semibold text-primary uppercase tracking-widest"
+                        className="text-sm font-ui font-semibold text-text-secondary uppercase tracking-widest"
                     >
                         Selected Work
                     </motion.h2>
@@ -38,7 +38,7 @@ const ProjectsGrid = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-bold"
+                        className="text-3xl md:text-5xl font-brand font-medium text-text-primary"
                     >
                         Crafting digital perfection.
                     </motion.h3>
@@ -53,20 +53,20 @@ const ProjectsGrid = () => {
                 >
                     <button
                         onClick={() => setActiveCategory('ui-ux')}
-                        className={`px-6 py-2 rounded-full border text-sm md:text-base transition-all duration-300 ${
+                        className={`px-6 py-2 rounded-[10px] border text-sm md:text-base transition-all duration-300 ${
                             activeCategory === 'ui-ux' 
-                                ? 'bg-white border-white text-black font-semibold' 
-                                : 'border-white/20 text-white/70 hover:border-white/40 hover:text-white'
+                                ? 'bg-primary border-primary text-text-primary font-semibold' 
+                                : 'border-border text-text-secondary hover:border-primary/40 hover:text-text-primary'
                         }`}
                     >
                         UI/UX Design
                     </button>
                     <button
                         onClick={() => setActiveCategory('graphic-design')}
-                        className={`px-6 py-2 rounded-full border text-sm md:text-base transition-all duration-300 ${
+                        className={`px-6 py-2 rounded-[10px] border text-sm md:text-base transition-all duration-300 ${
                             activeCategory === 'graphic-design' 
-                                ? 'bg-white border-white text-black font-semibold' 
-                                : 'border-white/20 text-white/70 hover:border-white/40 hover:text-white'
+                                ? 'bg-primary border-primary text-text-primary font-semibold' 
+                                : 'border-border text-text-secondary hover:border-primary/40 hover:text-text-primary'
                         }`}
                     >
                         Graphic Design
@@ -100,7 +100,7 @@ const ProjectsGrid = () => {
                             ))}
                             
                             {projects.filter(p => p.category === 'ui-ux').length === 0 && (
-                                <div className="col-span-1 md:col-span-2 py-24 text-center text-white/50">
+                                <div className="col-span-1 md:col-span-2 py-24 text-center text-text-secondary/50 font-ui">
                                     <p className="text-xl">More projects coming soon.</p>
                                 </div>
                             )}
@@ -117,7 +117,7 @@ const ProjectsGrid = () => {
                             className="space-y-24"
                         >
                             <div>
-                                <h4 className="text-2xl md:text-3xl font-bold mb-8 text-white border-b border-white/10 pb-4">Social Media Post Design</h4>
+                                <h4 className="text-2xl md:text-3xl font-brand font-medium mb-8 text-text-primary border-b border-border pb-4">Social Media Post Design</h4>
                                 {projects.filter(p => p.category === 'graphic-design' && p.subCategory === 'social-media').length > 0 ? (
                                     <div className="columns-1 md:columns-2 lg:columns-3 gap-8 block">
                                         {projects.filter(p => p.category === 'graphic-design' && p.subCategory === 'social-media').map((project, index) => (
@@ -136,10 +136,10 @@ const ProjectsGrid = () => {
                                                         className="w-full h-auto block object-cover transform transition-transform duration-700 group-hover:scale-105"
                                                         loading="lazy"
                                                     />
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-text-primary/95 via-text-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
                                                         <div>
-                                                            <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                                                            <p className="text-sm text-gray-200">{project.description}</p>
+                                                            <h3 className="text-xl font-brand font-medium text-white mb-2">{project.title}</h3>
+                                                            <p className="text-sm text-gray-200 font-ui">{project.description}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -147,14 +147,14 @@ const ProjectsGrid = () => {
                                         ))}
                                     </div>
                                 ) : (
-                                    <div className="py-12 text-center text-white/50 bg-white/5 rounded-2xl border border-white/10">
-                                        <p className="text-xl">More projects coming soon.</p>
+                                    <div className="py-12 text-center text-text-secondary/50 bg-primary/5 rounded-2xl border border-border">
+                                        <p className="text-xl font-ui">More projects coming soon.</p>
                                     </div>
                                 )}
                             </div>
 
                             <div>
-                                <h4 className="text-2xl md:text-3xl font-bold mb-8 text-white border-b border-white/10 pb-4">Product Poster Design</h4>
+                                <h4 className="text-2xl md:text-3xl font-brand font-medium mb-8 text-text-primary border-b border-border pb-4">Product Poster Design</h4>
                                 {projects.filter(p => p.category === 'graphic-design' && p.subCategory === 'product-poster').length > 0 ? (
                                     <div className="columns-1 md:columns-2 lg:columns-3 gap-8 block">
                                         {projects.filter(p => p.category === 'graphic-design' && p.subCategory === 'product-poster').map((project, index) => (
@@ -173,10 +173,10 @@ const ProjectsGrid = () => {
                                                         className="w-full h-auto block object-cover transform transition-transform duration-700 group-hover:scale-105"
                                                         loading="lazy"
                                                     />
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-text-primary/95 via-text-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
                                                         <div>
-                                                            <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                                                            <p className="text-sm text-gray-200">{project.description}</p>
+                                                            <h3 className="text-xl font-brand font-medium text-white mb-2">{project.title}</h3>
+                                                            <p className="text-sm text-gray-200 font-ui">{project.description}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -184,8 +184,8 @@ const ProjectsGrid = () => {
                                         ))}
                                     </div>
                                 ) : (
-                                    <div className="py-12 text-center text-white/50 bg-white/5 rounded-2xl border border-white/10">
-                                        <p className="text-xl">More projects coming soon.</p>
+                                    <div className="py-12 text-center text-text-secondary/50 bg-primary/5 rounded-2xl border border-border">
+                                        <p className="text-xl font-ui">More projects coming soon.</p>
                                     </div>
                                 )}
                             </div>
@@ -210,11 +210,11 @@ const ProjectsGrid = () => {
                             exit={{ scale: 0.9, opacity: 0 }}
                             transition={{ duration: 0.3 }}
                             onClick={(e) => e.stopPropagation()}
-                            className="relative max-w-5xl w-full max-h-[90vh] overflow-auto rounded-xl bg-surface border border-white/10 no-scrollbar"
+                            className="relative max-w-5xl w-full max-h-[90vh] overflow-auto rounded-[12px] bg-surface border border-border no-scrollbar"
                         >
                             <button
                                 onClick={() => setSelectedProject(null)}
-                                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-white/20 rounded-full text-white transition-colors z-10 backdrop-blur-md"
+                                className="absolute top-4 right-4 p-2 bg-text-primary/50 hover:bg-text-primary/70 rounded-full text-white transition-colors z-10 backdrop-blur-md"
                             >
                                 <X size={24} />
                             </button>

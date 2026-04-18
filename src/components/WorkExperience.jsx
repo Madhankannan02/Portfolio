@@ -11,7 +11,7 @@ const WorkExperience = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-sm font-semibold text-primary uppercase tracking-widest"
+                    className="text-sm font-ui font-semibold text-text-secondary uppercase tracking-widest"
                 >
                     Career History
                 </motion.h2>
@@ -20,7 +20,7 @@ const WorkExperience = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-3xl md:text-5xl font-bold"
+                    className="text-3xl md:text-5xl font-brand font-medium text-text-primary"
                 >
                     Experience & Roles.
                 </motion.h3>
@@ -34,15 +34,15 @@ const WorkExperience = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-12 py-8 border-t border-white/10 first:border-0"
+                        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-12 py-8 border-t border-border first:border-0"
                     >
                         <div className="space-y-2">
-                            <span className="text-gray-400 font-mono text-sm block">{exp.period}</span>
-                            <h4 className="text-xl md:text-2xl font-bold text-white">{exp.company}</h4>
+                            <span className="text-text-secondary font-ui text-sm block">{exp.period}</span>
+                            <h4 className="text-xl md:text-2xl font-brand font-medium text-text-primary">{exp.company}</h4>
                         </div>
                         <div className="space-y-4">
-                            <h5 className="text-lg font-semibold text-gray-200">{exp.role}</h5>
-                            <p className="text-gray-400 leading-relaxed max-w-2xl">
+                            <h5 className="text-lg font-ui font-semibold text-text-primary">{exp.role}</h5>
+                            <p className="text-text-secondary font-ui leading-relaxed max-w-2xl">
                                 {exp.description}
                             </p>
                         </div>
