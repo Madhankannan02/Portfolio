@@ -6,33 +6,43 @@ const Hero = () => {
     return (
         <section className="relative min-h-[90vh] flex flex-col justify-center items-center py-20 overflow-hidden">
 
-            {/* Premium Mesh Gradient Background */}
-            <div className="absolute inset-0 -z-10 overflow-hidden">
+            {/* Enhanced Mesh Gradient - High Visibility */}
+            <div className="absolute inset-0 -z-10 bg-background overflow-hidden">
+                {/* Core Atmospheric Glows */}
+                <motion.div
+                    animate={{
+                        x: ['-10%', '10%', '-10%'],
+                        y: ['-5%', '15%', '-5%'],
+                    }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-[10%] -left-[5%] w-[60%] h-[60%] bg-primary/40 rounded-full blur-[100px]"
+                />
+                <motion.div
+                    animate={{
+                        x: ['10%', '-10%', '10%'],
+                        y: ['5%', '-15%', '5%'],
+                    }}
+                    transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-[10%] right-[-5%] w-[50%] h-[50%] bg-hover/40 rounded-full blur-[80px]"
+                />
                 <motion.div
                     animate={{
                         scale: [1, 1.2, 1],
-                        x: [0, 50, 0],
-                        y: [0, 30, 0],
-                    }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/30 rounded-full blur-[120px]"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1.2, 1, 1.2],
-                        x: [0, -40, 0],
-                        y: [0, -50, 0],
                     }}
                     transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-[20%] -right-[10%] w-[35%] h-[45%] bg-hover/20 rounded-full blur-[100px]"
+                    className="absolute -bottom-[10%] left-[20%] w-[40%] h-[40%] bg-primary/30 rounded-full blur-[90px]"
                 />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.1, 0.2, 0.1],
+
+                {/* Center highlight */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-transparent via-white/50 to-background pointer-events-none" />
+
+                {/* Textural Grid */}
+                <div
+                    className="absolute inset-0 opacity-[0.08]"
+                    style={{
+                        backgroundImage: `radial-gradient(var(--color-text-secondary) 1px, transparent 1px)`,
+                        backgroundSize: '40px 40px'
                     }}
-                    transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute bottom-[10%] left-[20%] w-[50%] h-[30%] bg-border/40 rounded-full blur-[110px]"
                 />
             </div>
 
@@ -41,7 +51,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/40 backdrop-blur-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-text-secondary/30 backdrop-blur-sm"
                 >
                     <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>

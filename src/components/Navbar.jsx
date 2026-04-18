@@ -15,8 +15,7 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
             <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
                 <a href="#" className="flex items-center gap-2 group">
-                    <span className="text-xl font-brand font-bold tracking-tighter text-text-primary">MADHAN</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary group-hover:scale-150 transition-transform"></span>
+                    <span className="text-xl font-brand font-bold tracking-tighter text-text-primary">MADHAN KANNAN</span>
                 </a>
 
                 {/* Desktop Menu */}
