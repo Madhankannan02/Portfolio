@@ -29,7 +29,7 @@ const ProjectsGrid = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-sm font-ui font-semibold text-text-secondary uppercase tracking-widest"
+                        className="text-xs font-ui font-semibold text-text-secondary uppercase tracking-widest"
                     >
                         Selected Work
                     </motion.h2>
