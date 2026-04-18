@@ -56,7 +56,7 @@ const ProjectsGrid = () => {
                         className={`px-6 py-2 rounded-[10px] border text-sm md:text-base transition-all duration-300 ${
                             activeCategory === 'ui-ux' 
                                 ? 'bg-primary border-primary text-text-primary font-semibold' 
-                                : 'border-border text-text-secondary hover:border-primary/40 hover:text-text-primary'
+                                : 'border-text-secondary/30 text-text-secondary hover:border-primary/60 hover:text-text-primary'
                         }`}
                     >
                         UI/UX Design
@@ -66,7 +66,7 @@ const ProjectsGrid = () => {
                         className={`px-6 py-2 rounded-[10px] border text-sm md:text-base transition-all duration-300 ${
                             activeCategory === 'graphic-design' 
                                 ? 'bg-primary border-primary text-text-primary font-semibold' 
-                                : 'border-border text-text-secondary hover:border-primary/40 hover:text-text-primary'
+                                : 'border-text-secondary/30 text-text-secondary hover:border-primary/60 hover:text-text-primary'
                         }`}
                     >
                         Graphic Design

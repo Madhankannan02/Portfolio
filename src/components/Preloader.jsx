@@ -40,7 +40,7 @@ const Preloader = ({ onComplete }) => {
         >
             <div className="relative w-32 h-32 md:w-48 md:h-48 mb-12">
                 {/* Abstract Design Grid/Wireframe Animation */}
-                <svg viewBox="0 0 100 100" className="w-full h-full stroke-text-primary stroke-[1.5] fill-none stroke-linecap-round stroke-linejoin-round">
+                <svg viewBox="0 0 100 100" className="w-full h-full stroke-text-primary stroke-[2.5] fill-none stroke-linecap-round stroke-linejoin-round">
                     {/* 1. Frame */}
                     <motion.rect
                         x="10" y="10" width="80" height="80" rx="4"

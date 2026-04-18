@@ -32,7 +32,7 @@ const Navbar = () => {
                     ))}
                     <a
                         href="#contact"
-                        className="px-5 py-2 rounded-[10px] bg-primary text-text-primary text-sm font-semibold hover:bg-hover transition-colors"
+                        className="px-5 py-2 rounded-[10px] bg-primary text-text-primary text-sm font-semibold hover:bg-hover transition-colors border border-text-primary/5"
                     >
                         Let's Talk
                     </a>

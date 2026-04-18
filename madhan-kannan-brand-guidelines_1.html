@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Madhan Kannan — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+/* =================================================
+   DESIGN TOKENS
+================================================= */
+:root {
+  --c-primary:   #CFFFEF;
+  --c-bg:        #F8FFFD;
+  --c-secondary: #5F7D76;
+
+  --c-sage-00:   #EEF7F5;
+  --c-sage-01:   #DFF0EB;
+  --c-sage-02:   #C9E4DC;
+  --c-sage-03:   #A7CCBF;
+  --c-sage-04:   #7EA99F;
+  --c-sage-05:   #5F7D76;
+  --c-sage-06:   #3D5954;
+  --c-sage-07:   #253835;
+
+  --c-mint:      #CFFFEF;
+  --c-mint-dim:  #A8EDD6;
+  --c-mint-pale: #E4FBF3;
+
+  --c-warm-01:   #F5F0E8;
+  --c-warm-02:   #EDE4D3;
+  --c-warm-03:   #D4C4A8;
+
+  --bg-page:     #EEF7F5;
+  --bg-section-a: #DFF0EB;
+  --bg-section-b: #E8F5F1;
+  --bg-section-c: #F5F0E8;
+  --bg-card:     #F8FFFD;
+
+  --border:      rgba(95,125,118,0.18);
+  --border-strong: rgba(95,125,118,0.32);
+
+  --text-900: #1D302C;
+  --text-700: #3D5954;
+  --text-500: #6B9089;
+  --text-300: #A7C5BF;
+
+  --font-d: 'Manrope', sans-serif;
+  --font-b: 'Inter', sans-serif;
+
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+
+  --r-sm: 4px;  --r-md: 8px;  --r-lg: 14px; --r-xl: 20px;
+  --nav-h: 58px;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;font-size:16px}
+body{font-family:var(--font-b);background:var(--bg-page);color:var(--text-900);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--c-mint);color:var(--text-900)}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+  background:rgba(238,247,245,0.94);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  z-index:1000;display:flex;align-items:center;
+  padding:0 var(--sp-7);gap:var(--sp-7);
+  transition:box-shadow .3s var(--ease);
+}
+.nav.scrolled{box-shadow:0 2px 20px rgba(61,89,84,0.1)}
+.nav-brand{
+  font-family:var(--font-d);font-weight:800;font-size:14px;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--text-900);
+  margin-right:auto;display:flex;align-items:center;gap:6px;
+}
+.nav-brand-dot{width:6px;height:6px;border-radius:50%;background:var(--c-secondary)}
+.nav-links{display:flex;gap:var(--sp-5);list-style:none}
+.nav-links a{
+  font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;color:var(--text-500);transition:color .2s;
+  padding:var(--sp-1) 0;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;height:1.5px;
+  background:var(--c-secondary);transform:scaleX(0);transform-origin:left;
+  transition:transform .2s var(--ease);
+}
+.nav-links a:hover,.nav-links a.active{color:var(--c-secondary)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(155deg, var(--c-sage-01) 0%, var(--c-mint-pale) 40%, var(--c-sage-00) 100%);
+  display:grid;grid-template-columns:1fr 1fr;align-items:center;
+  padding:calc(var(--nav-h) + var(--sp-7)) var(--sp-7) var(--sp-7);
+  position:relative;overflow:hidden;gap:var(--sp-7);
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:52px 52px;pointer-events:none;opacity:.5;
+}
+.hero-orb{
+  position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(207,255,239,0.55) 0%,transparent 70%);
+  pointer-events:none;animation:pulse 9s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.06);opacity:.5}}
+
+.hero-left{position:relative;z-index:1}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:var(--sp-2);
+  font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--c-secondary);margin-bottom:var(--sp-4);
+  opacity:0;animation:fadeUp .6s ease .15s forwards;
+}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1.5px;background:var(--c-secondary)}
+.hero-title{
+  font-family:var(--font-d);font-size:clamp(44px,6vw,80px);font-weight:800;
+  line-height:.98;letter-spacing:-.035em;color:var(--text-900);margin-bottom:var(--sp-5);
+  opacity:0;animation:fadeUp .7s ease .3s forwards;
+}
+.hero-title em{font-style:normal;color:var(--c-secondary)}
+.hero-sub{
+  font-size:14px;line-height:1.75;color:var(--text-700);max-width:400px;margin-bottom:var(--sp-6);
+  opacity:0;animation:fadeUp .7s ease .45s forwards;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:var(--sp-2);opacity:0;animation:fadeUp .7s ease .6s forwards}
+.htag{
+  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 12px;border-radius:2px;
+  background:rgba(95,125,118,.1);color:var(--c-secondary);
+  border:1px solid var(--border-strong);
+}
+.hero-right{
+  position:relative;z-index:1;display:flex;flex-direction:column;gap:var(--sp-3);
+  opacity:0;animation:fadeUp .8s ease .5s forwards;
+}
+.hero-card{
+  background:rgba(248,255,253,.82);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:var(--sp-4) var(--sp-5);
+  backdrop-filter:blur(8px);display:flex;gap:var(--sp-4);align-items:center;
+}
+.hero-card-icon{
+  width:38px;height:38px;border-radius:var(--r-md);
+  background:var(--c-mint);display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.hero-card-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-500);margin-bottom:2px}
+.hero-card-val{font-family:var(--font-d);font-size:13px;font-weight:700;color:var(--text-900)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTION SYSTEM */
+.section{
+  padding:var(--sp-7) var(--sp-7);border-top:1px solid var(--border);
+  opacity:0;transform:translateY(20px);
+  transition:opacity .55s ease,transform .55s ease;
+}
+.section.visible{opacity:1;transform:translateY(0)}
+.section:nth-of-type(odd){background:var(--bg-section-a)}
+.section:nth-of-type(even){background:var(--bg-section-b)}
+.section.warm{background:var(--bg-section-c)}
+
+.sec-head{display:flex;align-items:flex-start;gap:var(--sp-5);margin-bottom:var(--sp-6)}
+.sec-num{
+  font-family:var(--font-d);font-size:10px;font-weight:700;
+  letter-spacing:.12em;color:var(--text-300);text-transform:uppercase;padding-top:7px;min-width:28px;
+}
+.sec-title{
+  font-family:var(--font-d);font-size:clamp(24px,3vw,38px);font-weight:800;
+  letter-spacing:-.025em;color:var(--text-900);line-height:1.1;
+}
+.sec-desc{font-size:13px;color:var(--text-500);margin-top:6px;line-height:1.75;max-width:500px}
+.sub-label{
+  font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--c-secondary);margin-bottom:var(--sp-4);display:block;
+}
+.divider{height:1px;background:var(--border);margin:var(--sp-6) 0}
+
+/* COLORS */
+.color-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);margin-bottom:var(--sp-6)}
+.color-card{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);transition:transform .25s var(--ease),box-shadow .25s}
+.color-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(61,89,84,.12)}
+.swatch{height:100px}
+.sw-primary{background:#CFFFEF}
+.sw-bg{background:#F8FFFD;border-bottom:1px solid var(--border)}
+.sw-secondary{background:#5F7D76}
+.color-info{padding:var(--sp-3) var(--sp-4);background:var(--bg-card)}
+.color-name{font-family:var(--font-d);font-size:13px;font-weight:700;color:var(--text-900);margin-bottom:var(--sp-1)}
+.color-vals{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-bottom:var(--sp-2)}
+.chip{font-size:9px;font-weight:600;letter-spacing:.05em;font-family:'SF Mono','Fira Mono',monospace;color:var(--text-500);background:var(--c-sage-00);padding:2px 7px;border-radius:var(--r-sm);border:1px solid var(--border)}
+.color-use{font-size:10px;color:var(--text-300);font-weight:600;letter-spacing:.04em}
+
+.contrast-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3);margin-bottom:var(--sp-6)}
+.cc{border-radius:var(--r-lg);padding:var(--sp-5);border:1px solid transparent}
+.cc-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-bottom:var(--sp-2);display:block}
+.cc-heading{font-family:var(--font-d);font-size:17px;font-weight:800;margin-bottom:var(--sp-1)}
+.cc-body{font-size:12px;line-height:1.7;opacity:.72}
+.cc-ratio{margin-top:var(--sp-3);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:2px;display:inline-block}
+.cc1{background:#CFFFEF;color:#1D302C}.cc1 .cc-ratio{background:rgba(29,48,44,.1);color:#1D302C}
+.cc2{background:#F8FFFD;color:#5F7D76;border-color:var(--border-strong)}.cc2 .cc-ratio{background:rgba(95,125,118,.12);color:#5F7D76}
+.cc3{background:#5F7D76;color:#fff}.cc3 .cc-ratio{background:rgba(255,255,255,.18);color:#fff}
+.cc4{background:#DFF0EB;color:#1D302C;border-color:var(--border)}.cc4 .cc-ratio{background:rgba(29,48,44,.1);color:#1D302C}
+
+.usage-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3)}
+.ub{border-radius:var(--r-lg);padding:var(--sp-5);border:1px solid var(--border)}
+.ub-tag{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:var(--sp-3);display:inline-block}
+.ub-title{font-family:var(--font-d);font-size:15px;font-weight:700;margin-bottom:var(--sp-2);line-height:1.3}
+.ub-body{font-size:12px;line-height:1.7;opacity:.7}
+.ub-a{background:var(--c-mint);color:var(--text-900)}.ub-a .ub-tag{background:rgba(29,48,44,.1);color:var(--text-700)}
+.ub-b{background:var(--c-warm-01);color:var(--text-900)}.ub-b .ub-tag{background:var(--c-mint);color:var(--text-700)}
+.ub-c{background:var(--c-secondary);color:#fff}.ub-c .ub-tag{background:rgba(255,255,255,.15);color:#fff}.ub-c .ub-body{opacity:.8}
+
+/* TYPOGRAPHY */
+.type-row{display:flex;align-items:baseline;gap:var(--sp-5);padding:var(--sp-4) 0;border-bottom:1px solid var(--border)}
+.type-row:last-child{border-bottom:none}
+.tmeta{min-width:150px;flex-shrink:0}
+.tmeta .tt{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-secondary);display:block}
+.tmeta .ts{font-size:9px;color:var(--text-300);font-family:'SF Mono','Fira Mono',monospace;margin-top:2px;display:block}
+.tprev{flex:1;color:var(--text-900)}
+.tp1{font-family:var(--font-d);font-size:52px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.tp2{font-family:var(--font-d);font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.tp3{font-family:var(--font-d);font-size:26px;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+.tp4{font-family:var(--font-d);font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.tp5{font-family:var(--font-d);font-size:15px;font-weight:600;line-height:1.4}
+.tp6{font-family:var(--font-d);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c-secondary)}
+.tpbody{font-family:var(--font-b);font-size:14px;font-weight:400;line-height:1.75;color:var(--text-700)}
+.tpcap{font-family:var(--font-b);font-size:11px;font-weight:400;line-height:1.6;color:var(--text-500)}
+
+.fw-row{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3);margin-top:var(--sp-6)}
+.fw-card{padding:var(--sp-4) var(--sp-5);background:var(--bg-card);border-radius:var(--r-lg);border:1px solid var(--border)}
+.fw-sample{font-family:var(--font-d);font-size:26px;color:var(--text-900);margin-bottom:var(--sp-2)}
+.fw-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-500)}
+
+/* LOGO */
+.logo-panels{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5);margin-bottom:var(--sp-6)}
+.logo-panel{border-radius:var(--r-xl);padding:var(--sp-7) var(--sp-6);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:var(--sp-5)}
+.lp-light{background:var(--bg-card)}
+.lp-sage{background:var(--c-secondary)}
+.mk-mark{width:68px;height:68px;border-radius:var(--r-lg);background:var(--c-secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mk-mark.inv{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3)}
+.mk-mark svg{width:38px;height:38px}
+.mk-word{font-family:var(--font-d);font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--text-900);display:flex;align-items:center;gap:6px}
+.mk-word.inv{color:#fff}
+.mk-dot{width:5px;height:5px;border-radius:50%;background:var(--c-secondary);display:inline-block}
+.mk-dot.inv{background:rgba(255,255,255,.7)}
+.logo-lockup{display:flex;align-items:center;gap:var(--sp-4)}
+.lp-caption{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-500);text-align:center}
+.lp-caption.inv{color:rgba(255,255,255,.6)}
+
+.clearspace-wrap{display:flex;flex-direction:column;align-items:center;gap:var(--sp-5);padding:var(--sp-6) 0}
+.clearspace-inner{position:relative;display:inline-flex;align-items:center;justify-content:center}
+.clearspace-inner::before{content:'';position:absolute;inset:-18px;border:1.5px dashed var(--c-secondary);border-radius:var(--r-lg);opacity:.4}
+.cs-note{font-size:11px;color:var(--text-500);letter-spacing:.04em;text-align:center}
+
+.dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4)}
+.dd{border-radius:var(--r-lg);padding:var(--sp-5);border:1px solid var(--border);background:var(--bg-card)}
+.dd-do{border-top:3px solid var(--c-secondary)}
+.dd-dont{border-top:3px solid var(--c-warm-03)}
+.dd-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--sp-4);display:block}
+.dd-do .dd-label{color:var(--c-secondary)}.dd-dont .dd-label{color:var(--c-warm-03)}
+.dd-item{font-size:12px;color:var(--text-700);display:flex;gap:var(--sp-2);align-items:flex-start;line-height:1.55;padding:5px 0;border-bottom:1px solid var(--border)}
+.dd-item:last-child{border-bottom:none}
+.dd-item::before{content:'→';color:var(--text-300);flex-shrink:0;font-weight:600}
+
+/* VOICE */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3);margin-bottom:var(--sp-6)}
+.pillar{padding:var(--sp-5);border-radius:var(--r-lg);background:var(--bg-card);border:1px solid var(--border);transition:border-color .2s,transform .2s}
+.pillar:hover{border-color:var(--c-secondary);transform:translateY(-2px)}
+.pillar-icon{width:34px;height:34px;border-radius:var(--r-sm);background:var(--c-mint);display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:var(--sp-3)}
+.pillar-title{font-family:var(--font-d);font-size:14px;font-weight:700;color:var(--text-900);margin-bottom:4px}
+.pillar-desc{font-size:11px;color:var(--text-500);line-height:1.6}
+
+.voice-compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4);margin-bottom:var(--sp-6)}
+.vc{border-radius:var(--r-lg);padding:var(--sp-5);border:1px solid var(--border);background:var(--bg-card)}
+.vc-do{border-top:3px solid var(--c-secondary)}.vc-dont{border-top:3px solid var(--c-sage-03)}
+.vc-head{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--sp-4);display:block}
+.vc-do .vc-head{color:var(--c-secondary)}.vc-dont .vc-head{color:var(--text-500)}
+.vc-eg{padding:var(--sp-3) var(--sp-4);border-radius:var(--r-md);margin-bottom:var(--sp-2);font-size:12px;line-height:1.65}
+.vc-do .vc-eg{background:var(--c-mint-pale);color:var(--text-700)}
+.vc-dont .vc-eg{background:var(--c-sage-00);color:var(--text-500)}
+
+.sample-block{
+  background:linear-gradient(135deg,var(--c-mint) 0%,var(--c-mint-pale) 100%);
+  border-radius:var(--r-xl);padding:var(--sp-6) var(--sp-7);border:1px solid var(--c-mint-dim);
+}
+.sample-eyebrow{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c-secondary);margin-bottom:var(--sp-3);display:block}
+.sample-hed{font-family:var(--font-d);font-size:clamp(22px,3vw,34px);font-weight:800;letter-spacing:-.025em;color:var(--text-900);line-height:1.15;margin-bottom:var(--sp-4)}
+.sample-para{font-size:14px;line-height:1.8;color:var(--text-700);max-width:560px}
+
+/* TEMPLATES */
+.tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4)}
+.tpl-bar{padding:7px var(--sp-4);background:var(--c-sage-01);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:var(--sp-2)}
+.tpl-bar-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-500)}
+.tpl-wrap{border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border)}
+
+/* Social */
+.slide{
+  aspect-ratio:1;background:var(--c-mint);
+  padding:var(--sp-4);display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.slide::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(95,125,118,.07);pointer-events:none}
+.slide-n{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-secondary);opacity:.7}
+.slide-mid{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--sp-2)}
+.slide-topic{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-secondary)}
+.slide-hed{font-family:var(--font-d);font-size:18px;font-weight:800;color:var(--text-900);line-height:1.2;letter-spacing:-.02em}
+.slide-txt{font-size:11px;line-height:1.6;color:var(--text-700)}
+.slide-foot{display:flex;align-items:center;justify-content:space-between}
+.slide-brand{font-family:var(--font-d);font-size:10px;font-weight:700;color:var(--c-secondary);letter-spacing:.05em}
+.slide-dots{display:flex;gap:4px}
+.sd{width:5px;height:5px;border-radius:50%;background:var(--c-secondary);opacity:.2}
+.sd.on{opacity:1}
+
+/* Presentation */
+.pres{
+  aspect-ratio:16/9;background:var(--c-sage-01);
+  padding:var(--sp-4);display:grid;grid-template-rows:auto 1fr auto;gap:var(--sp-2);
+  position:relative;overflow:hidden;
+}
+.pres::after{content:'';position:absolute;bottom:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(207,255,239,.5);pointer-events:none}
+.pres-top{display:flex;justify-content:space-between;align-items:center}
+.pres-sn{font-size:8px;font-weight:600;color:var(--text-300);letter-spacing:.1em}
+.pres-logo{font-family:var(--font-d);font-size:10px;font-weight:800;color:var(--c-secondary);letter-spacing:.06em}
+.pres-body{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);align-content:center;position:relative;z-index:1}
+.pres-lft .pe{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c-secondary);display:block;margin-bottom:4px}
+.pres-lft .ph{font-family:var(--font-d);font-size:15px;font-weight:800;color:var(--text-900);letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
+.pres-lft .pt{font-size:9px;line-height:1.65;color:var(--text-500)}
+.pres-rgt{background:var(--c-mint);border-radius:var(--r-md);padding:var(--sp-3);display:flex;flex-direction:column;gap:var(--sp-1)}
+.pstat{background:rgba(255,255,255,.7);border-radius:var(--r-sm);padding:5px var(--sp-3);display:flex;justify-content:space-between;align-items:center}
+.pstat-l{font-size:8px;font-weight:600;color:var(--text-500);text-transform:uppercase;letter-spacing:.05em}
+.pstat-v{font-family:var(--font-d);font-size:13px;font-weight:800;color:var(--c-secondary)}
+.pres-foot{display:flex;justify-content:space-between;align-items:center;padding-top:4px;border-top:1px solid var(--border)}
+.pf-txt{font-size:7px;color:var(--text-300);letter-spacing:.07em;text-transform:uppercase}
+.pf-bar{width:56px;height:2px;background:var(--border);border-radius:1px;overflow:hidden}
+.pf-fill{width:33%;height:100%;background:var(--c-secondary)}
+
+/* Letterhead */
+.letter{background:#fff;padding:var(--sp-5)}
+.letter-head{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:var(--sp-4);border-bottom:2.5px solid var(--c-mint)}
+.lh-name{font-family:var(--font-d);font-size:15px;font-weight:800;color:var(--text-900);letter-spacing:-.02em}
+.lh-role{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c-secondary);margin-top:2px}
+.lh-contact{text-align:right;display:flex;flex-direction:column;gap:2px}
+.lh-contact span{font-size:8px;color:var(--text-500);letter-spacing:.04em}
+.letter-date{font-size:8px;color:var(--text-500);font-style:italic;margin:var(--sp-3) 0 var(--sp-2)}
+.letter-sal{font-size:10px;font-weight:600;color:var(--text-900)}
+.letter-body-txt{font-size:9px;line-height:1.7;color:var(--text-700);margin-top:4px}
+.letter-sig{margin-top:var(--sp-4)}
+.ls-name{font-family:var(--font-d);font-size:11px;font-weight:700;color:var(--text-900)}
+.ls-role{font-size:8px;color:var(--c-secondary);letter-spacing:.06em;margin-top:2px}
+.letter-foot{padding:6px var(--sp-5);background:var(--c-mint);display:flex;justify-content:space-between}
+.letter-foot span{font-size:8px;color:var(--c-secondary);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
+/* FOOTER */
+.footer{
+  padding:var(--sp-5) var(--sp-7);background:var(--c-sage-06);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-brand{font-family:var(--font-d);font-size:15px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.footer-meta{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.04em}
+.footer-v{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .color-grid,.contrast-grid,.usage-row,.tpl-grid,.logo-panels,.dd-grid,.voice-compare{grid-template-columns:1fr}
+  .pillars{grid-template-columns:repeat(2,1fr)}
+  .fw-row{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  .section{padding:var(--sp-6) var(--sp-4)}
+  .hero{padding:calc(var(--nav-h)+var(--sp-5)) var(--sp-4) var(--sp-5)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-brand">MK<span class="nav-brand-dot"></span>Brand</div>
+  <ul class="nav-links">
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#type">Type</a></li>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#templates">Templates</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Brand Identity System — 2025</div>
+    <h1 class="hero-title">Design.<br>Intelligence.<em><br>Presence.</em></h1>
+    <p class="hero-sub">A premium personal brand system built for clarity, authority, and technology-first design thinking. Every element is intentional.</p>
+    <div class="hero-tags">
+      <span class="htag">System Design</span>
+      <span class="htag">AI Automation</span>
+      <span class="htag">Brand Strategy</span>
+      <span class="htag">Tech Consulting</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card"><div class="hero-card-icon">⬡</div><div><div class="hero-card-label">Positioning</div><div class="hero-card-val">System-Focused Designer & AI Strategist</div></div></div>
+    <div class="hero-card"><div class="hero-card-icon">◎</div><div><div class="hero-card-label">Aesthetic Direction</div><div class="hero-card-val">Minimal · Precise · Premium</div></div></div>
+    <div class="hero-card"><div class="hero-card-icon">⊞</div><div><div class="hero-card-label">Typefaces</div><div class="hero-card-val">Manrope · Inter</div></div></div>
+    <div class="hero-card"><div class="hero-card-icon">—</div><div><div class="hero-card-label">Brand Version</div><div class="hero-card-val">v1.0 — Madhan Kannan</div></div></div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section class="section" id="colors">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div>
+      <h2 class="sec-title">Color System</h2>
+      <p class="sec-desc">A light, sage-tinted palette rooted in calm authority. No pure whites — every surface carries tonal intent, from mint highlights to deep sage accents.</p>
+    </div>
+  </div>
+
+  <span class="sub-label">Primary Palette</span>
+  <div class="color-grid">
+    <div class="color-card"><div class="swatch sw-primary"></div><div class="color-info"><div class="color-name">Primary Mint</div><div class="color-vals"><span class="chip">#CFFFEF</span><span class="chip">RGB 207 255 239</span></div><div class="color-use">Highlights · Tags · CTA backgrounds</div></div></div>
+    <div class="color-card"><div class="swatch sw-bg"></div><div class="color-info"><div class="color-name">Surface White</div><div class="color-vals"><span class="chip">#F8FFFD</span><span class="chip">RGB 248 255 253</span></div><div class="color-use">Cards · Modal backgrounds</div></div></div>
+    <div class="color-card"><div class="swatch sw-secondary"></div><div class="color-info"><div class="color-name">Deep Sage</div><div class="color-vals"><span class="chip">#5F7D76</span><span class="chip">RGB 95 125 118</span></div><div class="color-use">Typography · UI Elements · Borders</div></div></div>
+  </div>
+
+  <div class="divider"></div>
+  <span class="sub-label">Accessibility & Contrast</span>
+  <div class="contrast-grid">
+    <div class="cc cc1"><span class="cc-lbl">Primary Mint — Dark Text</span><div class="cc-heading">Design with intent.</div><div class="cc-body">Every decision in a system has weight. Clarity is the first form of respect.</div><span class="cc-ratio">4.2:1 — AA Pass ✓</span></div>
+    <div class="cc cc2"><span class="cc-lbl">Surface White — Sage Text</span><div class="cc-heading">Precision builds trust.</div><div class="cc-body">Systems that breathe communicate confidence — they don't rush or overexplain.</div><span class="cc-ratio">5.1:1 — AA Pass ✓</span></div>
+    <div class="cc cc3"><span class="cc-lbl">Deep Sage — White Text</span><div class="cc-heading">Strategy first.</div><div class="cc-body">Intelligence isn't about complexity — it's about the right simplicity at the right moment.</div><span class="cc-ratio">4.8:1 — AA Pass ✓</span></div>
+    <div class="cc cc4"><span class="cc-lbl">Sage Tint — Dark Text</span><div class="cc-heading">Calm and deliberate.</div><div class="cc-body">Calmness is a feature of well-designed systems — it signals control, not emptiness.</div><span class="cc-ratio">7.6:1 — AAA Pass ✓</span></div>
+  </div>
+
+  <div class="divider"></div>
+  <span class="sub-label">Real-World Usage</span>
+  <div class="usage-row">
+    <div class="ub ub-a"><span class="ub-tag">Feature</span><div class="ub-title">AI Automation Systems</div><div class="ub-body">Intelligent pipelines designed to eliminate friction and amplify human output.</div></div>
+    <div class="ub ub-b"><span class="ub-tag">New</span><div class="ub-title">Design Strategy Practice</div><div class="ub-body">From system architecture to interface craft — trust-led, holistic design thinking.</div></div>
+    <div class="ub ub-c"><span class="ub-tag">Services</span><div class="ub-title">High-Trust Brand Systems</div><div class="ub-body">Corporate-grade personal brand infrastructure for technology leaders.</div></div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section class="section" id="type">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div>
+      <h2 class="sec-title">Typography System</h2>
+      <p class="sec-desc">Manrope leads with structural authority. Inter carries the body with precision. Together they define a modern, technology-oriented typographic voice.</p>
+    </div>
+  </div>
+
+  <span class="sub-label">Type Scale</span>
+  <div class="type-row"><div class="tmeta"><span class="tt">H1</span><span class="ts">Manrope 800 · 52px · −3%</span></div><div class="tprev tp1">Design × Intelligence</div></div>
+  <div class="type-row"><div class="tmeta"><span class="tt">H2</span><span class="ts">Manrope 700 · 36px · −2%</span></div><div class="tprev tp2">System Thinking</div></div>
+  <div class="type-row"><div class="tmeta"><span class="tt">H3</span><span class="ts">Manrope 700 · 26px · −1.5%</span></div><div class="tprev tp3">Brand Architecture</div></div>
+  <div class="type-row"><div class="tmeta"><span class="tt">H4</span><span class="ts">Manrope 600 · 19px · −1%</span></div><div class="tprev tp4">Strategic Design Practice</div></div>
+  <div class="type-row"><div class="tmeta"><span class="tt">H5</span><span class="ts">Manrope 600 · 15px · 0%</span></div><div class="tprev tp5">Technology-Driven Solutions</div></div>
+  <div class="type-row"><div class="tmeta"><span class="tt">H6</span><span class="ts">Manrope 700 · 12px · +7% · Caps</span></div><div class="tprev tp6">Section Label</div></div>
+  <div class="type-row"><div class="tmeta"><span class="tt">Body</span><span class="ts">Inter 400 · 14px · 1.75 lh</span></div><div class="tprev tpbody">A system-focused approach to design means every decision has a reason. Clarity isn't a style — it's a commitment to the people who use what you build.</div></div>
+  <div class="type-row"><div class="tmeta"><span class="tt">Caption</span><span class="ts">Inter 400 · 11px · 1.6 lh</span></div><div class="tprev tpcap">Source data reflects Q1–Q4 brand performance metrics. Updated January 2025.</div></div>
+
+  <div class="divider"></div>
+  <span class="sub-label">Font Weights — Manrope</span>
+  <div class="fw-row">
+    <div class="fw-card"><div class="fw-sample" style="font-weight:300">Light</div><div class="fw-lbl">Weight 300 — Subtle</div></div>
+    <div class="fw-card"><div class="fw-sample" style="font-weight:400">Regular</div><div class="fw-lbl">Weight 400 — Body</div></div>
+    <div class="fw-card"><div class="fw-sample" style="font-weight:600">Semibold</div><div class="fw-lbl">Weight 600 — UI Labels</div></div>
+    <div class="fw-card"><div class="fw-sample" style="font-weight:800">Extrabold</div><div class="fw-lbl">Weight 800 — Display</div></div>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section class="section warm" id="logo">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div>
+      <h2 class="sec-title">Logo Guidelines</h2>
+      <p class="sec-desc">The MK mark is a geometric monogram built on precise angular structure — reflecting clarity, intelligence, and a system-led design philosophy.</p>
+    </div>
+  </div>
+
+  <span class="sub-label">Logo Variants</span>
+  <div class="logo-panels">
+    <div class="logo-panel lp-light">
+      <div class="logo-lockup">
+        <div class="mk-mark"><svg viewBox="0 0 40 40" fill="none"><path d="M8 30L8 10L20 22L32 10L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg></div>
+        <div class="mk-word">Madhan Kannan<span class="mk-dot"></span></div>
+      </div>
+      <div class="lp-caption">Full Lockup — Light Surface</div>
+    </div>
+    <div class="logo-panel lp-sage">
+      <div class="logo-lockup">
+        <div class="mk-mark inv"><svg viewBox="0 0 40 40" fill="none"><path d="M8 30L8 10L20 22L32 10L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg></div>
+        <div class="mk-word inv">Madhan Kannan<span class="mk-dot inv"></span></div>
+      </div>
+      <div class="lp-caption inv">Full Lockup — Sage Background</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <span class="sub-label">Clear Space & Minimum Size</span>
+  <div class="clearspace-wrap">
+    <div class="clearspace-inner">
+      <div class="mk-mark"><svg viewBox="0 0 40 40" width="38" height="38" fill="none"><path d="M8 30L8 10L20 22L32 10L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg></div>
+    </div>
+    <div class="cs-note">Clear space = the x-height of the mark on all sides<br>Never crowd the logo with other elements</div>
+    <div style="display:flex;gap:var(--sp-5);align-items:center;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:var(--sp-3)">
+        <div class="mk-mark" style="width:48px;height:48px;border-radius:10px"><svg viewBox="0 0 40 40" width="27" height="27" fill="none"><path d="M8 30L8 10L20 22L32 10L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg></div>
+        <span style="font-size:11px;color:var(--text-500)">48px — Digital minimum</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:var(--sp-3)">
+        <div class="mk-mark" style="width:32px;height:32px;border-radius:7px"><svg viewBox="0 0 40 40" width="18" height="18" fill="none"><path d="M8 30L8 10L20 22L32 10L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22L32 30" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg></div>
+        <span style="font-size:11px;color:var(--text-500)">32px — Favicon / App icon</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <span class="sub-label">Do's & Don'ts</span>
+  <div class="dd-grid">
+    <div class="dd dd-do">
+      <span class="dd-label">Do</span>
+      <div class="dd-item">Use on brand-approved backgrounds (mint, sage surface, white card)</div>
+      <div class="dd-item">Maintain minimum clear space on all sides at all times</div>
+      <div class="dd-item">Use full lockup when space allows; logomark alone for icon contexts</div>
+      <div class="dd-item">Scale proportionally — never alter aspect ratio</div>
+    </div>
+    <div class="dd dd-dont">
+      <span class="dd-label">Don't</span>
+      <div class="dd-item">Stretch, rotate, skew, or distort the mark in any way</div>
+      <div class="dd-item">Apply drop shadows, outlines, or decorative effects</div>
+      <div class="dd-item">Change logo colors outside of approved brand variants</div>
+      <div class="dd-item">Place on busy, low-contrast, or off-brand backgrounds</div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="section" id="voice">
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <div>
+      <h2 class="sec-title">Brand Voice</h2>
+      <p class="sec-desc">Considered and deliberate. This voice never performs urgency or enthusiasm — it earns attention through precision, structure, and calm confidence.</p>
+    </div>
+  </div>
+
+  <span class="sub-label">Voice Pillars</span>
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-icon">⬡</div><div class="pillar-title">Clear & Precise</div><div class="pillar-desc">Every word earns its place. No filler, no hedging — only calibrated communication.</div></div>
+    <div class="pillar"><div class="pillar-icon">◎</div><div class="pillar-title">Calm & Confident</div><div class="pillar-desc">Authority that doesn't announce itself. Quiet certainty, not loud assertion.</div></div>
+    <div class="pillar"><div class="pillar-icon">⊞</div><div class="pillar-title">System-Oriented</div><div class="pillar-desc">Thinks in structures and patterns. Connects individual parts to the whole system.</div></div>
+    <div class="pillar"><div class="pillar-icon">—</div><div class="pillar-title">Minimal & Intentional</div><div class="pillar-desc">Says more by saying less. Respects the reader's intelligence and time.</div></div>
+  </div>
+
+  <div class="divider"></div>
+  <span class="sub-label">Writing Examples — Do vs Don't</span>
+  <div class="voice-compare">
+    <div class="vc vc-do">
+      <span class="vc-head">Write this</span>
+      <div class="vc-eg">I design systems that work — at the intersection of strategy, interface, and intelligence.</div>
+      <div class="vc-eg">Each engagement begins with clarity on the problem. Then we build toward precision.</div>
+      <div class="vc-eg">AI doesn't replace judgment. It extends it — if you design it well.</div>
+    </div>
+    <div class="vc vc-dont">
+      <span class="vc-head">Not this</span>
+      <div class="vc-eg">I'm super passionate about design and love creating amazing digital experiences!!!</div>
+      <div class="vc-eg">Let's hop on a call and brainstorm synergies around your brand journey together!</div>
+      <div class="vc-eg">AI is literally transforming everything and I'm obsessed with disrupting the space!</div>
+    </div>
+  </div>
+
+  <div class="sample-block">
+    <span class="sample-eyebrow">Sample Copy — Brand Paragraph</span>
+    <h2 class="sample-hed">Designed for systems.<br>Built for trust.</h2>
+    <p class="sample-para">Madhan Kannan works at the intersection of design strategy, AI automation, and high-trust brand architecture. The practice is built on a single conviction: that clarity is the highest form of intelligence — and the rarest. Whether designing enterprise interfaces, building automation systems, or shaping a professional presence, every engagement is system-led, precision-first, and outcome-oriented.</p>
+  </div>
+</section>
+
+<!-- TEMPLATES -->
+<section class="section warm" id="templates">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div>
+      <h2 class="sec-title">Templates</h2>
+      <p class="sec-desc">Structured layout systems for social, presentation, and document contexts — each grounded in the same visual grammar and spatial logic.</p>
+    </div>
+  </div>
+
+  <div class="tpl-grid">
+    <div class="tpl-wrap">
+      <div class="tpl-bar">
+        <div class="mk-mark" style="width:20px;height:20px;border-radius:4px"><svg viewBox="0 0 40 40" width="11" height="11" fill="none"><path d="M8 30L8 10L20 22L32 10L32 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22L32 30" stroke="white" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <span class="tpl-bar-label">Social Carousel — Slide 1/4</span>
+      </div>
+      <div class="slide">
+        <div class="slide-n">01 / 04</div>
+        <div class="slide-mid">
+          <div class="slide-topic">AI × Design</div>
+          <div class="slide-hed">Why most AI workflows fail at the interface layer</div>
+          <div class="slide-txt">The gap between capability and usability is a design problem. Here's how to close it.</div>
+        </div>
+        <div class="slide-foot">
+          <div class="slide-brand">@madhankannan</div>
+          <div class="slide-dots"><div class="sd on"></div><div class="sd"></div><div class="sd"></div><div class="sd"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpl-wrap">
+      <div class="tpl-bar">
+        <div class="mk-mark" style="width:20px;height:20px;border-radius:4px"><svg viewBox="0 0 40 40" width="11" height="11" fill="none"><path d="M8 30L8 10L20 22L32 10L32 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22L32 30" stroke="white" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <span class="tpl-bar-label">Presentation Slide</span>
+      </div>
+      <div class="pres">
+        <div class="pres-top"><div class="pres-sn">3 / 12</div><div class="pres-logo">MK.</div></div>
+        <div class="pres-body">
+          <div class="pres-lft"><span class="pe">Design Impact</span><div class="ph">System-led design reduces decision overhead by 40%</div><div class="pt">When clarity is built into the architecture, teams move faster — fewer reviews, fewer revisions, more confidence.</div></div>
+          <div class="pres-rgt">
+            <div class="pstat"><span class="pstat-l">Delivery Speed</span><span class="pstat-v">+40%</span></div>
+            <div class="pstat"><span class="pstat-l">Revision Cycles</span><span class="pstat-v">−62%</span></div>
+            <div class="pstat"><span class="pstat-l">Trust Score</span><span class="pstat-v">9.4/10</span></div>
+          </div>
+        </div>
+        <div class="pres-foot"><span class="pf-txt">Madhan Kannan — Design Strategy 2025</span><div class="pf-bar"><div class="pf-fill"></div></div></div>
+      </div>
+    </div>
+
+    <div class="tpl-wrap">
+      <div class="tpl-bar">
+        <div class="mk-mark" style="width:20px;height:20px;border-radius:4px"><svg viewBox="0 0 40 40" width="11" height="11" fill="none"><path d="M8 30L8 10L20 22L32 10L32 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22L32 30" stroke="white" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <span class="tpl-bar-label">Professional Letterhead</span>
+      </div>
+      <div class="letter">
+        <div class="letter-head">
+          <div><div class="lh-name">Madhan Kannan</div><div class="lh-role">Design Strategist & AI Systems Architect</div></div>
+          <div class="lh-contact"><span>hello@madhankannan.com</span><span>madhankannan.com</span><span>Chennai, India</span></div>
+        </div>
+        <div class="letter-date">January 14, 2025</div>
+        <div class="letter-sal">Dear Hiring Committee,</div>
+        <div class="letter-body-txt">I approach each engagement as a systems problem — understanding the constraints, mapping the decision surface, and designing for clarity at every layer. My work sits at the intersection of strategic design, intelligent automation, and high-trust brand architecture...</div>
+        <div class="letter-sig"><div class="ls-name">Madhan Kannan</div><div class="ls-role">Design Strategy & AI Automation</div></div>
+      </div>
+      <div class="letter-foot"><span>Madhan Kannan</span><span>Confidential</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Madhan Kannan</div>
+  <div class="footer-meta">Brand Identity System — Confidential & Proprietary</div>
+  <div class="footer-v">V1.0 — 2025</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
+
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting)
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  secs.forEach(s => io.observe(s));
+
+  const fo = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fo.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.section').forEach(el => fo.observe(el));
+</script>
+</body>
+</html>

@@ -41,7 +41,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/40 backdrop-blur-sm"
                 >
                     <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -51,7 +51,7 @@ const Hero = () => {
                 </motion.div>
 
                 <h1
-                    className="text-6xl md:text-8xl font-brand font-medium leading-tight tracking-tighter text-text-primary"
+                    className="text-6xl md:text-8xl font-brand font-bold leading-tight tracking-tighter text-text-primary"
                 >
                     Designing the <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-secondary">Future of Digital.</span>
@@ -74,14 +74,14 @@ const Hero = () => {
                 >
                     <a
                         href="#work"
-                        className="group px-8 py-4 rounded-[10px] bg-primary text-text-primary font-semibold text-lg hover:bg-hover transition-all flex items-center gap-2"
+                        className="group px-8 py-4 rounded-[10px] bg-primary text-text-primary font-semibold text-lg hover:bg-hover transition-all flex items-center gap-2 border border-text-primary/5"
                     >
                         View Projects
                         <ArrowDown size={20} className="group-hover:translate-y-1 transition-transform" />
                     </a>
                     <a
                         href="#contact"
-                        className="px-8 py-4 rounded-[10px] border border-border hover:bg-primary/10 transition-colors font-medium text-lg text-text-primary"
+                        className="px-8 py-4 rounded-[10px] border border-text-secondary/30 hover:bg-primary/10 transition-colors font-medium text-lg text-text-primary"
                     >
                         Let's Collaborate
                     </a>
