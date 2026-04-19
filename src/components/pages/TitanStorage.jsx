@@ -1,6 +1,4 @@
 import React from 'react';
-import '@fontsource/manrope';
-import '@fontsource/manrope/800.css';
 import '@fontsource/inter';
 import './TitanStorage.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -66,7 +64,7 @@ export default function TitanStorage() {
                         </span>
                     </div>
 
-                    <h1 className="text-6xl md:text-9xl font-extrabold mb-8 tracking-tighter leading-none relative" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <h1 className="text-6xl md:text-9xl font-bold mb-8 tracking-tighter leading-none relative" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                         <span className="relative z-10 bg-gradient-to-b from-gray-900 to-gray-500 bg-clip-text text-transparent">TITAN</span>
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 blur-[100px] bg-[#B4F7E1]/20 -z-10 rounded-full pointer-events-none" />
@@ -110,7 +108,7 @@ export default function TitanStorage() {
                     <FadeIn>
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B4F7E1]/10 border border-[#B4F7E1]/20 backdrop-blur-md mb-12">
                             <span className="w-2 h-2 rounded-full bg-[#FF5722] shadow-[0_0_10px_rgba(255,87,34,0.5)]"></span>
-                            <span className="text-sm font-extrabold text-gray-600 uppercase tracking-widest" style={{ fontFamily: 'Manrope, sans-serif' }}>The Mission</span>
+                            <span className="text-sm font-bold text-gray-600 uppercase tracking-widest" style={{ fontFamily: 'Satoshi, sans-serif' }}>The Mission</span>
                         </div>
                     </FadeIn>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">

@@ -1,5 +1,3 @@
-import '@fontsource/manrope';
-import '@fontsource/manrope/800.css';
 import '@fontsource/inter';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, Sun, Moon } from 'lucide-react';
@@ -62,7 +60,7 @@ export default function Stract() {
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-9xl font-extrabold mb-8 tracking-tighter leading-none relative" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <h1 className="text-5xl md:text-9xl font-bold mb-8 tracking-tighter leading-none relative" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                         <span className="relative z-10 bg-gradient-to-b from-gray-900 to-gray-500 bg-clip-text text-transparent">STRACT</span>
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 blur-[100px] bg-[#B4F7E1]/20 -z-10 rounded-full pointer-events-none" />
@@ -106,7 +104,7 @@ export default function Stract() {
                     <FadeIn>
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B4F7E1]/10 border border-[#B4F7E1]/20 backdrop-blur-md mb-12">
                             <span className="w-2 h-2 rounded-full bg-[#B4F7E1] shadow-[0_0_10px_rgba(180,247,225,0.5)]"></span>
-                            <span className="text-sm font-extrabold text-gray-600 uppercase tracking-widest" style={{ fontFamily: 'Manrope, sans-serif' }}>What is Stract?</span>
+                            <span className="text-sm font-bold text-gray-600 uppercase tracking-widest" style={{ fontFamily: 'Satoshi, sans-serif' }}>What is Stract?</span>
                         </div>
                     </FadeIn>
 

@@ -1,6 +1,4 @@
 import React from 'react';
-import '@fontsource/manrope';
-import '@fontsource/manrope/800.css';
 import '@fontsource/inter';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, Utensils } from 'lucide-react';
@@ -51,7 +49,7 @@ export default function ButcherBox() {
                     </FadeIn>
 
                     <FadeIn delay={0.4}>
-                        <h1 className="text-5xl md:text-9xl font-extrabold mb-8 tracking-tighter leading-none" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <h1 className="text-5xl md:text-9xl font-bold mb-8 tracking-tighter leading-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-gray-900 to-gray-500">ButcherBox</span>
                         </h1>
                     </FadeIn>
@@ -92,7 +90,7 @@ export default function ButcherBox() {
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <FadeIn>
-                        <h2 className="text-4xl md:text-6xl font-extrabold text-center mb-24 leading-tight tracking-tighter" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <h2 className="text-4xl md:text-6xl font-bold text-center mb-24 leading-tight tracking-tighter" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                             High-quality meat,<br />
                             <span className="text-gray-300 italic">humanely raised,</span><br />
                             delivered to you.
@@ -391,7 +389,7 @@ export default function ButcherBox() {
             <section className="py-32 px-6 md:px-[80px] bg-[#F8FFFD] border-t border-black/5">
                 <div className="max-w-4xl mx-auto text-center">
                     <FadeIn>
-                        <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                             Ready to elevate your <br /> culinary brand?
                         </h2>
                         <p className="text-xl text-gray-600 mb-12 leading-relaxed font-sans">
