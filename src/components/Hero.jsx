@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowDown } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] flex flex-col justify-center items-center py-20 overflow-hidden">
+        <section className="relative min-h-[95vh] flex flex-col justify-center items-center py-20 overflow-hidden">
 
             {/* Enhanced Mesh Gradient - High Visibility */}
             <div className="absolute inset-0 -z-10 bg-background overflow-hidden">
@@ -38,7 +38,7 @@ const Hero = () => {
 
                 {/* Textural Grid */}
                 <div
-                    className="absolute inset-0 opacity-[0.08]"
+                    className="absolute inset-0 opacity-[0.05]"
                     style={{
                         backgroundImage: `radial-gradient(var(--color-text-secondary) 1px, transparent 1px)`,
                         backgroundSize: '40px 40px'
@@ -46,70 +46,78 @@ const Hero = () => {
                 />
             </div>
 
-            <div className="flex flex-col items-center text-center space-y-8 max-w-4xl z-10 px-4">
+            <div className="flex flex-col items-center text-center space-y-10 max-w-5xl z-10 px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-text-secondary/30 backdrop-blur-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 border border-text-secondary/10 backdrop-blur-md shadow-sm"
                 >
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <span className="text-text-secondary text-xs font-medium tracking-wide uppercase">Available for new projects</span>
+                    <Sparkles size={14} className="text-primary" />
+                    <span className="text-text-secondary text-xs font-bold tracking-[0.15em] uppercase">Building Brands That Convert</span>
                 </motion.div>
 
-                <h1
-                    className="text-6xl md:text-8xl font-brand font-bold leading-tight tracking-tighter text-text-primary"
+                <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-5xl md:text-8xl font-brand font-bold leading-[1.1] tracking-tighter text-text-primary max-w-4xl"
                 >
-                    Designing the <br className="hidden md:block" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-secondary">Future of Digital.</span>
-                </h1>
+                    Design That Makes You Look Like the <br className="hidden md:block" />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500">Best Option in the Room</span>
+                </motion.h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-xl md:text-2xl text-text-secondary font-ui max-w-2xl leading-relaxed"
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-lg md:text-xl text-text-secondary font-ui max-w-3xl leading-relaxed"
                 >
-                    Hi, I am Madhan Kannan. I craft aesthetically pleasing and highly functional user interfaces that drive business growth and user satisfaction.
+                    From pixel-perfect websites to scroll-stopping graphics — I help startups and local businesses build a brand that looks professional and turns visitors into paying customers.
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.15 }}
-                    className="flex flex-col sm:flex-row items-center gap-4 pt-4"
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="flex flex-col sm:flex-row items-center gap-5 pt-4 w-full sm:w-auto"
                 >
                     <a
                         href="#work"
-                        className="group px-8 py-4 rounded-[10px] bg-primary text-text-primary font-semibold text-lg hover:bg-hover transition-all flex items-center gap-2 border border-text-primary/5"
+                        className="group w-full sm:w-auto px-10 py-5 rounded-[12px] bg-primary text-text-primary font-bold text-lg hover:bg-hover transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 border border-white/20"
                     >
-                        View Projects
-                        <ArrowDown size={20} className="group-hover:translate-y-1 transition-transform" />
+                        View My Work
+                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
                         href="#contact"
-                        className="px-8 py-4 rounded-[10px] border border-text-secondary/30 hover:bg-primary/10 transition-colors font-medium text-lg text-text-primary"
+                        className="w-full sm:w-auto px-10 py-5 rounded-[12px] border border-text-secondary/20 bg-white/30 backdrop-blur-sm hover:bg-white/50 transition-all font-bold text-lg text-text-primary flex items-center justify-center shadow-sm"
                     >
-                        Let's Collaborate
+                        Let's Work Together
                     </a>
                 </motion.div>
-            </div>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-text-secondary text-sm animate-bounce"
-            >
-                Scroll to explore
-            </motion.div>
+                {/* Trust Line */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 1 }}
+                    className="pt-16 w-full"
+                >
+                    <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-xs md:text-sm font-bold tracking-[0.2em] text-text-secondary/40 uppercase">
+                        <span>Web Design & Development</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                        <span>Graphic Design</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                        <span>Built for Results</span>
+                    </div>
+                </motion.div>
+            </div>
         </section>
     );
 };
 
 export default Hero;
+
 
 
