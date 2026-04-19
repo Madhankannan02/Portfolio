@@ -61,10 +61,10 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-5xl md:text-8xl font-brand font-bold leading-[1.1] tracking-tighter text-text-primary max-w-4xl"
+                    className="text-6xl md:text-8xl font-brand font-bold leading-tight tracking-tighter text-text-primary"
                 >
-                    Design That Makes You Look Like the <br className="hidden md:block" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500">Best Option in the Room</span>
+                    Designing the <br className="hidden md:block" />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-secondary">Future of Digital.</span>
                 </motion.h1>
 
                 <motion.p
@@ -95,22 +95,6 @@ const Hero = () => {
                     >
                         Let's Work Together
                     </a>
-                </motion.div>
-
-                {/* Trust Line */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8, duration: 1 }}
-                    className="pt-16 w-full"
-                >
-                    <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-xs md:text-sm font-bold tracking-[0.2em] text-text-secondary/40 uppercase">
-                        <span>Web Design & Development</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
-                        <span>Graphic Design</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
-                        <span>Built for Results</span>
-                    </div>
                 </motion.div>
             </div>
         </section>
