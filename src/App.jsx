@@ -1,11 +1,9 @@
-import React, { Suspense, lazy, useState, useEffect } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/ScrollToTop';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
-import Preloader from './components/Preloader';
 
 // Lazy Load Components
 const ProjectsGrid = lazy(() => import('./components/ProjectsGrid'));
@@ -24,38 +22,28 @@ const PageLoader = () => (
 );
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
   return (
     <>
-      <AnimatePresence mode="wait">
-        {loading && <Preloader onComplete={() => setLoading(false)} />}
-      </AnimatePresence>
-
-      {!loading && (
-        <>
-          <ScrollToTop />
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={
-                <Layout>
-                  <Hero />
-                  <Suspense fallback={<div className="min-h-screen" />}>
-                    <ProjectsGrid />
-                    <WorkExperience />
-                    <Contact />
-                  </Suspense>
-                </Layout>
-              } />
-              <Route path="/hathaven" element={<HatHaven />} />
-              <Route path="/titan-storage" element={<TitanStorage />} />
-              <Route path="/butcher-box" element={<ButcherBox />} />
-              <Route path="/stract" element={<Stract />} />
-            </Routes>
-          </Suspense>
-          <Analytics />
-        </>
-      )}
+      <ScrollToTop />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={
+            <Layout>
+              <Hero />
+              <Suspense fallback={<div className="min-h-screen" />}>
+                <ProjectsGrid />
+                <WorkExperience />
+                <Contact />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/hathaven" element={<HatHaven />} />
+          <Route path="/titan-storage" element={<TitanStorage />} />
+          <Route path="/butcher-box" element={<ButcherBox />} />
+          <Route path="/stract" element={<Stract />} />
+        </Routes>
+      </Suspense>
+      <Analytics />
     </>
   );
 }
