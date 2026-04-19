@@ -1,6 +1,7 @@
 import React from 'react';
-import '@fontsource/manrope'; // Defaults to weight 400
-import '@fontsource/manrope/300.css'; // Light weight
+import '@fontsource/manrope';
+import '@fontsource/manrope/800.css';
+import '@fontsource/inter';
 import './TitanStorage.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
@@ -33,19 +34,20 @@ export default function TitanStorage() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
     const textParallax = useTransform(scrollYProgress, [0, 0.5], [0, 200]); // Text moves down slowly on scroll
     const laptopParallax = useTransform(scrollYProgress, [0, 0.5], [0, -80]); // Laptop moves up slightly on scroll
+    const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
     return (
-        <div className="bg-[#F8F9FA] min-h-screen text-gray-900 font-montreal selection:bg-slate-200 selection:text-black overflow-x-hidden">
+        <div className="bg-[#F8FFFD] min-h-screen text-gray-900 font-sans selection:bg-[#B4F7E1]/30 selection:text-black overflow-x-hidden">
 
             {/* Hero Section */}
-            <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-white text-gray-900 pt-20 pb-20 md:pt-12 md:pb-0">
+            <section className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-[#F8FFFD] text-gray-900 pt-20 pb-20 md:pt-12 md:pb-0">
 
                 {/* 1. Background Image Layer - Subtle Fade In */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.0, ease: "easeOut" }}
-                    className="absolute inset-0 z-0 bg-gradient-to-b from-[#FFFFFF] via-[#F3F4F6] to-[#E5E7EB]/20"
+                    className="absolute inset-0 z-0 bg-gradient-to-b from-[#B4F7E1]/10 to-[#F8FFFD]/90"
                 >
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-200/20 via-[#FFFFFF] to-[#FFFFFF] opacity-70" />
                 </motion.div>
@@ -59,15 +61,15 @@ export default function TitanStorage() {
                     className="relative z-10 text-center max-w-5xl mx-auto mb-[-8%] md:mb-[-6%] pt-12 md:pt-0"
                 >
                     <div className="mb-8">
-                        <span className="inline-block px-4 py-1.5 text-xs tracking-[0.2em] uppercase border border-black/10 rounded-full bg-black/5 text-gray-600 font-bold backdrop-blur-md">
-                            Industrial Engineering
+                        <span className="inline-block px-4 py-1.5 text-xs tracking-[0.2em] uppercase border border-[#B4F7E1]/30 rounded-full bg-[#B4F7E1]/10 text-gray-600 font-bold backdrop-blur-md">
+                            Storage Solutions & Logistics
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-9xl font-black mb-8 tracking-tighter leading-none relative">
-                        <span className="relative z-10 bg-gradient-to-b from-gray-900 to-gray-500 bg-clip-text text-transparent">TITAN STORAGE</span>
+                    <h1 className="text-6xl md:text-9xl font-extrabold mb-8 tracking-tighter leading-none relative" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <span className="relative z-10 bg-gradient-to-b from-gray-900 to-gray-500 bg-clip-text text-transparent">TITAN</span>
                         {/* Text Glow Effect */}
-                        <div className="absolute inset-0 blur-[100px] bg-black/5 -z-10 rounded-full pointer-events-none" />
+                        <div className="absolute inset-0 blur-[100px] bg-[#B4F7E1]/20 -z-10 rounded-full pointer-events-none" />
                     </h1>
                 </motion.div>
 
@@ -98,8 +100,19 @@ export default function TitanStorage() {
             </section>
 
             {/* About the Project Section */}
-            <section className="py-[50px] px-6 md:px-[80px] bg-[#F8F9FA] border-t border-black/5">
-                <div className="max-w-8xl mx-auto">
+            <section className="py-32 px-6 md:px-[80px] bg-[#F8FFFD] relative overflow-hidden">
+                {/* Background Glows */}
+                <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#B4F7E1]/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+
+                <div className="max-w-[90rem] mx-auto relative z-10">
+
+                    {/* Top Label */}
+                    <FadeIn>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#B4F7E1]/10 border border-[#B4F7E1]/20 backdrop-blur-md mb-12">
+                            <span className="w-2 h-2 rounded-full bg-[#FF5722] shadow-[0_0_10px_rgba(255,87,34,0.5)]"></span>
+                            <span className="text-sm font-extrabold text-gray-600 uppercase tracking-widest" style={{ fontFamily: 'Manrope, sans-serif' }}>The Mission</span>
+                        </div>
+                    </FadeIn>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">
 
                         {/* Divider Line (Vertical on Desktop) */}
@@ -150,22 +163,19 @@ export default function TitanStorage() {
                 </div>
             </section>
 
-            {/* Second Mockup Section */}
-            <section className="bg-[#F8F9FA] px-4 md:px-[30px] pb-[50px]">
-                <FadeIn>
-                    <div className="w-full">
-                        <img
-                            src={SecondMockup}
-                            alt="Titan Storage Interface Mockup"
-                            loading="lazy"
-                            decoding="async"
-                            className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-black/5"
-                        />
-                    </div>
-                </FadeIn>
+            {/* Mockup 2 Section */}
+            <section className="bg-[#F8FFFD] px-4 md:px-[30px] pb-[50px]">
+                <div className="w-full">
+                    <img
+                        src={SecondMockup}
+                        alt="Titan Storage Dashboard"
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-auto object-cover rounded-2xl md:rounded-[45px] shadow-2xl border border-black/5"
+                    />
+                </div>
             </section>
 
-            {/* User Research / Audience Analysis */}
             {/* User Research / Audience Analysis */}
             <section className="py-[50px] px-6 md:px-[80px] bg-[#121212] text-gray-100 relative overflow-hidden mx-4 md:mx-[30px] rounded-[45px] mb-[50px]">
                 {/* Background Shapes */}
@@ -277,7 +287,7 @@ export default function TitanStorage() {
 
 
             {/* Third Mockup Section */}
-            <section className="bg-[#F8F9FA] px-4 md:px-[30px] pb-[50px]">
+            <section className="bg-[#F8FFFD] px-4 md:px-[30px] pb-[50px]">
                 <FadeIn>
                     <div className="w-full">
                         <img
@@ -406,7 +416,7 @@ export default function TitanStorage() {
             </section>
 
             {/* Fourth Mockup Section */}
-            <section className="bg-[#F8F9FA] px-4 md:px-[30px] pb-[50px]">
+            <section className="bg-[#F8FFFD] px-4 md:px-[30px] pb-[50px]">
                 <FadeIn>
                     <div className="w-full">
                         <img
@@ -421,7 +431,7 @@ export default function TitanStorage() {
             </section>
 
             {/* High Fidelity Preview Section */}
-            <section className="py-32 px-6 md:px-[60px] bg-[#F3F4F6] border-t border-black/5">
+            <section className="py-32 px-6 md:px-[60px] bg-[#B4F7E1]/10 border-t border-black/5">
                 <div className="max-w-[90rem] mx-auto">
                     <FadeIn>
                         <div className="flex justify-between items-end mb-24">
@@ -445,7 +455,7 @@ export default function TitanStorage() {
                             <div className="group relative">
                                 <div className="absolute -inset-1 bg-gradient-to-b from-black/10 to-transparent rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
                                 <div className="relative rounded-[2rem] overflow-hidden border border-black/10 bg-white shadow-2xl">
-                                    <div className="h-12 bg-[#F3F4F6] border-b border-black/5 flex items-center px-6 gap-2">
+                                    <div className="h-12 bg-[#B4F7E1]/10 border-b border-black/5 flex items-center px-6 gap-2">
                                         <div className="w-3 h-3 rounded-full bg-red-500/20" />
                                         <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
                                         <div className="w-3 h-3 rounded-full bg-green-500/20" />
@@ -461,7 +471,7 @@ export default function TitanStorage() {
                             <FadeIn delay={0.2}>
                                 <div className="group relative">
                                     <div className="relative rounded-[2rem] overflow-hidden border border-black/10 bg-white shadow-2xl">
-                                        <div className="h-12 bg-[#F3F4F6] border-b border-black/5 flex items-center px-6 gap-2">
+                                        <div className="h-12 bg-[#B4F7E1]/10 border-b border-black/5 flex items-center px-6 gap-2">
                                             <div className="w-3 h-3 rounded-full bg-red-500/20" />
                                             <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
                                             <div className="w-3 h-3 rounded-full bg-green-500/20" />
@@ -475,7 +485,7 @@ export default function TitanStorage() {
                             <FadeIn delay={0.4} className="lg:mt-32">
                                 <div className="group relative">
                                     <div className="relative rounded-[2rem] overflow-hidden border border-black/10 bg-white shadow-2xl">
-                                        <div className="h-12 bg-[#F3F4F6] border-b border-black/5 flex items-center px-6 gap-2">
+                                        <div className="h-12 bg-[#B4F7E1]/10 border-b border-black/5 flex items-center px-6 gap-2">
                                             <div className="w-3 h-3 rounded-full bg-red-500/20" />
                                             <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
                                             <div className="w-3 h-3 rounded-full bg-green-500/20" />
@@ -596,7 +606,7 @@ export default function TitanStorage() {
             </section>
 
             {/* Conclusion & Feedback Section */}
-            <section className="py-[50px] px-6 md:px-[80px] bg-[#F8F9FA] border-t border-black/5">
+            <section className="py-[50px] px-6 md:px-[80px] bg-[#F8FFFD] border-t border-black/5">
                 <div className="max-w-8xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative">
 
@@ -641,7 +651,7 @@ export default function TitanStorage() {
             </section>
 
             {/* Fifth Mockup Section */}
-            <section className="bg-[#F8F9FA] px-4 md:px-[30px] pb-[50px]">
+            <section className="bg-[#F8FFFD] px-4 md:px-[30px] pb-[50px]">
                 <FadeIn>
                     <div className="w-full">
                         <img
@@ -656,7 +666,7 @@ export default function TitanStorage() {
             </section>
 
             {/* Footer / Call to Action */}
-            <section className="py-32 px-6 md:px-[80px] bg-[#F8F9FA] border-t border-black/5">
+            <section className="py-32 px-6 md:px-[80px] bg-[#F8FFFD] border-t border-black/5">
                 <div className="max-w-4xl mx-auto text-center">
                     <FadeIn>
                         <h2 className="text-4xl md:text-6xl font-medium text-gray-900 mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>

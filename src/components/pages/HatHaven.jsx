@@ -1,4 +1,7 @@
 import React from 'react';
+import '@fontsource/manrope';
+import '@fontsource/manrope/800.css';
+import '@fontsource/inter';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
     ArrowDown,
@@ -36,8 +39,8 @@ const FadeIn = ({ children, delay = 0, y = 20, className = "" }) => (
 const SectionHeader = ({ title, subtitle }) => (
     <FadeIn>
         <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-500 bg-clip-text text-transparent">{title}</h2>
-            <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto">{subtitle}</p>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent" style={{ fontFamily: 'Manrope, sans-serif' }}>{title}</h2>
+            <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto font-sans">{subtitle}</p>
         </div>
     </FadeIn>
 );
@@ -89,26 +92,26 @@ export default function HatHaven() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
     return (
-        <div className="bg-stone-50 min-h-screen text-stone-900 font-sans selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden">
+        <div className="bg-[#F8FFFD] min-h-screen text-gray-900 font-sans selection:bg-[#B4F7E1]/30 selection:text-black overflow-x-hidden">
 
             {/* Hero Section */}
-            <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-[#FAFAG9] pt-8 md:pt-0">
-                <div className="absolute inset-0 z-0 opacity-10"
+            <section className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden bg-[#F8FFFD] pt-8 md:pt-0">
+                <div className="absolute inset-0 z-0 opacity-20"
                     style={{
-                        backgroundImage: 'radial-gradient(#EA580C 1px, transparent 1px)',
+                        backgroundImage: 'radial-gradient(#B4F7E1 1px, transparent 1px)',
                         backgroundSize: '30px 30px'
                     }}
                 />
 
                 <div className="z-10 text-center max-w-4xl mx-auto">
                     <FadeIn delay={0.2}>
-                        <span className="inline-block px-3 py-1 mb-6 text-xs tracking-widest uppercase border border-orange-200 rounded-full bg-orange-50 text-orange-600 font-semibold shadow-sm">
+                        <span className="inline-block px-4 py-1.5 mb-6 text-xs tracking-widest uppercase border border-[#B4F7E1]/30 rounded-full bg-[#B4F7E1]/10 text-gray-600 font-bold shadow-sm backdrop-blur-md">
                             E-Commerce Experience
                         </span>
                     </FadeIn>
 
                     <FadeIn delay={0.4}>
-                        <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight text-gray-900">
+                        <h1 className="text-6xl md:text-9xl font-extrabold mb-6 tracking-tighter text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
                             HATHAVEN
                         </h1>
                     </FadeIn>
@@ -133,29 +136,29 @@ export default function HatHaven() {
             </section>
 
             {/* Intro / Overview */}
-            <section className="py-24 px-6 lg:px-12">
+            <section className="py-24 px-6 lg:px-12 bg-[#F8FFFD]">
                 <div className="max-w-7xl mx-auto">
-                    <div className="relative rounded-[3rem] bg-[#1a1a1a] overflow-hidden text-white shadow-2xl">
+                    <div className="relative rounded-[3rem] bg-white overflow-hidden text-gray-900 shadow-2xl border border-black/5">
                         {/* Background abstract elements */}
-                        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-900/30 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
-                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gray-800/50 rounded-full blur-[80px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
+                        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#B4F7E1]/20 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#B4F7E1]/10 rounded-full blur-[80px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
 
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center p-8 md:p-16 lg:p-24 relative z-10">
                             <div className="lg:col-span-5">
                                 <FadeIn>
                                     <div className="space-y-8">
                                         <div>
-                                            <div className="flex items-center gap-3 mb-6 text-orange-400">
-                                                <div className="w-8 h-[2px] bg-orange-400" />
-                                                <span className="uppercase tracking-[0.2em] text-xs font-semibold">Core Philosophy</span>
+                                            <div className="flex items-center gap-3 mb-6 text-orange-600">
+                                                <div className="w-8 h-[2px] bg-orange-600" />
+                                                <span className="uppercase tracking-[0.2em] text-xs font-extrabold" style={{ fontFamily: 'Manrope, sans-serif' }}>Core Philosophy</span>
                                             </div>
-                                            <h2 className="text-4xl md:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
+                                            <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tighter" style={{ fontFamily: 'Manrope, sans-serif' }}>
                                                 The Digital <br />
-                                                <span className="text-orange-200">Sanctuary</span>
+                                                <span className="text-gray-400">Sanctuary</span>
                                             </h2>
                                         </div>
 
-                                        <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
+                                        <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-sans">
                                             <p>
                                                 Hathaven reimagines the e-commerce experience by blending the tranquility of a sanctuary with the utility of a modern store.
                                             </p>
@@ -204,7 +207,7 @@ export default function HatHaven() {
             </section>
 
             {/* Design Process - Process Flow */}
-            <section className="py-24 bg-[#1A1A1A] relative overflow-hidden">
+            <section className="py-24 bg-[#F8FFFD] relative overflow-hidden">
                 {/* Grid Background */}
                 <div className="absolute inset-0 z-0 opacity-10"
                     style={{
@@ -252,7 +255,7 @@ export default function HatHaven() {
             </section>
 
             {/* Design System - Hybrid Version */}
-            <section className="py-32 bg-gray-50 border-y border-gray-200">
+            <section className="py-32 bg-[#F8FFFD] border-y border-black/5">
                 <div className="max-w-7xl mx-auto px-6">
                     <SectionHeader
                         title="Visual Identity"
@@ -260,36 +263,36 @@ export default function HatHaven() {
                     />
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        {/* Typography Spec Sheet - Adapted from Version 3 */}
+                        {/* Typography Spec Sheet */}
                         <FadeIn className="lg:col-span-2">
-                            <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-stone-100 flex flex-col justify-between h-full hover:shadow-md transition-shadow duration-300">
+                            <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col justify-between h-full hover:shadow-md transition-shadow duration-300">
                                 <div>
-                                    <span className="text-[#66588D] font-mono text-sm tracking-widest uppercase mb-6 block flex items-center gap-2">
-                                        <Type size={16} /> Primary Typeface
+                                    <span className="text-[#B4F7E1] bg-black font-mono text-[10px] px-3 py-1 rounded-full tracking-widest uppercase mb-6 inline-flex items-center gap-2">
+                                        <Type size={14} /> Primary Typeface
                                     </span>
-                                    <h3 className="text-6xl md:text-8xl font-bold text-stone-900 mb-6 tracking-tighter">Inter</h3>
+                                    <h3 className="text-6xl md:text-8xl font-extrabold text-gray-900 mb-6 tracking-tighter" style={{ fontFamily: 'Manrope, sans-serif' }}>Manrope</h3>
 
                                     <div className="flex flex-wrap gap-6 text-gray-400 mt-8 mb-12">
                                         <div className="space-y-2">
-                                            <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center text-2xl text-gray-900 font-light border border-gray-100">Aa</div>
-                                            <p className="text-[10px] uppercase tracking-wide text-center font-medium">Light</p>
+                                            <div className="w-14 h-14 rounded-xl bg-[#F8FFFD] flex items-center justify-center text-2xl text-gray-900 font-light border border-black/5">Aa</div>
+                                            <p className="text-[10px] uppercase tracking-wide text-center font-bold">Light</p>
                                         </div>
                                         <div className="space-y-2">
-                                            <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center text-2xl text-gray-900 font-normal border border-gray-100">Aa</div>
-                                            <p className="text-[10px] uppercase tracking-wide text-center font-medium">Regular</p>
+                                            <div className="w-14 h-14 rounded-xl bg-[#F8FFFD] flex items-center justify-center text-2xl text-gray-900 font-normal border border-black/5">Aa</div>
+                                            <p className="text-[10px] uppercase tracking-wide text-center font-bold">Regular</p>
                                         </div>
                                         <div className="space-y-2">
-                                            <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center text-2xl text-gray-900 font-bold border border-gray-100">Aa</div>
-                                            <p className="text-[10px] uppercase tracking-wide text-center font-medium">Bold</p>
+                                            <div className="w-14 h-14 rounded-xl bg-[#F8FFFD] flex items-center justify-center text-2xl text-gray-900 font-extrabold border border-black/5">Aa</div>
+                                            <p className="text-[10px] uppercase tracking-wide text-center font-bold">Extra Bold</p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="w-full bg-[#FAFAFA] rounded-2xl p-8 border border-gray-100">
-                                    <p className="text-xl md:text-2xl text-gray-800 leading-tight font-light">
+                                <div className="w-full bg-[#B4F7E1]/5 rounded-2xl p-8 border border-[#B4F7E1]/20">
+                                    <p className="text-xl md:text-2xl text-gray-800 leading-tight font-light italic">
                                         "Good design is as little design as possible."
                                     </p>
-                                    <div className="mt-6 pt-6 border-t border-gray-200">
+                                    <div className="mt-6 pt-6 border-t border-black/5">
                                         <p className="text-gray-400 font-mono text-xs leading-loose opacity-70 break-words">
                                             ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
                                             abcdefghijklmnopqrstuvwxyz 0123456789
@@ -299,19 +302,19 @@ export default function HatHaven() {
                             </div>
                         </FadeIn>
 
-                        {/* Colors Column - Restored from Version 2 */}
+                        {/* Colors Column */}
                         <div className="flex flex-col gap-6">
-                            {/* Primary Color */}
+                            {/* Primary Color - Glacier Green Integration */}
                             <FadeIn delay={0.2} className="flex-1 min-h-[300px]">
-                                <div className="bg-[#66588D] rounded-[2.5rem] p-8 flex flex-col justify-between h-full text-white relative overflow-hidden group shadow-xl shadow-purple-900/10">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="bg-black rounded-[2.5rem] p-8 flex flex-col justify-between h-full text-white relative overflow-hidden group shadow-xl">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#B4F7E1]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     <div className="flex justify-between items-start relative z-10">
-                                        <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl"><Palette size={24} className="text-white" /></div>
-                                        <span className="font-mono text-sm opacity-60 bg-black/20 px-3 py-1 rounded-full">#66588D</span>
+                                        <div className="p-3 bg-[#B4F7E1] rounded-2xl"><Palette size={24} className="text-black" /></div>
+                                        <span className="font-mono text-sm text-[#B4F7E1] bg-white/5 px-3 py-1 rounded-full border border-white/10">#B4F7E1</span>
                                     </div>
                                     <div className="relative z-10">
-                                        <p className="text-sm opacity-80 uppercase tracking-wider mb-2 font-medium">Primary Brand</p>
-                                        <p className="text-3xl font-bold">Royal Purple</p>
+                                        <p className="text-sm text-[#B4F7E1] uppercase tracking-wider mb-2 font-bold">Portfolio Core</p>
+                                        <p className="text-3xl font-extrabold" style={{ fontFamily: 'Manrope, sans-serif' }}>Glacier Green</p>
                                     </div>
                                 </div>
                             </FadeIn>
@@ -319,27 +322,27 @@ export default function HatHaven() {
                             {/* Secondary Colors Grid */}
                             <div className="grid grid-cols-2 gap-6 flex-1">
                                 <FadeIn delay={0.3}>
-                                    <div className="bg-[#707070] rounded-[2rem] p-6 aspect-square flex flex-col justify-between text-white group hover:scale-[1.02] transition-transform shadow-lg">
-                                        <span className="font-mono text-[10px] opacity-60 uppercase">Slate</span>
-                                        <p className="font-bold text-lg">#707070</p>
+                                    <div className="bg-[#66588D] rounded-[2rem] p-6 aspect-square flex flex-col justify-between text-white group hover:scale-[1.02] transition-transform shadow-lg">
+                                        <span className="font-mono text-[10px] opacity-60 uppercase">Royal Purple</span>
+                                        <p className="font-bold text-lg">#66588D</p>
                                     </div>
                                 </FadeIn>
                                 <FadeIn delay={0.4}>
-                                    <div className="bg-[#C3C4CE] rounded-[2rem] p-6 aspect-square flex flex-col justify-between text-gray-800 group hover:scale-[1.02] transition-transform shadow-lg">
-                                        <span className="font-mono text-[10px] opacity-60 uppercase">Mist</span>
-                                        <p className="font-bold text-lg">#C3C4CE</p>
+                                    <div className="bg-[#EA580C] rounded-[2rem] p-6 aspect-square flex flex-col justify-between text-white group hover:scale-[1.02] transition-transform shadow-lg">
+                                        <span className="font-mono text-[10px] opacity-60 uppercase">Brand Glow</span>
+                                        <p className="font-bold text-lg">#EA580C</p>
                                     </div>
                                 </FadeIn>
                                 <FadeIn delay={0.5}>
-                                    <div className="bg-[#F3F3F3] rounded-[2rem] p-6 aspect-square flex flex-col justify-between text-gray-800 border border-gray-100 group hover:scale-[1.02] transition-transform">
-                                        <span className="font-mono text-[10px] opacity-60 uppercase">Paper</span>
-                                        <p className="font-bold text-lg">#F3F3F3</p>
+                                    <div className="bg-white rounded-[2rem] p-6 aspect-square flex flex-col justify-between text-gray-800 border border-black/5 group hover:scale-[1.02] transition-transform shadow-sm">
+                                        <span className="font-mono text-[10px] opacity-60 uppercase">Glacier</span>
+                                        <p className="font-bold text-lg">#F8FFFD</p>
                                     </div>
                                 </FadeIn>
                                 <FadeIn delay={0.6}>
-                                    <div className="bg-[#1A1A1A] rounded-[2rem] p-6 aspect-square flex flex-col justify-between text-white group hover:scale-[1.02] transition-transform shadow-lg">
-                                        <span className="font-mono text-[10px] opacity-60 uppercase">Charcoal</span>
-                                        <p className="font-bold text-lg">#1A1A1A</p>
+                                    <div className="bg-gray-900 rounded-[2rem] p-6 aspect-square flex flex-col justify-between text-white group hover:scale-[1.02] transition-transform shadow-lg">
+                                        <span className="font-mono text-[10px] opacity-60 uppercase">Obsidian</span>
+                                        <p className="font-bold text-lg">#111111</p>
                                     </div>
                                 </FadeIn>
                             </div>
@@ -349,7 +352,7 @@ export default function HatHaven() {
             </section>
 
             {/* Main Showcase */}
-            <section className="py-20 md:py-32 bg-white overflow-hidden">
+            <section className="py-20 md:py-32 bg-[#F8FFFD] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 space-y-24 md:space-y-32">
                     <SectionHeader
                         title="Visual Journey"
@@ -359,10 +362,10 @@ export default function HatHaven() {
                     <div className="space-y-24 md:space-y-40">
                         {/* Main Page */}
                         <div className="relative">
-                            <div className="absolute top-0 right-0 w-2/3 h-full bg-orange-50 rounded-l-[3rem] -z-10 translate-x-1/3" />
+                            <div className="absolute top-0 right-0 w-2/3 h-full bg-[#B4F7E1]/10 rounded-l-[3rem] -z-10 translate-x-1/3" />
                             <div className="max-w-5xl mx-auto">
                                 <div className="flex items-end justify-between mb-8 px-4">
-                                    <h3 className="text-4xl font-bold text-stone-900">01. Home</h3>
+                                    <h3 className="text-4xl font-extrabold text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>01. Home</h3>
                                     <span className="text-gray-400 font-mono">Main Page</span>
                                 </div>
                                 <ProjectImage src={MainPage} alt="Main Page Design" loading="lazy" />
@@ -371,10 +374,10 @@ export default function HatHaven() {
 
                         {/* Product Page */}
                         <div className="relative">
-                            <div className="absolute top-0 left-0 w-2/3 h-full bg-gray-50 rounded-r-[3rem] -z-10 -translate-x-1/3" />
+                            <div className="absolute top-0 left-0 w-2/3 h-full bg-[#B4F7E1]/5 rounded-r-[3rem] -z-10 -translate-x-1/3" />
                             <div className="max-w-5xl mx-auto">
                                 <div className="flex items-end justify-between mb-8 px-4 flex-row-reverse">
-                                    <h3 className="text-4xl font-bold text-gray-900">02. Product</h3>
+                                    <h3 className="text-4xl font-extrabold text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>02. Product</h3>
                                     <span className="text-gray-400 font-mono">Details View</span>
                                 </div>
                                 <ProjectImage src={ProductPage} alt="Product Page Design" loading="lazy" />
@@ -385,18 +388,18 @@ export default function HatHaven() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
                             <FadeIn delay={0.2}>
                                 <div className="flex items-center justify-between mb-4">
-                                    <h3 className="text-2xl font-bold">03. Blog</h3>
+                                    <h3 className="text-2xl font-extrabold text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>03. Blog</h3>
                                 </div>
-                                <div className="group relative rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white hover:shadow-xl transition-shadow">
+                                <div className="group relative rounded-xl overflow-hidden shadow-lg border border-black/5 bg-white hover:shadow-xl transition-shadow">
                                     <img src={ContactPage} alt="Blog Page" loading="lazy" decoding="async" className="w-full h-auto" />
                                 </div>
                             </FadeIn>
 
                             <FadeIn delay={0.4} className="md:mt-32">
                                 <div className="flex items-center justify-between mb-4">
-                                    <h3 className="text-2xl font-bold">04. Contact</h3>
+                                    <h3 className="text-2xl font-extrabold text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>04. Contact</h3>
                                 </div>
-                                <div className="group relative rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white hover:shadow-xl transition-shadow">
+                                <div className="group relative rounded-xl overflow-hidden shadow-lg border border-black/5 bg-white hover:shadow-xl transition-shadow">
                                     <img src={BlogPage} alt="Contact Page" loading="lazy" decoding="async" className="w-full h-auto" />
                                 </div>
                             </FadeIn>
@@ -406,29 +409,29 @@ export default function HatHaven() {
             </section>
 
             {/* Mobile Experience Section */}
-            <section className="py-24 bg-[#0a0a0a] text-white overflow-hidden relative">
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-                    <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-900 rounded-full blur-[120px]" />
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-900 rounded-full blur-[120px]" />
+            <section className="py-24 bg-[#F8FFFD] text-gray-900 overflow-hidden relative">
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+                    <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#B4F7E1] rounded-full blur-[120px]" />
+                    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#B4F7E1] rounded-full blur-[120px]" />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <FadeIn>
                             <div className="space-y-8">
-                                <div className="flex items-center gap-3 text-orange-400">
+                                <div className="flex items-center gap-3 text-orange-600">
                                     <Smartphone className="w-6 h-6" />
-                                    <span className="uppercase tracking-[0.2em] text-xs font-semibold">Responsive Design</span>
+                                    <span className="uppercase tracking-[0.2em] text-xs font-extrabold" style={{ fontFamily: 'Manrope, sans-serif' }}>Responsive Design</span>
                                 </div>
 
-                                <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+                                <h2 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tighter" style={{ fontFamily: 'Manrope, sans-serif' }}>
                                     Seamless on <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500">
                                         Every Device
                                     </span>
                                 </h2>
 
-                                <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
+                                <p className="text-gray-600 text-lg leading-relaxed max-w-xl font-sans">
                                     The shopping experience transcends the desktop. We meticulously crafted a mobile-first interface that retains all the elegance of the full site while optimizing for touch interactions and smaller viewports.
                                 </p>
 
@@ -470,8 +473,7 @@ export default function HatHaven() {
 
 
             {/* High Fidelity UI Design */}
-            {/* High Fidelity UI Design */}
-            <section className="py-24 px-6 bg-[#FaFaFa]">
+            <section className="py-24 px-6 bg-[#F8FFFD]">
                 <div className="max-w-7xl mx-auto">
                     <SectionHeader
                         title="High Fidelity Design"
@@ -480,10 +482,10 @@ export default function HatHaven() {
 
                     <div className="mt-16">
                         <FadeIn>
-                            <div className="relative rounded-[3rem] bg-[#1a1a1a] p-8 md:p-16 overflow-hidden shadow-2xl">
+                            <div className="relative rounded-[3rem] bg-white p-8 md:p-16 overflow-hidden shadow-2xl border border-black/5">
                                 {/* Background Gradients */}
-                                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
-                                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
+                                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#B4F7E1]/15 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+                                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-600/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
 
                                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center relative z-10">
                                     {/* Mockup Column */}
@@ -527,9 +529,9 @@ export default function HatHaven() {
                                             </div>
                                         </motion.div>
 
-                                        <div className="mt-12 text-white/80">
-                                            <h3 className="text-2xl font-bold text-white mb-4">Immersive Shopping</h3>
-                                            <p className="leading-relaxed text-stone-300">
+                                        <div className="mt-12 text-gray-900/80">
+                                            <h3 className="text-2xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'Manrope, sans-serif' }}>Immersive Shopping</h3>
+                                            <p className="leading-relaxed text-gray-600 font-sans">
                                                 High-fidelity visuals combined with clean typography create an environment where the product takes center stage.
                                             </p>
                                         </div>
@@ -542,16 +544,16 @@ export default function HatHaven() {
             </section>
 
             {/* Footer / Call to Action */}
-            <section className="py-32 px-6 md:px-[80px] bg-white border-t border-stone-100">
+            <section className="py-32 px-6 md:px-[80px] bg-[#F8FFFD] border-t border-black/5">
                 <div className="max-w-4xl mx-auto text-center">
                     <FadeIn>
-                        <h2 className="text-4xl md:text-6xl font-medium text-gray-900 mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+                        <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
                             Ready to redefine your <br /> style signature?
                         </h2>
-                        <p className="text-xl text-stone-600 mb-12 leading-relaxed">
+                        <p className="text-xl text-gray-600 mb-12 leading-relaxed">
                             HatHaven merges urban aesthetics with premium quality. Designed for the bold, the classic, and everyone in between.
                         </p>
-                        <a href="mailto:madhankannan29@gmail.com" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black text-white font-semibold text-lg hover:bg-orange-600 transition-all duration-300">
+                        <a href="mailto:madhankannan29@gmail.com" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black text-white font-semibold text-lg hover:bg-[#B4F7E1] hover:text-black transition-all duration-300">
                             Start a Project
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
