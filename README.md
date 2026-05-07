@@ -2,7 +2,7 @@
 
 A high-performance, aesthetically pleasing portfolio website designed to showcase premium UI/UX work. Built with **React** and **Framer Motion**, this project emphasizes smooth transitions, unified animation timing, and a "luxury minimalist" design philosophy.
 
-![Portfolio Preview](src/assets/images/portfolio-preview.png)
+![Portfolio Preview](src/assets/images/Portfolio-Screenshot-Updated-Look)
 
 ## 🚀 Key Features
 
