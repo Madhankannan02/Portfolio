@@ -22,7 +22,7 @@ export const experiences = [
     },
     {
         id: 3,
-        role: "UI/UX Intern",
+        role: "UI/UX Design Intern",
         company: "Duhzine IT Solutions Pvt Ltd",
         period: "Mar 2024 - Apr 2024",
         description: "Designed a comprehensive e-commerce website for a meat shop over three weeks, focusing on creating a visually appealing, user-friendly interface that enhances the shopping experience."
