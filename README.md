@@ -2,7 +2,7 @@
 
 A high-performance, aesthetically pleasing portfolio website designed to showcase premium UI/UX work. Built with **React** and **Framer Motion**, this project emphasizes smooth transitions, unified animation timing, and a "luxury minimalist" design philosophy.
 
-![Portfolio Preview](src/assets/images/portfolio-preview.png)
+![Portfolio Preview](src/assets/images/Portfolio-Screenshot-Updated-Look.png)
 
 ## 🚀 Key Features
 
@@ -38,29 +38,6 @@ src/
 ├── data/           # Project data objects
 └── App.jsx         # Main routing and global layout
 ```
-
-## 🏃‍♂️ Getting Started
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/Madhankannan02/Portfolio.git
-    cd Portfolio
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
-
-3.  **Run the development server**
-    ```bash
-    npm run dev
-    ```
-
-4.  **Build for production**
-    ```bash
-    npm run build
-    ```
 
 ## 🎨 Design System
 
