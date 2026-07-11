@@ -61,12 +61,12 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="w-full flex justify-between items-center mb-8 px-4 md:px-12"
+                    className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 md:gap-0 mb-8 px-4 md:px-12"
                 >
-                    <p className="text-white font-ui font-medium tracking-wide">Hello, from the design &amp; code studio.</p>
-                    <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30">
-                        <span className="text-white text-xs font-ui font-semibold uppercase tracking-wider">Open To Work</span>
-                        <span className="w-2 h-2 rounded-full bg-white block"></span>
+                    <p className="text-white font-ui font-medium tracking-wide text-center md:text-left">Hello, from the design &amp; code studio.</p>
+                    <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30 shrink-0">
+                        <span className="text-white text-xs font-ui font-semibold uppercase tracking-wider whitespace-nowrap">Open To Work</span>
+                        <span className="w-2 h-2 rounded-full bg-white block shrink-0"></span>
                     </div>
                 </motion.div>
 
@@ -88,7 +88,7 @@ const Hero = () => {
                     initial={{ opacity: 0, rotate: -15, y: 20 }}
                     animate={{ opacity: 1, rotate: -8, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="absolute right-0 md:-right-4 bottom-[-80px] md:bottom-[-60px] bg-[#F8F9FA] p-5 shadow-xl w-[240px] border border-gray-200 hidden md:block"
+                    className="relative mt-12 md:absolute md:mt-0 right-auto md:-right-4 bottom-auto md:bottom-[-60px] bg-[#F8F9FA] p-5 shadow-xl w-[240px] border border-gray-200"
                     style={{ transform: 'rotate(-8deg)' }}
                 >
                     {/* A simple decorative tape */}
@@ -98,16 +98,6 @@ const Hero = () => {
                         <p>I'm Madhan, a Designer & Full-Stack Developer building end-to-end experiences.</p>
                     </div>
                 </motion.div>
-                
-                {/* Mobile version of the intro text */}
-                 <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="md:hidden mt-12 text-white/90 font-ui text-lg text-center px-4"
-                >
-                    I'm Madhan, a Designer & Full-Stack Developer building end-to-end experiences.
-                </motion.p>
             </div>
             
         </section>
