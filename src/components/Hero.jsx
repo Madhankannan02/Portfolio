@@ -1,102 +1,115 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+
+const Bird = ({ className }) => (
+    <svg 
+        className={className} 
+        viewBox="0 0 100 50" 
+        fill="currentColor"
+    >
+        <path d="M50 25 C30 0, 0 10, 0 10 C15 15, 30 25, 50 40 C70 25, 85 15, 100 10 C100 10, 70 0, 50 25 Z"/>
+    </svg>
+);
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[95vh] flex flex-col justify-center items-center py-20 overflow-hidden">
+        <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden" 
+                 style={{ background: 'linear-gradient(180deg, var(--color-sky-top) 0%, var(--color-sky-bottom) 100%)' }}>
+            
+            {/* Floating Birds flying across the screen */}
+            <motion.div
+                initial={{ x: '-10vw', y: '10vh', opacity: 0, rotate: 75 }}
+                animate={{ x: '110vw', y: '-15vh', opacity: [0, 0.6, 0.6, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                className="absolute top-[20%] text-white/40 w-12 h-6"
+            >
+                <Bird />
+            </motion.div>
+            
+            <motion.div
+                initial={{ x: '110vw', y: '30vh', opacity: 0, rotate: -75 }}
+                animate={{ x: '-10vw', y: '10vh', opacity: [0, 0.4, 0.4, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 2 }}
+                className="absolute top-[10%] text-white/30 w-8 h-4"
+            >
+                 <Bird />
+            </motion.div>
 
-            {/* Enhanced Mesh Gradient - High Visibility */}
-            <div className="absolute inset-0 -z-10 bg-background overflow-hidden">
-                {/* Core Atmospheric Glows */}
+            <motion.div
+                initial={{ x: '-20vw', y: '-5vh', opacity: 0, rotate: 105 }}
+                animate={{ x: '120vw', y: '20vh', opacity: [0, 0.5, 0.5, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "linear", delay: 4 }}
+                className="absolute top-[40%] text-white/30 w-10 h-5"
+            >
+                 <Bird />
+            </motion.div>
+            
+            <motion.div
+                initial={{ x: '120vw', y: '20vh', opacity: 0, rotate: -105 }}
+                animate={{ x: '-20vw', y: '35vh', opacity: [0, 0.3, 0.3, 0] }}
+                transition={{ duration: 9, repeat: Infinity, ease: "linear", delay: 1 }}
+                className="absolute top-[50%] text-white/20 w-6 h-3"
+            >
+                 <Bird />
+            </motion.div>
+
+            {/* Main Content Container */}
+            <div className="relative z-10 flex flex-col items-center w-full max-w-4xl px-6 mt-16">
+                
+                {/* Intro Line */}
                 <motion.div
-                    animate={{
-                        x: ['-10%', '10%', '-10%'],
-                        y: ['-5%', '15%', '-5%'],
-                    }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-[10%] -left-[5%] w-[60%] h-[60%] bg-primary/40 rounded-full blur-[100px]"
-                />
-                <motion.div
-                    animate={{
-                        x: ['10%', '-10%', '10%'],
-                        y: ['5%', '-15%', '5%'],
-                    }}
-                    transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-[10%] right-[-5%] w-[50%] h-[50%] bg-hover/40 rounded-full blur-[80px]"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                    }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -bottom-[10%] left-[20%] w-[40%] h-[40%] bg-primary/30 rounded-full blur-[90px]"
-                />
-
-                {/* Center highlight */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-transparent via-white/50 to-background pointer-events-none" />
-
-                {/* Textural Grid */}
-                <div
-                    className="absolute inset-0 opacity-[0.05]"
-                    style={{
-                        backgroundImage: `radial-gradient(var(--color-text-secondary) 1px, transparent 1px)`,
-                        backgroundSize: '40px 40px'
-                    }}
-                />
-            </div>
-
-            <div className="flex flex-col items-center text-center space-y-10 max-w-5xl z-10 px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 border border-text-secondary/10 backdrop-blur-md shadow-sm"
-                >
-                    <Sparkles size={14} className="text-primary" />
-                    <span className="text-text-secondary text-xs font-bold tracking-[0.15em] uppercase">Building Brands That Convert</span>
-                </motion.div>
-
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-6xl md:text-8xl font-brand font-bold leading-tight tracking-tighter text-text-primary"
+                    className="w-full flex justify-between items-center mb-8 px-4 md:px-12"
                 >
-                    Designing the <br className="hidden md:block" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-secondary">Future of Digital.</span>
+                    <p className="text-white font-ui font-medium tracking-wide">Hello, from the design &amp; code studio.</p>
+                    <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30">
+                        <span className="text-white text-xs font-ui font-semibold uppercase tracking-wider">Open To Work</span>
+                        <span className="w-2 h-2 rounded-full bg-white block"></span>
+                    </div>
+                </motion.div>
+
+                {/* Big Serif Heading */}
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                    className="text-5xl md:text-[90px] font-serif leading-[0.9] text-white text-center tracking-tight drop-shadow-sm"
+                >
+                    Thoughtful<br/> 
+                    <span className="italic font-light tracking-normal pr-4">by</span>design<br/>
+                    Powered<br/> 
+                    <span className="italic font-light tracking-normal pr-4">by</span>code
                 </motion.h1>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-lg md:text-xl text-text-secondary font-ui max-w-3xl leading-relaxed"
-                >
-                    From pixel-perfect websites to scroll-stopping graphics — I help startups and local businesses build a brand that looks professional and turns visitors into paying customers.
-                </motion.p>
-
+                {/* Floating Note Card */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row items-center gap-5 pt-4 w-full sm:w-auto"
+                    initial={{ opacity: 0, rotate: -15, y: 20 }}
+                    animate={{ opacity: 1, rotate: -8, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="absolute right-0 md:-right-4 bottom-[-80px] md:bottom-[-60px] bg-[#F8F9FA] p-5 shadow-xl w-[240px] border border-gray-200 hidden md:block"
+                    style={{ transform: 'rotate(-8deg)' }}
                 >
-                    <a
-                        href="#work"
-                        className="group w-full sm:w-auto px-10 py-5 rounded-[12px] bg-primary text-text-primary font-bold text-lg hover:bg-hover transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 border border-white/20"
-                    >
-                        View My Work
-                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
-                        href="#contact"
-                        className="w-full sm:w-auto px-10 py-5 rounded-[12px] border border-text-secondary/20 bg-white/30 backdrop-blur-sm hover:bg-white/50 transition-all font-bold text-lg text-text-primary flex items-center justify-center shadow-sm"
-                    >
-                        Let's Work Together
-                    </a>
+                    {/* A simple decorative tape */}
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-5 bg-white/60 backdrop-blur-sm shadow-sm rotate-3"></div>
+                    
+                    <div className="font-ui text-[14px] text-gray-700 leading-snug text-center mt-1">
+                        <p>I'm Madhan, a Designer & Full-Stack Developer building end-to-end experiences.</p>
+                    </div>
                 </motion.div>
+                
+                {/* Mobile version of the intro text */}
+                 <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="md:hidden mt-12 text-white/90 font-ui text-lg text-center px-4"
+                >
+                    I'm Madhan, a Designer & Full-Stack Developer building end-to-end experiences.
+                </motion.p>
             </div>
+            
         </section>
     );
 };

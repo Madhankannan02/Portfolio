@@ -30,11 +30,13 @@ function App() {
           <Route path="/" element={
             <Layout>
               <Hero />
-              <Suspense fallback={<div className="min-h-screen" />}>
-                <ProjectsGrid />
-                <WorkExperience />
-                <Contact />
-              </Suspense>
+              <div className="pt-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
+                <Suspense fallback={<div className="min-h-screen" />}>
+                  <ProjectsGrid />
+                  <WorkExperience />
+                  <Contact />
+                </Suspense>
+              </div>
             </Layout>
           } />
           <Route path="/hathaven" element={<HatHaven />} />
